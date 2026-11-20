@@ -96,7 +96,8 @@ def main():
         except Exception as ex:
             out["errors"][key] = f"{type(ex).__name__}: {ex}"[:200]
 
-    end, start = now.date() - dt.timedelta(days=1), now.date() - dt.timedelta(days=7)
+    # 데이터랩은 전날 집계가 아침에 아직 안 들어와 0이 나온다 → 그저께까지 7일
+    end, start = now.date() - dt.timedelta(days=2), now.date() - dt.timedelta(days=8)
     dates = [start + dt.timedelta(days=i) for i in range(7)]
     period = {"startDate": start.isoformat(), "endDate": end.isoformat(), "timeUnit": "date"}
     try:

@@ -160,7 +160,7 @@
         var seg=document.getElementById('stSeg');
         if(seg&&d.searchtrend){
           var lbl=document.getElementById('stLabel'),body=document.getElementById('stBody'),srcs={g:[d.searchtrend,d.searchtrend.label]};
-          if(nv.trend&&nv.trend.keywords&&nv.trend.keywords.length)srcs.n=[{dates:nv.trend.dates,keywords:nv.trend.keywords,note:'네이버 검색량 상댓값(기간 내 최고=100) · 어제까지 7일 · 출처: NAVER 데이터랩'},'AI 서비스 검색량 · 네이버 데이터랩 · 최근 7일'];
+          if(nv.trend&&nv.trend.keywords&&nv.trend.keywords.length)srcs.n=[{dates:nv.trend.dates,keywords:nv.trend.keywords,note:'네이버 검색량 상댓값(기간 내 최고=100) · 그저께까지 7일 · 출처: NAVER 데이터랩'},'AI 서비스 검색량 · 네이버 데이터랩 · 최근 7일'];
           if(nv.shopping&&nv.shopping.keywords&&nv.shopping.keywords.length)srcs.s=[{dates:nv.shopping.dates,keywords:nv.shopping.keywords,note:'네이버쇼핑 '+nv.shopping.category+' 분야 키워드 클릭량 상댓값(기간 내 최고=100) · 출처: NAVER 데이터랩 쇼핑인사이트'},'AI 기기 쇼핑 관심도 · 네이버쇼핑 '+nv.shopping.category+' · 최근 7일'];
           seg.querySelectorAll('button').forEach(function(bt){bt.hidden=!srcs[bt.dataset.s];bt.onclick=function(){
             var x=srcs[bt.dataset.s];seg.querySelectorAll('button').forEach(function(y){y.setAttribute('aria-pressed',String(y===bt))});
