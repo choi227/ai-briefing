@@ -7,6 +7,10 @@
 - `public/data/index.json`의 마지막 호를 열어 형식과 `issue` 번호를 확인한다. 새 호의 `issue`는 마지막 호 + 1.
 - 형식의 기준은 `public/data/2026-11-20.json`이다. 키 이름과 구조를 그대로 따른다.
 
+## 0-1. 보조 소스 한 번에 모으기
+- `pip install -q trendspyg` 후 `python3 scripts/collect.py --out /tmp/sources.json` 을 실행한다.
+- 결과의 `errors`에 적힌 소스는 그날 빼고 계속한다. (네이버는 `NAVER_CLIENT_ID`/`NAVER_CLIENT_SECRET` 환경 변수가 없으면 실패한다.)
+
 ## 1. AI 뉴스 (`headline`, `news`, `oneline`)
 - 최근 24시간(한국시간 전날 아침 이후) AI 뉴스를 웹 검색으로 찾는다. 모델 출시, 빅테크·반도체, 투자·상장, 규제·정책, 스타트업, 한국 소식을 고르게 본다.
 - 가장 중요한 1건은 `headline`으로, 나머지 6~8건은 `news`로 넣는다. `news` 중 비중 큰 2건은 `featured: true`.
@@ -18,6 +22,10 @@
 ## 2. 밤사이 미국 시장 (`market`)
 - 전날 미국 장 마감 기준 나스닥, S&P 500, 필라델피아 반도체지수, 엔비디아의 등락률(%)을 기사에서 확인해 `change`에 숫자로 넣는다(하락은 음수).
 - 확인 못 한 항목은 빼고, 주말·휴장일이면 `label`에 "최근 거래일(MM/DD) 종가"라고 쓴다.
+
+## 2-1. AI 검색 관심도 (`searchtrend`)
+- `/tmp/sources.json`의 `trends`를 그대로 옮긴다: `dates`, `keywords`(name·series·avg, 숫자 수정 금지), `rising`은 `rising_ai`.
+- `label`: "AI 서비스 검색 관심도 · 구글 트렌드 한국 · 최근 7일". `trends`가 실패했으면 이 키를 넣지 않는다.
 
 ## 3. GitHub 트렌딩 (`trending`)
 - https://github.com/trending 을 웹페이지 읽기로 열어 목록 전체를 가져온다. (이 환경의 curl로는 github.com이 막혀 있다.)
@@ -31,6 +39,10 @@
 - Hacker News: https://hn.algolia.com/api/v1/search?tags=front_page&hitsPerPage=30 을 웹페이지 읽기로 열어, AI·LLM·머신러닝 관련 글만 점수(points) 높은 순 최대 5개. `title`은 원제, `title_ko`는 한국어 번역, `discuss`는 `https://news.ycombinator.com/item?id=<objectID>`.
 - GeekNews: https://news.hada.io/ 를 웹페이지 읽기로 열어 AI 관련 글 최대 3개. `title`과 `title_ko`는 같은 한국어 원제, `discuss`는 `https://news.hada.io/topic?id=...`.
 - `source`는 `hn` 또는 `gn`. `points`, `comments`는 페이지에 보인 숫자 그대로. `label`에는 수집 시각(KST)을 적는다.
+- Hugging Face 논문 (`source: "hf"`): `/tmp/sources.json`의 `hf` 중 추천 많은 순 최대 3개. `title`은 원제, `title_ko`는 한국어 번역, `url`·`discuss`는 논문 링크, `points`=upvotes, `comments`=comments.
+- dev.to (`source: "dev"`): `devto` 중 AI와 직접 관련된 글만 반응 많은 순 최대 3개. `points`=reactions, `comments`=comments, `url`·`discuss`=글 링크.
+- 네이버 블로그 (`source: "nv"`): `naver` 후보 중 광고·홍보·강의 판매 글을 빼고, 정보가 있는 AI 글 최대 3개. `title`=원제(`title_ko` 없음), `url`, `meta`="블로그명 · MM/DD". `points`·`comments`·`discuss`는 넣지 않는다. 인기순이 아니라 최신 글 중 고른 것이다.
+- `label`은 실제로 넣은 소스 이름을 나열하고 수집 시각을 붙인다. 예: "HN · GeekNews · HF 논문 · dev.to · 네이버 블로그 · 11/21 07:30 KST".
 - Reddit은 이 환경에서 막혀 있으니 쓰지 않는다. 형식 기준은 `public/data/2026-11-20.json`의 `community`.
 
 ## 3-2. 유튜브 인기 (`youtube`)

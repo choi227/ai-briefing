@@ -11,6 +11,28 @@
   function dur(t){var m=Math.floor(t/60),x=t%60;return m>=60?Math.floor(m/60)+':'+String(m%60).padStart(2,'0')+':'+String(x).padStart(2,'0'):m+':'+String(x).padStart(2,'0')}
   function fmtDate(d,w){var p=d.split('-');return p[0]+'.'+p[1]+'.'+p[2]+(w?' '+w:'')}
 
+  var TCOL=['var(--c-invest)','var(--star)','var(--c-startup)','var(--c-chip)','var(--muted)'];
+  function trendCard(g){
+    var W=640,H=200,P={l:30,r:22,t:12,b:26},n=g.dates.length,iw=W-P.l-P.r,ih=H-P.t-P.b;
+    var mx=Math.max(10,Math.ceil(Math.max.apply(null,g.keywords.map(function(k){return Math.max.apply(null,k.series)}))/10)*10);
+    var X=function(i){return P.l+(n<2?iw/2:i*iw/(n-1))},Y=function(v){return P.t+ih-v/mx*ih};
+    var svg='<svg class="tchart" viewBox="0 0 '+W+' '+H+'" role="img" aria-label="AI 서비스 검색 관심도 '+esc(g.dates[0])+'~'+esc(g.dates[n-1])+'">';
+    [0,mx/2,mx].forEach(function(v){svg+='<line x1="'+P.l+'" x2="'+(W-P.r)+'" y1="'+Y(v)+'" y2="'+Y(v)+'" class="gl"/><text x="'+(P.l-6)+'" y="'+(Y(v)+4)+'" text-anchor="end">'+Math.round(v)+'</text>'});
+    g.dates.forEach(function(dd,i){if(n<=6||i%2===(n-1)%2)svg+='<text x="'+X(i)+'" y="'+(H-6)+'" text-anchor="'+(i===n-1?'end':i===0?'start':'middle')+'">'+esc(dd)+'</text>'});
+    g.keywords.slice().reverse().forEach(function(k){
+      var j=g.keywords.indexOf(k),c=TCOL[j]||'var(--muted)';
+      svg+='<polyline fill="none" stroke="'+c+'" stroke-width="'+(j<3?2.5:1.5)+'" stroke-linejoin="round" stroke-linecap="round" points="'+k.series.map(function(v,i){return X(i).toFixed(1)+','+Y(v).toFixed(1)}).join(' ')+'"/>';
+      var l=k.series.length-1;svg+='<circle cx="'+X(l)+'" cy="'+Y(k.series[l])+'" r="3.5" fill="'+c+'"/>';
+    });
+    svg+='</svg>';
+    var leg=g.keywords.map(function(k,j){var a=k.series[0],b=k.series[k.series.length-1],ch=a?Math.round((b-a)/a*100):0;
+      return '<div><i style="background:'+(TCOL[j]||'var(--muted)')+'"></i>'+esc(k.name)+'<span class="tch mono" style="color:'+(ch>=0?'var(--up)':'var(--down)')+'">'+(ch>=0?'+':'−')+Math.abs(ch)+'%</span><b>'+k.avg+'</b></div>'}).join('');
+    var ris=(g.rising||[]).length?'<div class="label" style="margin-top:14px">급상승 관련 검색어 · 인공지능</div><div class="pills">'+g.rising.map(function(r){return '<span class="pill">'+esc(r.query)+'</span>'}).join('')+'</div>':'';
+    return '<article class="card strend"><div class="label">'+esc(g.label)+'</div><div class="stwrap"><div class="stchart">'+svg+'</div>'+
+      '<div class="stside"><div class="legend"><div class="lh"><span>서비스</span><span class="tch">7일 변화</span><b>평균</b></div>'+leg+'</div>'+ris+'</div></div>'+
+      '<div class="note">'+esc(g.note||'구글 검색 관심도 상댓값(기간 내 최고=100). 실제 검색 횟수가 아니에요.')+'</div></article>';
+  }
+
   function render(d){
     var h=d.headline,m=d.market,o=d.oneline,t=d.trending;
     var mmax=Math.max.apply(null,m.rows.map(function(r){return Math.abs(r.change)}))||1;
@@ -23,6 +45,7 @@
       m.rows.map(function(r){var c=r.change<0?'var(--down)':'var(--up)';return '<div class="mrow"><span class="nm">'+esc(r.name)+'</span><div class="mbar"><i style="width:'+(Math.abs(r.change)/mmax*100).toFixed(1)+'%;background:'+c+'"></i></div><span class="v" style="color:'+c+'">'+pct(r.change)+'</span></div>'}).join('')+
       '<div class="note">'+esc(m.note)+' · '+link(m.source)+'</div></article>'+
       '<article class="card oneline"><div class="label">한 줄 요약</div><p>'+esc(o.text)+'</p><div class="pills">'+o.tags.map(function(x){return '<span class="pill">'+esc(x)+'</span>'}).join('')+'</div></article>'+
+      (d.searchtrend&&d.searchtrend.keywords&&d.searchtrend.keywords.length?trendCard(d.searchtrend):'')+
       '</section>';
     html+='<section id="news"><div class="sec-title"><div><h2>AI 뉴스</h2><p>밤사이 나온 소식 '+d.news.length+'건, 원문 링크 포함</p></div><div class="filters" id="filters" role="group" aria-label="분야 필터"></div></div><div class="news" id="newsGrid">'+
       d.news.map(function(n){var c=CATS[n.cat]||[n.cat,"--muted"];return '<article class="card ncard'+(n.featured?' big':'')+'" data-cat="'+esc(n.cat)+'"><div class="cat" style="color:var('+c[1]+')"><i style="background:var('+c[1]+')"></i>'+esc(c[0])+'</div><h3>'+esc(n.title)+'</h3><p>'+esc(n.summary)+'</p><a href="'+esc(n.url)+'" target="_blank" rel="noopener">'+esc(n.source)+' ↗</a></article>'}).join('')+
@@ -36,13 +59,13 @@
       '<div class="card insight"><div class="label">트렌드 읽기</div><p>'+t.insight+'</p></div>'+
       '</aside></div></section>';
     if(d.community&&d.community.items&&d.community.items.length){
-      var SRC={hn:['Hacker News','HN'],gn:['GeekNews','GN']};
+      var SRC={hn:['Hacker News','HN'],gn:['GeekNews','GN'],hf:['Hugging Face 오늘의 논문','HF'],dev:['dev.to 개발자 블로그','DEV'],nv:['네이버 블로그','N']};
       var col=function(k){var it=d.community.items.filter(function(x){return x.source===k});if(!it.length)return '';
         return '<div class="card ccol"><div class="label">'+SRC[k][0]+'</div><ol class="clist">'+it.map(function(x,i){
           return '<li class="citem"><span class="rank">'+(i+1)+'</span><div class="cbody"><a class="ct" href="'+esc(x.url)+'" target="_blank" rel="noopener">'+esc(x.title_ko||x.title)+'</a>'+
             (x.title_ko&&x.title_ko!==x.title?'<div class="co">'+esc(x.title)+'</div>':'')+
-            '<div class="cm"><span class="mono">▲ '+x.points.toLocaleString('en-US')+'</span><a href="'+esc(x.discuss)+'" target="_blank" rel="noopener">댓글 '+x.comments.toLocaleString('en-US')+' ↗</a></div></div></li>'}).join('')+'</ol></div>'};
-      html+='<section id="community"><div class="sec-title"><div><h2>커뮤니티 화제</h2><p>'+esc(d.community.label)+'</p></div></div><div class="cgrid">'+col('hn')+col('gn')+'</div></section>';
+            '<div class="cm">'+(x.points!=null?'<span class="mono">'+(k==='dev'?'♥ ':'▲ ')+x.points.toLocaleString('en-US')+'</span>':'')+(x.meta?'<span>'+esc(x.meta)+'</span>':'')+(x.discuss?'<a href="'+esc(x.discuss)+'" target="_blank" rel="noopener">댓글 '+(x.comments!=null?x.comments.toLocaleString('en-US')+' ':'')+'↗</a>':(x.comments!=null?'<span>댓글 '+x.comments.toLocaleString('en-US')+'</span>':''))+'</div></div></li>'}).join('')+'</ol></div>'};
+      html+='<section id="community"><div class="sec-title"><div><h2>커뮤니티 화제</h2><p>'+esc(d.community.label)+'</p></div></div><div class="cgrid">'+col('hn')+col('gn')+col('hf')+col('dev')+col('nv')+'</div></section>';
     }
     if(d.youtube&&((d.youtube.videos||[]).length||(d.youtube.shorts||[]).length)){
       html+='<section id="youtube"><div class="sec-title"><div><h2>유튜브 인기</h2><p>'+esc(d.youtube.label)+'</p></div>'+
@@ -201,7 +224,7 @@
         setTimeout(function(){e.target.style.transitionDelay=''},900);
       });
     },{rootMargin:'0px 0px -8% 0px'});
-    var els=document.querySelectorAll('.ncard,.tlist,.side .card,.ccol,.ytc,.todo,.archive');
+    var els=document.querySelectorAll('.strend,.ncard,.tlist,.side .card,.ccol,.ytc,.todo,.archive');
     els.forEach(function(el){el.classList.add('rv');if(el.getBoundingClientRect().top>innerHeight*0.92){el.classList.add('pre')}});
     requestAnimationFrame(function(){els.forEach(function(el){if(el.classList.contains('pre'))io.observe(el)})});
   }

@@ -149,6 +149,17 @@ main{display:grid;gap:44px;padding-block:28px 64px}
 .cm a{color:var(--muted)}
 .cm .mono{color:var(--star)}
 @media (max-width:900px){.cgrid{grid-template-columns:1fr}}
+.strend{grid-column:1/-1}
+.stwrap{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(220px,1fr);gap:20px;align-items:start}
+.tchart{width:100%;height:auto;display:block}
+.tchart text{font-family:var(--f-mono);font-size:10px;fill:var(--muted)}
+.tchart .gl{stroke:var(--line);stroke-width:1}
+.strend .legend div{gap:8px}
+.strend .legend .lh{font-size:11px;color:var(--muted)}
+.tch{margin-left:auto;font-size:12px;min-width:48px;text-align:right}
+.strend .legend b{margin-left:12px;min-width:32px;text-align:right}
+@media (max-width:900px){.stwrap{grid-template-columns:1fr}}
+@media (max-width:640px){.tchart text{font-size:18px}}
 .ytgrid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin-bottom:18px}
 .ytl{margin-top:4px}
 .ytc{padding:0;overflow:hidden;display:flex;flex-direction:column}
