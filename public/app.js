@@ -35,7 +35,7 @@
       '</aside></div></section>';
     html+='<section id="todo" class="grid"><div class="card todo"><div class="label">오늘 해볼 것</div><ul>'+
       d.todo.map(function(x,i){return '<li><label><input type="checkbox" id="t'+i+'"><span>'+esc(x)+'</span></label></li>'}).join('')+
-      '</ul></div><div class="card archive"><div class="label">지난 브리핑</div><div class="days" id="days"></div><div class="note" id="archNote"></div></div></section>';
+      '</ul></div><div class="card archive"><div class="label">지난 브리핑</div><ol class="issues" id="issueList"></ol><div class="note" id="archNote"></div></div></section>';
     app.innerHTML=html;
 
     // 필터
@@ -78,16 +78,22 @@
       cb.addEventListener('change',function(){try{localStorage.setItem(key,cb.checked?'1':'0')}catch(e){}});
     });
 
-    // 지난 브리핑: 최근 7일
-    var days=document.getElementById('days'),base=new Date(d.date+'T00:00:00'),out='';
-    for(var i=6;i>=0;i--){
-      var x=new Date(base);x.setDate(base.getDate()-i);
-      var iso=x.getFullYear()+'-'+String(x.getMonth()+1).padStart(2,'0')+'-'+String(x.getDate()).padStart(2,'0');
-      var has=issues.indexOf(iso)>=0;
-      out+=has?'<a class="day'+(iso===d.date?' now':'')+'" href="#'+iso+'" style="text-decoration:none">'+x.getDate()+'</a>':'<div class="day">'+x.getDate()+'</div>';
-    }
-    days.innerHTML=out;
-    document.getElementById('archNote').textContent='지금까지 '+issues.length+'호 발행. 매일 아침 8시에 새 호가 올라와요';
+    // 지난 브리핑: 발행된 호 목록 (최신순, 최근 10개)
+    var list=document.getElementById('issueList'),recent=issues.slice(-10).reverse();
+    list.innerHTML=recent.map(function(iso){
+      var on=iso===d.date;
+      return '<li><a class="issue'+(on?' now':'')+'" href="#'+iso+'"'+(on?' aria-current="page"':'')+'><span class="no">'+fmtDate(iso).slice(5)+'</span><span class="tt" data-date="'+iso+'">'+(on?esc(h.title):'')+'</span></a></li>';
+    }).join('');
+    recent.forEach(function(iso){
+      if(iso===d.date)return;
+      getIssue(iso).then(function(x){
+        var el=list.querySelector('.tt[data-date="'+iso+'"]');if(!el)return;
+        el.textContent=x.headline.title;
+        el.previousSibling.textContent='No.'+String(x.issue).padStart(3,'0')+' · '+fmtDate(iso).slice(5);
+      }).catch(function(){});
+    });
+    list.querySelector('.now .no').textContent='No.'+String(d.issue).padStart(3,'0')+' · '+fmtDate(d.date).slice(5);
+    document.getElementById('archNote').textContent='지금까지 '+issues.length+'호 발행 · 매일 아침 8시에 새 호가 올라와요';
 
     // 헤더
     var idx=issues.indexOf(d.date);
@@ -141,10 +147,14 @@
     });
   }
 
+  var cache={};
+  function getIssue(date){
+    if(!cache[date])cache[date]=fetch('data/'+date+'.json',{cache:'no-cache'}).then(function(r){if(!r.ok)throw new Error(r.status);return r.json()});
+    return cache[date];
+  }
   function load(date){
     if(date===cur)return;
-    fetch('data/'+date+'.json',{cache:'no-cache'}).then(function(r){if(!r.ok)throw new Error(r.status);return r.json()})
-      .then(function(d){cur=date;render(d);scrollTo(0,0)})
+    getIssue(date).then(function(d){cur=date;render(d);scrollTo(0,0)})
       .catch(function(){app.innerHTML='<p class="loading">'+esc(date)+' 브리핑을 찾지 못했어요. 최신 호로 돌아가려면 <a href="./">여기</a>를 눌러 주세요</p>'});
   }
   function route(){
