@@ -48,7 +48,7 @@
       b.setAttribute('aria-pressed',String(k==='all'));
       b.onclick=function(){
         fl.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed',String(x===b))});
-        grid.querySelectorAll('.ncard').forEach(function(c){c.hidden=!(k==='all'||c.dataset.cat===k)});
+        grid.querySelectorAll('.ncard').forEach(function(c){c.hidden=!(k==='all'||c.dataset.cat===k);c.classList.remove('pre')});
       };
       fl.appendChild(b);
     });
@@ -98,13 +98,47 @@
     nx.onclick=function(){if(idx<issues.length-1)location.hash=issues[idx+1]};
     document.title='AI 모닝 브리핑 · '+fmtDate(d.date);
     observeTabs();
+    reveal();
   }
 
+  // 탭 활성화: 스크롤 위치 기준. 클릭하면 그 탭을 바로 켜고 스크롤이 끝날 때까지 고정
+  var tabLock=null,spyBound=false;
+  function setTab(id){document.querySelectorAll('.tabs a').forEach(function(t){t.classList.toggle('on',t.getAttribute('href')==='#'+id)})}
+  function spy(){
+    if(tabLock)return;
+    var ids=['summary','news','trending','todo'],line=document.querySelector('.top').getBoundingClientRect().bottom+24,act=ids[0];
+    ids.forEach(function(id){var el=document.getElementById(id);if(el&&el.getBoundingClientRect().top<=line)act=id});
+    if(innerHeight+scrollY>=document.documentElement.scrollHeight-4)act=ids[ids.length-1];
+    setTab(act);
+  }
   function observeTabs(){
-    var tabs=document.querySelectorAll('.tabs a');
-    if(!('IntersectionObserver' in window))return;
-    var so=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){tabs.forEach(function(t){t.classList.toggle('on',t.getAttribute('href')==='#'+e.target.id)})}})},{rootMargin:'-45% 0px -50% 0px'});
-    document.querySelectorAll('main > section').forEach(function(s){so.observe(s)});
+    if(!spyBound){
+      spyBound=true;
+      addEventListener('scroll',function(){
+        if(tabLock){clearTimeout(tabLock);tabLock=setTimeout(function(){tabLock=null;spy()},150);return}
+        spy();
+      },{passive:true});
+      document.querySelectorAll('.tabs a').forEach(function(a){
+        a.addEventListener('click',function(e){
+          e.preventDefault();
+          var id=a.getAttribute('href').slice(1),el=document.getElementById(id);
+          if(!el)return;
+          setTab(id);
+          clearTimeout(tabLock);tabLock=setTimeout(function(){tabLock=null},800);
+          el.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});
+        });
+      });
+    }
+    spy();
+  }
+
+  // 화면 아래쪽 요소만 스크롤할 때 나타나는 효과
+  function reveal(){
+    if(matchMedia('(prefers-reduced-motion: reduce)').matches||!('IntersectionObserver' in window))return;
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.remove('pre');io.unobserve(e.target)}})},{rootMargin:'0px 0px -6% 0px'});
+    document.querySelectorAll('.ncard,.tlist,.side .card,.todo,.archive').forEach(function(el){
+      if(el.getBoundingClientRect().top>innerHeight){el.classList.add('pre');io.observe(el)}
+    });
   }
 
   function load(date){
