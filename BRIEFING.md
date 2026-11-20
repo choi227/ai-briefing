@@ -9,7 +9,7 @@
 
 ## 0-1. 보조 소스 한 번에 모으기
 - `pip install -q trendspyg` 후 `python3 scripts/collect.py --out /tmp/sources.json` 을 실행한다.
-- 결과의 `errors`에 적힌 소스는 그날 빼고 계속한다. (네이버는 `NAVER_CLIENT_ID`/`NAVER_CLIENT_SECRET` 환경 변수가 없으면 실패한다.)
+- 결과의 `errors`에 적힌 소스는 그날 빼고 계속한다.
 
 ## 1. AI 뉴스 (`headline`, `news`, `oneline`)
 - 최근 24시간(한국시간 전날 아침 이후) AI 뉴스를 웹 검색으로 찾는다. 모델 출시, 빅테크·반도체, 투자·상장, 규제·정책, 스타트업, 한국 소식을 고르게 본다.
@@ -41,8 +41,8 @@
 - `source`는 `hn` 또는 `gn`. `points`, `comments`는 페이지에 보인 숫자 그대로. `label`에는 수집 시각(KST)을 적는다.
 - Hugging Face 논문 (`source: "hf"`): `/tmp/sources.json`의 `hf` 중 추천 많은 순 최대 3개. `title`은 원제, `title_ko`는 한국어 번역, `url`·`discuss`는 논문 링크, `points`=upvotes, `comments`=comments.
 - dev.to (`source: "dev"`): `devto` 중 AI와 직접 관련된 글만 반응 많은 순 최대 3개. `points`=reactions, `comments`=comments, `url`·`discuss`=글 링크.
-- 네이버 블로그 (`source: "nv"`): `naver` 후보 중 광고·홍보·강의 판매 글을 빼고, 정보가 있는 AI 글 최대 3개. `title`=원제(`title_ko` 없음), `url`, `meta`="블로그명 · MM/DD". `points`·`comments`·`discuss`는 넣지 않는다. 인기순이 아니라 최신 글 중 고른 것이다.
-- `label`은 실제로 넣은 소스 이름을 나열하고 수집 시각을 붙인다. 예: "HN · GeekNews · HF 논문 · dev.to · 네이버 블로그 · 11/21 07:30 KST".
+- `label`은 실제로 넣은 소스 이름을 나열하고 수집 시각을 붙인다. 예: "HN · GeekNews · HF 논문 · dev.to · 11/21 07:30 KST".
+- 네이버 검색 API는 쓰지 않는다. 약관상 결과를 AI로 가공·선별하거나 저장할 수 없다.
 - Reddit은 이 환경에서 막혀 있으니 쓰지 않는다. 형식 기준은 `public/data/2026-11-20.json`의 `community`.
 
 ## 3-2. 유튜브 인기 (`youtube`)

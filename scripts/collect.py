@@ -5,14 +5,12 @@
   - trends : 구글 트렌드(한국) AI 서비스 검색 관심도 7일 (pip install trendspyg 필요)
   - hf     : Hugging Face 오늘의 논문, 추천(upvotes) 순
   - devto  : dev.to #ai 태그 최근 하루 인기글, 반응 수 순
-  - naver  : 네이버 블로그 AI 글 최신순 (NAVER_CLIENT_ID / NAVER_CLIENT_SECRET 필요)
 하나가 실패해도 나머지는 계속 모은다. 실패한 소스는 errors 에 이유를 적는다.
 """
-import argparse, datetime as dt, html, json, os, re, sys, urllib.parse, urllib.request
+import argparse, datetime as dt, json, urllib.request
 
 KST = dt.timezone(dt.timedelta(hours=9))
 TREND_KEYWORDS = ["ChatGPT", "Gemini", "Claude", "Grok", "Perplexity"]
-NAVER_QUERIES = ["인공지능", "ChatGPT", "AI 에이전트", "생성형 AI"]
 UA = {"User-Agent": "ai-briefing/1.0"}
 
 
@@ -70,32 +68,12 @@ def devto():
     return out[:15]
 
 
-def naver():
-    cid, sec = os.environ.get("NAVER_CLIENT_ID"), os.environ.get("NAVER_CLIENT_SECRET")
-    if not (cid and sec):
-        raise RuntimeError("NAVER_CLIENT_ID / NAVER_CLIENT_SECRET 환경 변수가 없습니다")
-    h = {"X-Naver-Client-Id": cid, "X-Naver-Client-Secret": sec}
-    since = (dt.datetime.now(KST) - dt.timedelta(days=1)).strftime("%Y%m%d")
-    seen, out = set(), []
-    clean = lambda s: html.unescape(re.sub(r"<[^>]+>", "", s or ""))
-    for q in NAVER_QUERIES:
-        d = get_json("https://openapi.naver.com/v1/search/blog.json?" +
-                     urllib.parse.urlencode({"query": q, "display": 30, "sort": "date"}), h)
-        for it in d.get("items", []):
-            if it["link"] in seen or it.get("postdate", "") < since:
-                continue
-            seen.add(it["link"])
-            out.append({"title": clean(it["title"]), "url": it["link"], "blog": clean(it.get("bloggername")),
-                        "date": it.get("postdate"), "snippet": clean(it.get("description"))[:200], "query": q})
-    return out[:60]
-
-
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--out")
-    ap.add_argument("--only", help="쉼표로 구분: trends,hf,devto,naver")
+    ap.add_argument("--only", help="쉼표로 구분: trends,hf,devto")
     a = ap.parse_args()
-    jobs = {"trends": trends, "hf": hf, "devto": devto, "naver": naver}
+    jobs = {"trends": trends, "hf": hf, "devto": devto}
     pick = a.only.split(",") if a.only else list(jobs)
     res = {"collected": dt.datetime.now(KST).strftime("%m/%d %H:%M KST"), "errors": {}}
     for k in pick:
