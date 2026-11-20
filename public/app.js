@@ -12,7 +12,9 @@
   function fmtDate(d,w){var p=d.split('-');return p[0]+'.'+p[1]+'.'+p[2]+(w?' '+w:'')}
 
   var TCOL=['var(--c-invest)','var(--star)','var(--c-startup)','var(--c-chip)','var(--muted)'];
-  function trendCard(g){
+  var TNAME={Gemini:0,ChatGPT:1,Claude:2,Grok:3,Perplexity:4};
+  function tc(k,j){return TCOL[k.name in TNAME?TNAME[k.name]:j]||'var(--muted)'}
+  function trendInner(g){
     var W=640,H=200,P={l:30,r:22,t:12,b:26},n=g.dates.length,iw=W-P.l-P.r,ih=H-P.t-P.b;
     var mx=Math.max(10,Math.ceil(Math.max.apply(null,g.keywords.map(function(k){return Math.max.apply(null,k.series)}))/10)*10);
     var X=function(i){return P.l+(n<2?iw/2:i*iw/(n-1))},Y=function(v){return P.t+ih-v/mx*ih};
@@ -20,17 +22,22 @@
     [0,mx/2,mx].forEach(function(v){svg+='<line x1="'+P.l+'" x2="'+(W-P.r)+'" y1="'+Y(v)+'" y2="'+Y(v)+'" class="gl"/><text x="'+(P.l-6)+'" y="'+(Y(v)+4)+'" text-anchor="end">'+Math.round(v)+'</text>'});
     g.dates.forEach(function(dd,i){if(n<=6||i%2===(n-1)%2)svg+='<text x="'+X(i)+'" y="'+(H-6)+'" text-anchor="'+(i===n-1?'end':i===0?'start':'middle')+'">'+esc(dd)+'</text>'});
     g.keywords.slice().reverse().forEach(function(k){
-      var j=g.keywords.indexOf(k),c=TCOL[j]||'var(--muted)';
+      var j=g.keywords.indexOf(k),c=tc(k,j);
       svg+='<polyline fill="none" stroke="'+c+'" stroke-width="'+(j<3?2.5:1.5)+'" stroke-linejoin="round" stroke-linecap="round" points="'+k.series.map(function(v,i){return X(i).toFixed(1)+','+Y(v).toFixed(1)}).join(' ')+'"/>';
       var l=k.series.length-1;svg+='<circle cx="'+X(l)+'" cy="'+Y(k.series[l])+'" r="3.5" fill="'+c+'"/>';
     });
     svg+='</svg>';
     var leg=g.keywords.map(function(k,j){var a=k.series[0],b=k.series[k.series.length-1],ch=a?Math.round((b-a)/a*100):0;
-      return '<div><i style="background:'+(TCOL[j]||'var(--muted)')+'"></i>'+esc(k.name)+'<span class="tch mono" style="color:'+(ch>=0?'var(--up)':'var(--down)')+'">'+(ch>=0?'+':'−')+Math.abs(ch)+'%</span><b>'+k.avg+'</b></div>'}).join('');
+      return '<div><i style="background:'+tc(k,j)+'"></i>'+esc(k.name)+'<span class="tch mono" style="color:'+(ch>=0?'var(--up)':'var(--down)')+'">'+(ch>=0?'+':'−')+Math.abs(ch)+'%</span><b>'+k.avg+'</b></div>'}).join('');
     var ris=(g.rising||[]).length?'<div class="label" style="margin-top:14px">급상승 관련 검색어 · 인공지능</div><div class="pills">'+g.rising.map(function(r){return '<span class="pill">'+esc(r.query)+'</span>'}).join('')+'</div>':'';
-    return '<article class="card strend"><div class="label">'+esc(g.label)+'</div><div class="stwrap"><div class="stchart">'+svg+'</div>'+
-      '<div class="stside"><div class="legend"><div class="lh"><span>서비스</span><span class="tch">7일 변화</span><b>평균</b></div>'+leg+'</div>'+ris+'</div></div>'+
-      '<div class="note">'+esc(g.note||'구글 검색 관심도 상댓값(기간 내 최고=100). 실제 검색 횟수가 아니에요.')+'</div></article>';
+    return '<div class="stwrap"><div class="stchart">'+svg+'</div><div class="stside"><div class="legend"><div class="lh"><span>서비스</span><span class="tch">7일 변화</span><b>평균</b></div>'+leg+'</div>'+ris+'</div></div>'+
+      '<div class="note">'+esc(g.note)+'</div>';
+  }
+  function trendCard(g){
+    g.note=g.note||'구글 검색 관심도 상댓값(기간 내 최고=100). 실제 검색 횟수가 아니에요.';
+    return '<article class="card strend"><div class="sthead"><div class="label" id="stLabel">'+esc(g.label)+'</div>'+
+      '<div class="seg" role="group" aria-label="데이터 출처" id="stSeg" hidden><button type="button" data-s="g" aria-pressed="true">구글</button><button type="button" data-s="n" aria-pressed="false">네이버</button></div></div>'+
+      '<div id="stBody">'+trendInner(g)+'</div></article>';
   }
 
   function render(d){
@@ -148,9 +155,19 @@
 
     // 네이버 블로그 검색결과: 최신 호에서만, 네이버가 준 그대로 표시 (호 파일에 저장하지 않음)
     var cg=document.querySelector('#community .cgrid');
-    if(cg&&d.date===issues[issues.length-1]){
+    if(d.date===issues[issues.length-1]){
       fetch('data/naver.json',{cache:'no-cache'}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(nv){
-        if(!nv.items||!nv.items.length)return;
+        var seg=document.getElementById('stSeg');
+        if(nv.trend&&nv.trend.keywords&&nv.trend.keywords.length&&seg&&d.searchtrend){
+          var gN={dates:nv.trend.dates,keywords:nv.trend.keywords,note:'네이버 데이터랩 검색량 상댓값(기간 내 최고=100) · 어제까지 7일 · 출처: NAVER 데이터랩'};
+          var lbl=document.getElementById('stLabel'),body=document.getElementById('stBody');
+          seg.hidden=false;
+          seg.querySelectorAll('button').forEach(function(bt){bt.onclick=function(){
+            var n=bt.dataset.s==='n';seg.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed',String(x===bt))});
+            body.innerHTML=trendInner(n?gN:d.searchtrend);lbl.textContent=n?'AI 서비스 검색량 · 네이버 데이터랩 · 최근 7일':d.searchtrend.label;
+          }});
+        }
+        if(!cg||!nv.items||!nv.items.length)return;
         var fd=function(x){return x&&x.length===8?x.slice(4,6)+'/'+x.slice(6):''};
         var el=document.createElement('div');el.className='card ccol';
         el.innerHTML='<div class="label">네이버 블로그 검색결과</div><ol class="clist">'+nv.items.map(function(x,i){
