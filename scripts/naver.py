@@ -7,7 +7,9 @@
   - 날짜별 호에 저장하지 않고 매일 이 파일 하나를 덮어쓴다.
   - 화면에 '네이버 검색결과' 출처와 원문 링크를 표시한다.
 
-필요: NAVER_CLIENT_ID, NAVER_CLIENT_SECRET (네이버 개발자센터 검색 API)
+필요(둘 중 하나):
+  - NAVER API HUB: NCP_APIGW_API_KEY_ID, NCP_APIGW_API_KEY
+  - 기존 개발자센터 키(2027-06-30까지): NAVER_CLIENT_ID, NAVER_CLIENT_SECRET
 사용: python3 scripts/naver.py
 """
 import datetime as dt, html, json, os, re, sys, urllib.parse, urllib.request
@@ -17,12 +19,17 @@ OUT = os.path.join(os.path.dirname(__file__), "..", "public", "data", "naver.jso
 
 
 def main():
-    cid, sec = os.environ.get("NAVER_CLIENT_ID"), os.environ.get("NAVER_CLIENT_SECRET")
-    if not (cid and sec):
-        sys.exit("NAVER_CLIENT_ID / NAVER_CLIENT_SECRET 환경 변수가 없습니다")
-    url = "https://openapi.naver.com/v1/search/blog.json?" + urllib.parse.urlencode(
-        {"query": QUERY, "display": 5, "sort": "sim"})
-    req = urllib.request.Request(url, headers={"X-Naver-Client-Id": cid, "X-Naver-Client-Secret": sec})
+    e = os.environ
+    q = urllib.parse.urlencode({"query": QUERY, "display": 5, "sort": "sim"})
+    if e.get("NCP_APIGW_API_KEY_ID") and e.get("NCP_APIGW_API_KEY"):
+        url = "https://naverapihub.apigw.ntruss.com/search/v1/blog?" + q
+        h = {"X-NCP-APIGW-API-KEY-ID": e["NCP_APIGW_API_KEY_ID"], "X-NCP-APIGW-API-KEY": e["NCP_APIGW_API_KEY"]}
+    elif e.get("NAVER_CLIENT_ID") and e.get("NAVER_CLIENT_SECRET"):
+        url = "https://openapi.naver.com/v1/search/blog?" + q
+        h = {"X-Naver-Client-Id": e["NAVER_CLIENT_ID"], "X-Naver-Client-Secret": e["NAVER_CLIENT_SECRET"]}
+    else:
+        sys.exit("네이버 키 환경 변수가 없습니다 (NCP_APIGW_API_KEY_ID/NCP_APIGW_API_KEY 또는 NAVER_CLIENT_ID/NAVER_CLIENT_SECRET)")
+    req = urllib.request.Request(url, headers=h)
     with urllib.request.urlopen(req, timeout=30) as r:
         d = json.load(r)
     clean = lambda s: html.unescape(re.sub(r"<[^>]+>", "", s or ""))
