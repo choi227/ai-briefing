@@ -146,6 +146,21 @@
       yx.onclick=function(){ymode='ratio';yx.setAttribute('aria-pressed','true');yv.setAttribute('aria-pressed','false');yall()};
     }
 
+    // 네이버 블로그 검색결과: 최신 호에서만, 네이버가 준 그대로 표시 (호 파일에 저장하지 않음)
+    var cg=document.querySelector('#community .cgrid');
+    if(cg&&d.date===issues[issues.length-1]){
+      fetch('data/naver.json',{cache:'no-cache'}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(nv){
+        if(!nv.items||!nv.items.length)return;
+        var fd=function(x){return x&&x.length===8?x.slice(4,6)+'/'+x.slice(6):''};
+        var el=document.createElement('div');el.className='card ccol';
+        el.innerHTML='<div class="label">네이버 블로그 검색결과</div><ol class="clist">'+nv.items.map(function(x,i){
+          return '<li class="citem"><span class="rank">'+(i+1)+'</span><div class="cbody"><a class="ct" href="'+esc(x.url)+'" target="_blank" rel="noopener">'+esc(x.title)+'</a>'+
+            '<div class="co">'+esc(x.desc)+'</div><div class="cm"><span>'+esc(x.blog)+(x.date?' · '+fd(x.date):'')+'</span></div></div></li>'}).join('')+
+          '</ol><div class="note">출처: NAVER 검색 · "'+esc(nv.query)+'" '+esc(nv.sort)+' · '+esc(nv.updated)+'</div>';
+        cg.appendChild(el);
+      }).catch(function(){});
+    }
+
     // 할 일 체크 (이 브라우저에만 저장)
     document.querySelectorAll('.todo input').forEach(function(cb){
       var key='brief-'+d.date+'-'+cb.id;

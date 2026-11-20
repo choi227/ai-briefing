@@ -42,7 +42,6 @@
 - Hugging Face 논문 (`source: "hf"`): `/tmp/sources.json`의 `hf` 중 추천 많은 순 최대 3개. `title`은 원제, `title_ko`는 한국어 번역, `url`·`discuss`는 논문 링크, `points`=upvotes, `comments`=comments.
 - dev.to (`source: "dev"`): `devto` 중 AI와 직접 관련된 글만 반응 많은 순 최대 3개. `points`=reactions, `comments`=comments, `url`·`discuss`=글 링크.
 - `label`은 실제로 넣은 소스 이름을 나열하고 수집 시각을 붙인다. 예: "HN · GeekNews · HF 논문 · dev.to · 11/21 07:30 KST".
-- 네이버 검색 API는 쓰지 않는다. 약관상 결과를 AI로 가공·선별하거나 저장할 수 없다.
 - Reddit은 이 환경에서 막혀 있으니 쓰지 않는다. 형식 기준은 `public/data/2026-11-20.json`의 `community`.
 
 ## 3-2. 유튜브 인기 (`youtube`)
@@ -53,13 +52,18 @@
 - `label`은 "최근 3일 · AI 키워드 · MM/DD HH:MM 수집"(후보 파일의 `collected` 값).
 - 순서는 조회수 많은 순. 사이트에서 "구독자 대비" 정렬로 바꿔 볼 수 있다.
 
+## 3-3. 네이버 블로그 (`public/data/naver.json`)
+- `python3 scripts/naver.py` 를 실행한다. 키가 없거나 실패하면 건너뛴다.
+- **이 파일은 열어보거나 고치지 않는다.** 네이버 검색 API 약관상 결과를 AI가 읽고 가공·선별하면 안 된다. 스크립트가 네이버가 준 순서 그대로 쓰고, 화면이 그대로 보여준다.
+- 호 JSON(`community`)에 네이버 글을 넣지 않는다. 매일 덮어쓰는 이 파일 하나만 쓴다.
+
 ## 4. 오늘 해볼 것 (`todo`)
 - 오늘 소식과 이어지는 5분짜리 행동 2~3개.
 
 ## 5. 저장과 배포
 1. `public/data/<오늘>.json` 작성, `public/data/index.json`의 `issues` 배열 끝에 날짜 추가.
 2. `python3 -c "import json;json.load(open(...))"`로 두 파일이 올바른 JSON인지 확인.
-3. 이 두 파일만 커밋한다. 메시지: `브리핑 No.XXX (YYYY-MM-DD)`.
+3. 이 두 파일(+ `public/data/naver.json`이 바뀌었으면 그것도)만 커밋한다. 메시지: `브리핑 No.XXX (YYYY-MM-DD)`.
 4. `main`에 push. Cloudflare가 1~2분 안에 https://ai-briefing.a2teosis.workers.dev 에 반영한다.
 
 ## 하지 말 것
