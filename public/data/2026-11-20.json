@@ -7,51 +7,306 @@
     "title": "앤트로픽, 나스닥 상장 첫날 17% 상승 마감",
     "body": "공모가 83달러로 희망 범위(70~78달러) 위에서 정해졌고, 9억 8천만 주를 팔아 813억 달러를 모았어요. 사상 최대 규모 IPO예요. 첫 거래가는 111.50달러(+34%)였지만 97.17달러로 마감했어요.",
     "figures": [
-      {"value": "$83", "label": "공모가"},
-      {"value": "$813억", "label": "조달 규모"},
-      {"value": "+17.1%", "label": "첫날 종가 상승률"}
+      {
+        "value": "$83",
+        "label": "공모가"
+      },
+      {
+        "value": "$813억",
+        "label": "조달 규모"
+      },
+      {
+        "value": "+17.1%",
+        "label": "첫날 종가 상승률"
+      }
     ],
-    "source": {"name": "StockTitan", "url": "https://www.stocktitan.net/articles/anthropic-ipo-live-ant-first-trading-day-2026"}
+    "source": {
+      "name": "StockTitan",
+      "url": "https://www.stocktitan.net/articles/anthropic-ipo-live-ant-first-trading-day-2026"
+    }
   },
   "market": {
     "label": "밤사이 미국 시장 · 11/19 종가",
     "rows": [
-      {"name": "나스닥", "change": -2.25},
-      {"name": "S&P 500", "change": -2.02},
-      {"name": "엔비디아", "change": -3.30}
+      {
+        "name": "나스닥",
+        "change": -2.25
+      },
+      {
+        "name": "S&P 500",
+        "change": -2.02
+      },
+      {
+        "name": "엔비디아",
+        "change": -3.3
+      }
     ],
     "note": "엔비디아는 3분기 사상 최대 매출(1,158억 달러)에도 CEO 공백 우려로 밀렸고, AMD는 7.7% 떨어졌어요",
-    "source": {"name": "The Motley Fool", "url": "https://www.fool.com/coverage/stock-market-today/2026/11/19/stock-market-today-nov-19-nvidia-slides-as-investors-weigh-ceo-transition-fallout-despite-strong-q3-results/"}
+    "source": {
+      "name": "The Motley Fool",
+      "url": "https://www.fool.com/coverage/stock-market-today/2026/11/19/stock-market-today-nov-19-nvidia-slides-as-investors-weigh-ceo-transition-fallout-despite-strong-q3-results/"
+    }
   },
   "oneline": {
     "text": "앤트로픽이 사상 최대 IPO로 상장했지만, 같은 날 나스닥은 2% 넘게 빠지며 AI 열기와 불안이 함께 드러났어요.",
-    "tags": ["#앤트로픽상장", "#제미나이4네온", "#AI에이전트책임", "#에이전트스킬"]
+    "tags": [
+      "#앤트로픽상장",
+      "#제미나이4네온",
+      "#AI에이전트책임",
+      "#에이전트스킬"
+    ]
   },
   "news": [
-    {"cat": "model", "featured": true, "title": "구글, Gemini 4 Neon 공개: 입력 100만 토큰당 3달러", "summary": "코딩·복잡한 분석용 모델로 100만 토큰 컨텍스트를 지원해요. Artificial Analysis 코딩 에이전트 지수 58.6점으로 1위라고 밝혔어요(구글 발표 기준).", "source": "Google", "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/"},
-    {"cat": "policy", "featured": true, "title": "씨티은행, 'AI 에이전트가 해킹돼도 책임은 고객'", "summary": "외부 AI 에이전트에 계좌 접근권을 준 고객은 그 에이전트를 통한 거래에 책임을 지도록 약관을 바꿨어요. JP모건·뱅크오브아메리카는 지난달, PNC는 같은 날 비슷한 정책을 냈어요.", "source": "TechCrunch", "url": "https://techcrunch.com/2026/11/18/more-banks-says-customers-using-ai-agents-are-on-their-own-even-if-they-get-hacked/"},
-    {"cat": "chip", "featured": false, "title": "OpenAI, 자사 모델로 칩 설계 개선", "summary": "자체 칩 Jalapeño에서 모델이 제안한 변경으로 셀 면적을 약 10~13% 줄였고, AMD GPU 설계에서는 최대 14% 개선을 얻었다고 해요(OpenAI 발표 기준).", "source": "OpenAI", "url": "https://openai.com/index/advancing-chip-design-with-our-models/"},
-    {"cat": "model", "featured": false, "title": "센스타임, 층을 재사용하는 오픈 모델 Loop-9B 공개", "summary": "약 90억 파라미터, 51만 2천 토큰 컨텍스트예요. 32개 층 중 가운데 층을 두 번 돌려 56층만큼 계산하고, 4비트 가중치는 약 4.9GB예요.", "source": "TechNode", "url": "https://technode.com/2026/11/18/sensetime-releases-open-weight-loop-9b-model-that-reuses-layers-for-deeper-computation/"},
-    {"cat": "korea", "featured": false, "title": "인사처장 \"AI 시대 공직은 사람의 판단이 핵심\"", "summary": "모든 공무원이 매년 2시간 이상 AI 교육을 받도록 하고, 공직적격성평가를 2029년까지 9급 시험으로 넓힌다고 밝혔어요.", "source": "The Korea Herald", "url": "https://www.koreaherald.com/article/10942702"},
-    {"cat": "korea", "featured": false, "title": "한국·독일, 산업 AI 협력 논의", "summary": "헤럴드 글로벌 비즈니스 포럼에서 박영선 전 장관이 \"피지컬 AI의 핵심은 공장 자동화에서 공장 자율화로 넘어가는 것\"이라고 말했어요.", "source": "The Korea Herald", "url": "https://www.koreaherald.com/article/10942805"},
-    {"cat": "market", "featured": false, "title": "월가, 앤트로픽 상장일에 일제히 하락", "summary": "S&P 500은 2.02%, 나스닥은 2.25% 내렸어요. 엔비디아는 3.30% 하락한 145.98달러로 마감했어요.", "source": "The Motley Fool", "url": "https://www.fool.com/coverage/stock-market-today/2026/11/19/stock-market-today-nov-19-nvidia-slides-as-investors-weigh-ceo-transition-fallout-despite-strong-q3-results/"}
+    {
+      "cat": "model",
+      "featured": true,
+      "title": "구글, Gemini 4 Neon 공개: 입력 100만 토큰당 3달러",
+      "summary": "코딩·복잡한 분석용 모델로 100만 토큰 컨텍스트를 지원해요. Artificial Analysis 코딩 에이전트 지수 58.6점으로 1위라고 밝혔어요(구글 발표 기준).",
+      "source": "Google",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/"
+    },
+    {
+      "cat": "policy",
+      "featured": true,
+      "title": "씨티은행, 'AI 에이전트가 해킹돼도 책임은 고객'",
+      "summary": "외부 AI 에이전트에 계좌 접근권을 준 고객은 그 에이전트를 통한 거래에 책임을 지도록 약관을 바꿨어요. JP모건·뱅크오브아메리카는 지난달, PNC는 같은 날 비슷한 정책을 냈어요.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/18/more-banks-says-customers-using-ai-agents-are-on-their-own-even-if-they-get-hacked/"
+    },
+    {
+      "cat": "chip",
+      "featured": false,
+      "title": "OpenAI, 자사 모델로 칩 설계 개선",
+      "summary": "자체 칩 Jalapeño에서 모델이 제안한 변경으로 셀 면적을 약 10~13% 줄였고, AMD GPU 설계에서는 최대 14% 개선을 얻었다고 해요(OpenAI 발표 기준).",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/advancing-chip-design-with-our-models/"
+    },
+    {
+      "cat": "model",
+      "featured": false,
+      "title": "센스타임, 층을 재사용하는 오픈 모델 Loop-9B 공개",
+      "summary": "약 90억 파라미터, 51만 2천 토큰 컨텍스트예요. 32개 층 중 가운데 층을 두 번 돌려 56층만큼 계산하고, 4비트 가중치는 약 4.9GB예요.",
+      "source": "TechNode",
+      "url": "https://technode.com/2026/11/18/sensetime-releases-open-weight-loop-9b-model-that-reuses-layers-for-deeper-computation/"
+    },
+    {
+      "cat": "korea",
+      "featured": false,
+      "title": "인사처장 \"AI 시대 공직은 사람의 판단이 핵심\"",
+      "summary": "모든 공무원이 매년 2시간 이상 AI 교육을 받도록 하고, 공직적격성평가를 2029년까지 9급 시험으로 넓힌다고 밝혔어요.",
+      "source": "The Korea Herald",
+      "url": "https://www.koreaherald.com/article/10942702"
+    },
+    {
+      "cat": "korea",
+      "featured": false,
+      "title": "한국·독일, 산업 AI 협력 논의",
+      "summary": "헤럴드 글로벌 비즈니스 포럼에서 박영선 전 장관이 \"피지컬 AI의 핵심은 공장 자동화에서 공장 자율화로 넘어가는 것\"이라고 말했어요.",
+      "source": "The Korea Herald",
+      "url": "https://www.koreaherald.com/article/10942805"
+    },
+    {
+      "cat": "market",
+      "featured": false,
+      "title": "월가, 앤트로픽 상장일에 일제히 하락",
+      "summary": "S&P 500은 2.02%, 나스닥은 2.25% 내렸어요. 엔비디아는 3.30% 하락한 145.98달러로 마감했어요.",
+      "source": "The Motley Fool",
+      "url": "https://www.fool.com/coverage/stock-market-today/2026/11/19/stock-market-today-nov-19-nvidia-slides-as-investors-weigh-ceo-transition-fallout-despite-strong-q3-results/"
+    }
   ],
   "trending": {
     "label": "github.com/trending 전체 9개",
     "repos": [
-      {"name": "sherlock-project/sherlock", "today": 2373, "total": 103430, "lang": "Python", "skill": false, "desc": "사용자 이름으로 여러 SNS 계정을 찾아주는 도구"},
-      {"name": "milind-soni/OpenMausBot", "today": 1439, "total": 18228, "lang": "TypeScript", "skill": false, "desc": "봇이 쓸 가상머신을 갖춘 오픈소스 Grok 봇 대안"},
-      {"name": "meta/astryx", "today": 875, "total": 16693, "lang": "TypeScript", "skill": false, "desc": "에이전트가 바로 쓸 수 있는 메타의 오픈소스 디자인 시스템"},
-      {"name": "vercel-labs/agent-browser", "today": 815, "total": 47569, "lang": "Rust", "skill": false, "desc": "AI 에이전트용 브라우저 자동화 CLI"},
-      {"name": "anthropics/skills", "today": 792, "total": 189615, "lang": "Python", "skill": true, "desc": "앤트로픽 공식 에이전트 스킬 모음"},
-      {"name": "ranxianglei/billion-context", "today": 460, "total": 5129, "lang": "TypeScript", "skill": false, "desc": "긴 세션용 컨텍스트 압축 플러그인(토큰 5배 절약 주장)"},
-      {"name": "dsx-ai-factory/nvke", "today": 345, "total": 840, "lang": "Go", "skill": false, "desc": "베어메탈 GPU 쿠버네티스 관리 엔진"},
-      {"name": "google-deepmind/mujoco", "today": 41, "total": 16399, "lang": "C++", "skill": false, "desc": "범용 물리 시뮬레이터"},
-      {"name": "anthropics/claude-quickstarts", "today": 32, "total": 19406, "lang": "Python", "skill": false, "desc": "Claude API로 앱을 빠르게 만드는 예제 모음"}
+      {
+        "name": "sherlock-project/sherlock",
+        "today": 2373,
+        "total": 103430,
+        "lang": "Python",
+        "skill": false,
+        "desc": "사용자 이름으로 여러 SNS 계정을 찾아주는 도구"
+      },
+      {
+        "name": "milind-soni/OpenMausBot",
+        "today": 1439,
+        "total": 18228,
+        "lang": "TypeScript",
+        "skill": false,
+        "desc": "봇이 쓸 가상머신을 갖춘 오픈소스 Grok 봇 대안"
+      },
+      {
+        "name": "meta/astryx",
+        "today": 875,
+        "total": 16693,
+        "lang": "TypeScript",
+        "skill": false,
+        "desc": "에이전트가 바로 쓸 수 있는 메타의 오픈소스 디자인 시스템"
+      },
+      {
+        "name": "vercel-labs/agent-browser",
+        "today": 815,
+        "total": 47569,
+        "lang": "Rust",
+        "skill": false,
+        "desc": "AI 에이전트용 브라우저 자동화 CLI"
+      },
+      {
+        "name": "anthropics/skills",
+        "today": 792,
+        "total": 189615,
+        "lang": "Python",
+        "skill": true,
+        "desc": "앤트로픽 공식 에이전트 스킬 모음"
+      },
+      {
+        "name": "ranxianglei/billion-context",
+        "today": 460,
+        "total": 5129,
+        "lang": "TypeScript",
+        "skill": false,
+        "desc": "긴 세션용 컨텍스트 압축 플러그인(토큰 5배 절약 주장)"
+      },
+      {
+        "name": "dsx-ai-factory/nvke",
+        "today": 345,
+        "total": 840,
+        "lang": "Go",
+        "skill": false,
+        "desc": "베어메탈 GPU 쿠버네티스 관리 엔진"
+      },
+      {
+        "name": "google-deepmind/mujoco",
+        "today": 41,
+        "total": 16399,
+        "lang": "C++",
+        "skill": false,
+        "desc": "범용 물리 시뮬레이터"
+      },
+      {
+        "name": "anthropics/claude-quickstarts",
+        "today": 32,
+        "total": 19406,
+        "lang": "Python",
+        "skill": false,
+        "desc": "Claude API로 앱을 빠르게 만드는 예제 모음"
+      }
     ],
-    "categories": {"title": "분야 분포 · 트렌딩 9개", "items": [{"name": "에이전트 스킬", "count": 1}, {"name": "에이전트 도구·인프라", "count": 5}, {"name": "기타", "count": 3}]},
-    "languages": [{"name": "Python", "count": 3}, {"name": "TypeScript", "count": 3}, {"name": "Go", "count": 1}, {"name": "Rust", "count": 1}, {"name": "C++", "count": 1}],
+    "categories": {
+      "title": "분야 분포 · 트렌딩 9개",
+      "items": [
+        {
+          "name": "에이전트 스킬",
+          "count": 1
+        },
+        {
+          "name": "에이전트 도구·인프라",
+          "count": 5
+        },
+        {
+          "name": "기타",
+          "count": 3
+        }
+      ]
+    },
+    "languages": [
+      {
+        "name": "Python",
+        "count": 3
+      },
+      {
+        "name": "TypeScript",
+        "count": 3
+      },
+      {
+        "name": "Go",
+        "count": 1
+      },
+      {
+        "name": "Rust",
+        "count": 1
+      },
+      {
+        "name": "C++",
+        "count": 1
+      }
+    ],
     "insight": "9개 중 6개가 AI 에이전트 관련이에요. 브라우저·디자인 시스템·컨텍스트 압축처럼 에이전트가 쓰는 <strong>도구</strong> 쪽으로 관심이 옮겨갔어요."
+  },
+  "community": {
+    "label": "Hacker News 첫 페이지 · GeekNews 메인 · 11/20 17:30 KST 기준 AI 관련 글",
+    "items": [
+      {
+        "source": "hn",
+        "title": "Anthropic's Nasdaq debut",
+        "title_ko": "앤트로픽 나스닥 상장 데뷔",
+        "url": "https://www.reuters.com/business/finance/anthropics-historic-debut-put-ais-promise-peril-wall-st-test-2026-11-19/",
+        "discuss": "https://news.ycombinator.com/item?id=50562754",
+        "points": 863,
+        "comments": 1678
+      },
+      {
+        "source": "hn",
+        "title": "Claude solves two open problems in the physics of black holes",
+        "title_ko": "Claude가 블랙홀 물리학의 미해결 문제 두 개를 풀다",
+        "url": "https://www.anthropic.com/research/claude-black-hole-physics",
+        "discuss": "https://news.ycombinator.com/item?id=50563148",
+        "points": 361,
+        "comments": 163
+      },
+      {
+        "source": "hn",
+        "title": "Pete Warden on local AI, open models, voice interfaces, the future of hardware",
+        "title_ko": "피트 워든이 말하는 로컬 AI, 오픈 모델, 음성 인터페이스, 하드웨어의 미래",
+        "url": "https://thedataexchange.media/pete-warden-moonshine/",
+        "discuss": "https://news.ycombinator.com/item?id=50561508",
+        "points": 209,
+        "comments": 191
+      },
+      {
+        "source": "hn",
+        "title": "Should governments slow frontier AI? Jacob Coxon and Robin Hanson debate [video]",
+        "title_ko": "정부가 최첨단 AI 개발을 늦춰야 할까? 토론 영상",
+        "url": "https://www.youtube.com/watch?v=lwfewYL7X0o",
+        "discuss": "https://news.ycombinator.com/item?id=50564366",
+        "points": 66,
+        "comments": 127
+      },
+      {
+        "source": "hn",
+        "title": "Gemini 4 Neon is the new #1 on the Models Engineering Index",
+        "title_ko": "Gemini 4 Neon, 모델 엔지니어링 지수 1위",
+        "url": "https://git-aarvin.github.io/mei/",
+        "discuss": "https://news.ycombinator.com/item?id=50568130",
+        "points": 26,
+        "comments": 10
+      },
+      {
+        "source": "gn",
+        "title": "LLM을 활용한 리버스 엔지니어링",
+        "title_ko": "LLM을 활용한 리버스 엔지니어링",
+        "url": "https://www.slowchronicle.com/posts/llm-assisted-reverse-engineering",
+        "discuss": "https://news.hada.io/topic?id=37466",
+        "points": 18,
+        "comments": 1
+      },
+      {
+        "source": "gn",
+        "title": "AI는 왜 로컬로 향하는가",
+        "title_ko": "AI는 왜 로컬로 향하는가",
+        "url": "https://thedataexchange.media/pete-warden-moonshine/",
+        "discuss": "https://news.hada.io/topic?id=37491",
+        "points": 5,
+        "comments": 1
+      },
+      {
+        "source": "gn",
+        "title": "DaisyRose-27B - 장시간 에이전트 작업에 강화학습을 적용한 Qwen3.8-27B 기반 모델",
+        "title_ko": "DaisyRose-27B - 장시간 에이전트 작업에 강화학습을 적용한 Qwen3.8-27B 기반 모델",
+        "url": "https://www.radixark.com/blog/daisyrose-27b",
+        "discuss": "https://news.hada.io/topic?id=37459",
+        "points": 4,
+        "comments": 1
+      }
+    ]
   },
   "todo": [
     "Gemini 4 Neon 발표 글에서 가격·벤치마크 표 5분 훑어보기",

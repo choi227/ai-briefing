@@ -5,7 +5,7 @@
 ## 0. 준비
 - 오늘 날짜(KST)를 `YYYY-MM-DD`로 정한다. `public/data/<오늘>.json`이 이미 있으면 아무것도 하지 않고 끝낸다.
 - `public/data/index.json`의 마지막 호를 열어 형식과 `issue` 번호를 확인한다. 새 호의 `issue`는 마지막 호 + 1.
-- 형식의 기준은 `public/data/2026-11-17.json`이다. 키 이름과 구조를 그대로 따른다.
+- 형식의 기준은 `public/data/2026-11-20.json`이다. 키 이름과 구조를 그대로 따른다.
 
 ## 1. AI 뉴스 (`headline`, `news`, `oneline`)
 - 최근 24시간(한국시간 전날 아침 이후) AI 뉴스를 웹 검색으로 찾는다. 모델 출시, 빅테크·반도체, 투자·상장, 규제·정책, 스타트업, 한국 소식을 고르게 본다.
@@ -26,6 +26,12 @@
 - `categories.items`는 목록 전체를 "에이전트 스킬 / 에이전트 도구·인프라 / 기타"로 센 값, `title`은 "분야 분포 · 트렌딩 N개".
 - `languages`는 목록 전체의 언어별 개수(많은 순).
 - `insight`는 오늘 트렌딩에서 보이는 흐름 1~2문장. 강조할 단어 하나만 `<strong>`으로 감싸도 된다.
+
+## 3-1. 커뮤니티 화제 (`community`)
+- Hacker News: https://hn.algolia.com/api/v1/search?tags=front_page&hitsPerPage=30 을 웹페이지 읽기로 열어, AI·LLM·머신러닝 관련 글만 점수(points) 높은 순 최대 5개. `title`은 원제, `title_ko`는 한국어 번역, `discuss`는 `https://news.ycombinator.com/item?id=<objectID>`.
+- GeekNews: https://news.hada.io/ 를 웹페이지 읽기로 열어 AI 관련 글 최대 3개. `title`과 `title_ko`는 같은 한국어 원제, `discuss`는 `https://news.hada.io/topic?id=...`.
+- `source`는 `hn` 또는 `gn`. `points`, `comments`는 페이지에 보인 숫자 그대로. `label`에는 수집 시각(KST)을 적는다.
+- Reddit은 이 환경에서 막혀 있으니 쓰지 않는다. 형식 기준은 `public/data/2026-11-20.json`의 `community`.
 
 ## 4. 오늘 해볼 것 (`todo`)
 - 오늘 소식과 이어지는 5분짜리 행동 2~3개.

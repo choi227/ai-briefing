@@ -137,6 +137,19 @@ main{display:grid;gap:44px;padding-block:28px 64px}
 .insight p{margin:0;font-size:14px}
 .insight strong{color:var(--accent)}
 
+/* 커뮤니티 */
+.cgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.clist{list-style:none;margin:0;padding:0}
+.citem{display:grid;grid-template-columns:28px minmax(0,1fr);gap:12px;padding-block:12px;border-top:1px solid var(--line)}
+.citem:first-child{border-top:0;padding-top:4px}
+.ct{font-weight:600;font-size:15px;line-height:1.45;text-decoration:none}
+.ct:hover{text-decoration:underline}
+.co{font-size:12px;color:var(--muted);margin-top:2px}
+.cm{display:flex;gap:12px;margin-top:6px;font-size:12px;color:var(--muted)}
+.cm a{color:var(--muted)}
+.cm .mono{color:var(--star)}
+@media (max-width:900px){.cgrid{grid-template-columns:1fr}}
+
 /* 할 일 · 지난 호 */
 .todo{grid-column:span 7}
 .archive{grid-column:span 5}
@@ -191,7 +204,7 @@ footer{color:var(--muted);font-size:12px;padding-block:0 40px}
       </div>
     </div>
     <nav class="tabs" aria-label="섹션">
-      <a href="#summary" class="on">요약</a><a href="#news">AI 뉴스</a><a href="#trending">GitHub 트렌딩</a><a href="#todo">오늘 할 일</a>
+      <a href="#summary" class="on">요약</a><a href="#news">AI 뉴스</a><a href="#trending">GitHub 트렌딩</a><a href="#community" id="tabCommunity">커뮤니티</a><a href="#todo">오늘 할 일</a>
     </nav>
   </div>
 </header>

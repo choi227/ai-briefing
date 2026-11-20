@@ -33,10 +33,20 @@
       '<div class="card"><div class="label">언어 분포</div><div class="stack" aria-hidden="true">'+t.languages.map(function(l){return '<i style="flex:'+l.count+';background:var('+(LC[l.name]||'--line')+')"></i>'}).join('')+'</div><div class="legend">'+t.languages.map(function(l){return '<div><i style="background:var('+(LC[l.name]||'--line')+')"></i>'+esc(l.name)+'<b>'+l.count+'</b></div>'}).join('')+'</div></div>'+
       '<div class="card insight"><div class="label">트렌드 읽기</div><p>'+t.insight+'</p></div>'+
       '</aside></div></section>';
+    if(d.community&&d.community.items&&d.community.items.length){
+      var SRC={hn:['Hacker News','HN'],gn:['GeekNews','GN']};
+      var col=function(k){var it=d.community.items.filter(function(x){return x.source===k});if(!it.length)return '';
+        return '<div class="card ccol"><div class="label">'+SRC[k][0]+'</div><ol class="clist">'+it.map(function(x,i){
+          return '<li class="citem"><span class="rank">'+(i+1)+'</span><div class="cbody"><a class="ct" href="'+esc(x.url)+'" target="_blank" rel="noopener">'+esc(x.title_ko||x.title)+'</a>'+
+            (x.title_ko&&x.title_ko!==x.title?'<div class="co">'+esc(x.title)+'</div>':'')+
+            '<div class="cm"><span class="mono">▲ '+x.points.toLocaleString('en-US')+'</span><a href="'+esc(x.discuss)+'" target="_blank" rel="noopener">댓글 '+x.comments.toLocaleString('en-US')+' ↗</a></div></div></li>'}).join('')+'</ol></div>'};
+      html+='<section id="community"><div class="sec-title"><div><h2>커뮤니티 화제</h2><p>'+esc(d.community.label)+'</p></div></div><div class="cgrid">'+col('hn')+col('gn')+'</div></section>';
+    }
     html+='<section id="todo" class="grid"><div class="card todo"><div class="label">오늘 해볼 것</div><ul>'+
       d.todo.map(function(x,i){return '<li><label><input type="checkbox" id="t'+i+'"><span>'+esc(x)+'</span></label></li>'}).join('')+
       '</ul></div><div class="card archive"><div class="label">지난 브리핑</div><ol class="issues" id="issueList"></ol><div class="note" id="archNote"></div></div></section>';
     app.innerHTML=html;
+    var tc=document.getElementById('tabCommunity');if(tc)tc.hidden=!document.getElementById('community');
 
     // 필터
     var fl=document.getElementById('filters'),grid=document.getElementById('newsGrid');
@@ -112,7 +122,7 @@
   function setTab(id){document.querySelectorAll('.tabs a').forEach(function(t){t.classList.toggle('on',t.getAttribute('href')==='#'+id)})}
   function spy(){
     if(tabLock)return;
-    var ids=['summary','news','trending','todo'],line=document.querySelector('.top').getBoundingClientRect().bottom+24,act=ids[0];
+    var ids=['summary','news','trending','community','todo'].filter(function(id){return document.getElementById(id)}),line=document.querySelector('.top').getBoundingClientRect().bottom+24,act=ids[0];
     ids.forEach(function(id){var el=document.getElementById(id);if(el&&el.getBoundingClientRect().top<=line)act=id});
     if(innerHeight+scrollY>=document.documentElement.scrollHeight-4)act=ids[ids.length-1];
     setTab(act);
@@ -149,7 +159,7 @@
         setTimeout(function(){e.target.style.transitionDelay=''},900);
       });
     },{rootMargin:'0px 0px -8% 0px'});
-    var els=document.querySelectorAll('.ncard,.tlist,.side .card,.todo,.archive');
+    var els=document.querySelectorAll('.ncard,.tlist,.side .card,.ccol,.todo,.archive');
     els.forEach(function(el){el.classList.add('rv');if(el.getBoundingClientRect().top>innerHeight*0.92){el.classList.add('pre')}});
     requestAnimationFrame(function(){els.forEach(function(el){if(el.classList.contains('pre'))io.observe(el)})});
   }
