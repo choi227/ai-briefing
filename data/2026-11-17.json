@@ -1,0 +1,64 @@
+{
+  "date": "2026-11-17",
+  "issue": 1,
+  "weekday": "화",
+  "headline": {
+    "kicker": "오늘의 헤드라인 · 투자",
+    "title": "앤트로픽, 이번 주 나스닥 상장. 시가총액 1.2조 달러 겨냥",
+    "body": "티커는 ANT. 구글·마이크로소프트·엔비디아·TSMC 등이 260억 달러 규모 사모 배정에 함께 들어왔어요. 최근 12개월 매출은 353억 달러예요.",
+    "figures": [
+      {"value": "$70–78", "label": "공모가 범위"},
+      {"value": "$610억", "label": "조달 목표"},
+      {"value": "$1.2조", "label": "예상 시가총액"}
+    ],
+    "source": {"name": "Renaissance Capital", "url": "https://www.renaissancecapital.com/IPO-Center/News/122657/anthropic-sets-terms-for-61-billion-ipo-targeting-a-1.2-trillion-market-cap"}
+  },
+  "market": {
+    "label": "밤사이 미국 시장 · 11/16 종가",
+    "rows": [
+      {"name": "나스닥", "change": -2.30},
+      {"name": "S&P 500", "change": -1.78},
+      {"name": "반도체지수", "change": -4.60},
+      {"name": "엔비디아", "change": -4.20}
+    ],
+    "note": "나스닥은 10월 고점 대비 10% 넘게 빠져 조정 국면에 들어섰어요",
+    "source": {"name": "Korea Times", "url": "https://www.koreatimes.co.kr/world/20261117/wall-street-slumps-on-ai-jitters-ahead-of-nvidia-results-anthropic-ipo"}
+  },
+  "oneline": {
+    "text": "CEO 공백 속 엔비디아 실적, 앤트로픽 상장, 나스닥 조정이 겹치며 AI 거품 논쟁이 시장 한복판에 섰어요.",
+    "tags": ["#앤트로픽IPO", "#엔비디아실적", "#AI거품", "#에이전트스킬"]
+  },
+  "news": [
+    {"cat": "chip", "featured": true, "title": "엔비디아, 젠슨 황 사임 후 첫 실적 발표 (한국시간 18일 새벽)", "summary": "11월 12일 젠슨 황이 즉시 사임했고 CFO 콜렛 크레스가 임시 CEO를 겸하고 있어요. 시장 예상 매출은 약 1,091억 달러로, CEO 공백 속 첫 성적표예요.", "source": "Let's Data Science", "url": "https://letsdatascience.com/news/nvidia-ceo-jensen-huang-resigns-cfo-colette-kress-named-inte-c5e83b05"},
+    {"cat": "policy", "featured": false, "title": "미 상무부, 제3국 경유 AI 칩 접근 차단", "summary": "브라질·인도네시아·말레이시아·싱가포르·태국으로 첨단 반도체를 보낼 때 라이선스가 필요해졌어요.", "source": "CBS News", "url": "https://www.cbsnews.com/news/nvidia-jensen-huang-commerce-department-limit-remote-access-ai-chips/"},
+    {"cat": "startup", "featured": false, "title": "최예진·게스트린 교수의 Noeri, 1.1억 달러 유치", "summary": "스스로 개선하는 기업·과학 연구용 AI를 만들어요. 멘로벤처스 주도, 엔비디아·스노우플레이크 참여.", "source": "The Next Web", "url": "https://thenextweb.com/news/noeri-110m-stanford-yejin-choi-carlos-guestrin-menlo-nvidia"},
+    {"cat": "model", "featured": false, "title": "텐센트 Hy4 flash, 초저가 경량 모델 공개", "summary": "활성 120억 파라미터, 1M 토큰 컨텍스트, 입력 100만 토큰당 약 0.07달러. 오픈소스 예정(수치는 텐센트 발표).", "source": "Tencent", "url": "https://www.tencent.com/tencent-launches-hy4-flash-to-power-high-speed-cost-efficient-ai-deployment-for-everyday-workflows/"},
+    {"cat": "model", "featured": false, "title": "엔비디아 Nemotron for Science 공개", "summary": "과학 연구용 오픈 모델과 화학 문제 약 5만 개 데이터셋. DGX Spark에서 로컬 실행 가능.", "source": "NVIDIA", "url": "https://nvidianews.nvidia.com/news/nvidia-introduces-nemotron-for-science-to-accelerate-discoveries-with-agents"},
+    {"cat": "korea", "featured": true, "title": "수능 AI 부정행위 대책: 안경 전수 검사, 시험장 와이파이 차단 추진", "summary": "세무사 시험 수석 합격자가 전자기기와 생성형 AI로 부정행위를 했다고 고백한 뒤 나온 조치예요. 목요일 수능부터 적용돼요.", "source": "Korea Times", "url": "https://www.koreatimes.co.kr/southkorea/education/20261116/govt-seeks-to-block-public-wi-fi-at-college-entrance-test-sites-to-stop-ai-cheating"},
+    {"cat": "policy", "featured": false, "title": "캘리포니아주, OpenAI 상대 소송 제기", "summary": "캘리포니아 법무장관이 AI 모델 통제와 관련해 OpenAI를 제소했어요. 세부 내용은 원문에서 확인하세요.", "source": "CNBC", "url": "https://www.cnbc.com/2026/11/16/openai-california-bonta-ai-lawsuit.html"},
+    {"cat": "market", "featured": false, "title": "월가, AI 불안에 하락 마감", "summary": "엔비디아 실적과 앤트로픽 상장을 앞두고 반도체주 중심으로 매도세가 나왔어요.", "source": "Korea Times", "url": "https://www.koreatimes.co.kr/world/20261117/wall-street-slumps-on-ai-jitters-ahead-of-nvidia-results-anthropic-ipo"}
+  ],
+  "trending": {
+    "label": "github.com/trending 상위 10개",
+    "repos": [
+      {"name": "dream-num/univer", "today": 1828, "total": 27935, "lang": "TypeScript", "skill": false, "desc": "사람과 AI 에이전트가 함께 쓰는 오피스(문서·시트) SDK"},
+      {"name": "elementalsouls/Claude-BugHunter", "today": 1094, "total": 7593, "lang": "Python", "skill": true, "desc": "버그 헌팅·레드팀용 Claude Code 스킬 82개 묶음"},
+      {"name": "alibaba/open-code-review", "today": 951, "total": 53086, "lang": "Go", "skill": false, "desc": "LLM 에이전트 기반 코드 리뷰 도구"},
+      {"name": "NVIDIA/SkillEvaluator", "today": 873, "total": 2881, "lang": "Python", "skill": true, "desc": "AI 에이전트 스킬·플러그인 품질 평가 프레임워크"},
+      {"name": "ChromeDevTools/chrome-devtools-mcp", "today": 841, "total": 57778, "lang": "TypeScript", "skill": false, "desc": "코딩 에이전트용 크롬 개발자도구"},
+      {"name": "tradermonty/claude-trading-skills", "today": 837, "total": 6457, "lang": "Python", "skill": true, "desc": "주식 분석·차트용 Claude Code 스킬"},
+      {"name": "ag-ui-protocol/ag-ui", "today": 791, "total": 19277, "lang": "TypeScript", "skill": false, "desc": "에이전트를 프론트엔드에 붙이는 표준 프로토콜"},
+      {"name": "backnotprop/plannotator", "today": 696, "total": 12698, "lang": "TypeScript", "skill": false, "desc": "에이전트 계획·코드에 피드백을 주는 작업 공간"},
+      {"name": "google-labs-code/stitch-skills", "today": 529, "total": 9800, "lang": "TypeScript", "skill": true, "desc": "구글 Stitch 디자인 도구용 에이전트 스킬"},
+      {"name": "kajisho5/ffmpeg-skill", "today": 367, "total": 7030, "lang": "Python", "skill": true, "desc": "코딩 에이전트용 로컬 영상 편집 도구 42종"}
+    ],
+    "categories": {"title": "분야 분포 · 트렌딩 15개", "items": [{"name": "에이전트 스킬", "count": 6}, {"name": "에이전트 도구·인프라", "count": 6}, {"name": "기타", "count": 3}]},
+    "languages": [{"name": "Python", "count": 6}, {"name": "TypeScript", "count": 5}, {"name": "Go", "count": 2}, {"name": "JavaScript", "count": 2}],
+    "insight": "15개 중 12개가 AI 에이전트 관련이고, 그중 절반이 Claude Code·Cursor·Codex에 붙이는 <strong>스킬</strong>이에요. 모델 경쟁에서 에이전트 확장 생태계로 무게가 옮겨가는 중이에요."
+  },
+  "todo": [
+    "관심 가는 스킬 저장소 하나(예: claude-trading-skills)의 README 5분 훑어보기",
+    "내일 아침 엔비디아 실적 결과 확인하기",
+    "앤트로픽 상장 첫날 주가 흐름 보기"
+  ]
+}
