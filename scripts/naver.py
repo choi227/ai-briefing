@@ -31,12 +31,12 @@ TREND_GROUPS = [
     {"groupName": "Perplexity", "keywords": ["퍼플렉시티", "Perplexity"]},
 ]
 SHOP_CATEGORY = ("50000003", "디지털/가전")
-SHOP_KEYWORDS = [
-    {"name": "AI 노트북", "param": ["AI 노트북", "AI노트북"]},
-    {"name": "AI 스마트폰", "param": ["AI 스마트폰", "AI폰"]},
-    {"name": "AI 스피커", "param": ["AI 스피커", "AI스피커"]},
-    {"name": "스마트글래스", "param": ["스마트글래스", "AI 안경"]},
-    {"name": "AI PC", "param": ["AI PC", "코파일럿 PC"]},
+SHOP_KEYWORDS = [  # param은 키워드 1개만 허용
+    {"name": "AI 노트북", "param": ["AI 노트북"]},
+    {"name": "AI 스마트폰", "param": ["AI 스마트폰"]},
+    {"name": "AI 스피커", "param": ["AI 스피커"]},
+    {"name": "스마트글래스", "param": ["스마트글래스"]},
+    {"name": "AI PC", "param": ["AI PC"]},
 ]
 
 clean = lambda s: html.unescape(re.sub(r"<[^>]+>", "", s or ""))
