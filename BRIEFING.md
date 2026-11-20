@@ -33,6 +33,14 @@
 - `source`는 `hn` 또는 `gn`. `points`, `comments`는 페이지에 보인 숫자 그대로. `label`에는 수집 시각(KST)을 적는다.
 - Reddit은 이 환경에서 막혀 있으니 쓰지 않는다. 형식 기준은 `public/data/2026-11-20.json`의 `community`.
 
+## 3-2. 유튜브 인기 (`youtube`)
+- `python3 scripts/youtube.py --out /tmp/yt.json` 을 실행한다. (`YOUTUBE_API_KEY` 환경 변수 필요. 없거나 실패하면 이 섹션은 빼고 계속한다.)
+- 후보 중 AI·테크 소식과 관련된 것만 고른다. AI로 만든 노래·애니메이션·짜깁기 영상, 낚시성 제목, 같은 채널 중복은 뺀다.
+- `videos`, `shorts` 각각 최대 5개. 후보의 `id`, `title`, `channel`, `subs`, `views`, `ratio`, `seconds`, `lang` 값은 **그대로 복사**한다(숫자를 고치거나 지어내지 않는다).
+- 직접 채우는 것: `title_ko`(영어 제목이면 한국어 번역, 한국어면 원제 그대로), `desc`(제목과 채널로 알 수 있는 범위의 한국어 한 줄. 영상을 보지 않았으니 내용을 단정하지 않는다).
+- `label`은 "최근 3일 · AI 키워드 · MM/DD HH:MM 수집"(후보 파일의 `collected` 값).
+- 순서는 조회수 많은 순. 사이트에서 "구독자 대비" 정렬로 바꿔 볼 수 있다.
+
 ## 4. 오늘 해볼 것 (`todo`)
 - 오늘 소식과 이어지는 5분짜리 행동 2~3개.
 

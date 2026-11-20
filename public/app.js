@@ -7,6 +7,8 @@
   function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
   function link(s){return '<a href="'+esc(s.url)+'" target="_blank" rel="noopener">'+esc(s.name)+' ↗</a>'}
   function pct(n){return (n>0?'+':n<0?'−':'')+Math.abs(n).toFixed(2)+'%'}
+  function kn(n){n=Number(n)||0;if(n>=1e8)return (n/1e8).toFixed(n<1e9?1:0).replace(/\.0$/,'')+'억';if(n>=1e4)return (n/1e4).toFixed(n<1e5?1:0).replace(/\.0$/,'')+'만';return n.toLocaleString('en-US')}
+  function dur(t){var m=Math.floor(t/60),x=t%60;return m>=60?Math.floor(m/60)+':'+String(m%60).padStart(2,'0')+':'+String(x).padStart(2,'0'):m+':'+String(x).padStart(2,'0')}
   function fmtDate(d,w){var p=d.split('-');return p[0]+'.'+p[1]+'.'+p[2]+(w?' '+w:'')}
 
   function render(d){
@@ -42,11 +44,19 @@
             '<div class="cm"><span class="mono">▲ '+x.points.toLocaleString('en-US')+'</span><a href="'+esc(x.discuss)+'" target="_blank" rel="noopener">댓글 '+x.comments.toLocaleString('en-US')+' ↗</a></div></div></li>'}).join('')+'</ol></div>'};
       html+='<section id="community"><div class="sec-title"><div><h2>커뮤니티 화제</h2><p>'+esc(d.community.label)+'</p></div></div><div class="cgrid">'+col('hn')+col('gn')+'</div></section>';
     }
+    if(d.youtube&&((d.youtube.videos||[]).length||(d.youtube.shorts||[]).length)){
+      html+='<section id="youtube"><div class="sec-title"><div><h2>유튜브 인기</h2><p>'+esc(d.youtube.label)+'</p></div>'+
+        '<div class="seg" role="group" aria-label="정렬"><button type="button" id="ytViews" aria-pressed="true">조회수</button><button type="button" id="ytRatio" aria-pressed="false">구독자 대비</button></div></div>'+
+        ((d.youtube.videos||[]).length?'<div class="label">영상</div><div class="ytgrid" id="ytVideos"></div>':'')+
+        ((d.youtube.shorts||[]).length?'<div class="label ytl">숏츠</div><div class="ytgrid shorts" id="ytShorts"></div>':'')+
+        '<p class="note ytnote">구독자 대비 = 조회수 ÷ 채널 구독자 수. 3배 이상이면 채널 평소보다 크게 터진 영상이에요.</p></section>';
+    }
     html+='<section id="todo" class="grid"><div class="card todo"><div class="label">오늘 해볼 것</div><ul>'+
       d.todo.map(function(x,i){return '<li><label><input type="checkbox" id="t'+i+'"><span>'+esc(x)+'</span></label></li>'}).join('')+
       '</ul></div><div class="card archive"><div class="label">지난 브리핑</div><ol class="issues" id="issueList"></ol><div class="note" id="archNote"></div></div></section>';
     app.innerHTML=html;
     var tc=document.getElementById('tabCommunity');if(tc)tc.hidden=!document.getElementById('community');
+    var ty=document.getElementById('tabYoutube');if(ty)ty.hidden=!document.getElementById('youtube');
 
     // 필터
     var fl=document.getElementById('filters'),grid=document.getElementById('newsGrid');
@@ -80,6 +90,38 @@
     var bt=document.getElementById('sortToday'),ba=document.getElementById('sortTotal');
     bt.onclick=function(){mode='today';bt.setAttribute('aria-pressed','true');ba.setAttribute('aria-pressed','false');rr()};
     ba.onclick=function(){mode='total';ba.setAttribute('aria-pressed','true');bt.setAttribute('aria-pressed','false');rr()};
+
+    // 유튜브: 썸네일 누르면 그 자리에서 재생
+    if(document.getElementById('youtube')){
+      var ymode='views';
+      var yr=function(id,arr,short){
+        var el=document.getElementById(id);if(!el)return;
+        var a=arr.slice().sort(function(x,y){return (y[ymode]||0)-(x[ymode]||0)});
+        el.innerHTML=a.map(function(v,i){
+          var hot=v.ratio!=null&&v.ratio>=3,t=v.title_ko||v.title;
+          return '<article class="card ytc"><button type="button" class="yth" data-id="'+esc(v.id)+'" aria-label="'+esc(t)+' 재생">'+
+            '<img loading="lazy" alt="" src="https://i.ytimg.com/vi/'+esc(v.id)+'/'+(short?'hqdefault':'mqdefault')+'.jpg">'+
+            '<span class="ytr">'+(i+1)+'</span>'+(v.seconds?'<span class="ytd mono">'+dur(v.seconds)+'</span>':'')+'<span class="ytp" aria-hidden="true">▶</span></button>'+
+            '<div class="ytb"><h3><a href="https://www.youtube.com/'+(short?'shorts/':'watch?v=')+esc(v.id)+'" target="_blank" rel="noopener">'+esc(t)+'</a></h3>'+
+            (v.title_ko&&v.title_ko!==v.title?'<div class="co">'+esc(v.title)+'</div>':'')+
+            (v.desc?'<p>'+esc(v.desc)+'</p>':'')+
+            '<div class="cm"><span>'+esc(v.channel)+(v.subs!=null?' · 구독자 '+kn(v.subs):'')+'</span></div>'+
+            '<div class="ytm"><span class="mono"><b>'+kn(v.views)+'</b> 회</span>'+(v.ratio!=null?'<span class="ytx mono'+(hot?' hot':'')+'">×'+(v.ratio>=10?Math.round(v.ratio):v.ratio.toFixed(1))+'</span>':'')+'</div></div></article>';
+        }).join('');
+      };
+      var yall=function(){yr('ytVideos',d.youtube.videos||[],false);yr('ytShorts',d.youtube.shorts||[],true)};
+      yall();
+      document.getElementById('youtube').addEventListener('click',function(e){
+        var b=e.target.closest('.yth');if(!b)return;
+        var f=document.createElement('iframe');
+        f.src='https://www.youtube-nocookie.com/embed/'+encodeURIComponent(b.dataset.id)+'?autoplay=1&rel=0';
+        f.title=b.getAttribute('aria-label');f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';f.allowFullscreen=true;
+        f.className='ytf';b.replaceWith(f);
+      });
+      var yv=document.getElementById('ytViews'),yx=document.getElementById('ytRatio');
+      yv.onclick=function(){ymode='views';yv.setAttribute('aria-pressed','true');yx.setAttribute('aria-pressed','false');yall()};
+      yx.onclick=function(){ymode='ratio';yx.setAttribute('aria-pressed','true');yv.setAttribute('aria-pressed','false');yall()};
+    }
 
     // 할 일 체크 (이 브라우저에만 저장)
     document.querySelectorAll('.todo input').forEach(function(cb){
@@ -122,7 +164,7 @@
   function setTab(id){document.querySelectorAll('.tabs a').forEach(function(t){t.classList.toggle('on',t.getAttribute('href')==='#'+id)})}
   function spy(){
     if(tabLock)return;
-    var ids=['summary','news','trending','community','todo'].filter(function(id){return document.getElementById(id)}),line=document.querySelector('.top').getBoundingClientRect().bottom+24,act=ids[0];
+    var ids=['summary','news','trending','community','youtube','todo'].filter(function(id){return document.getElementById(id)}),line=document.querySelector('.top').getBoundingClientRect().bottom+24,act=ids[0];
     ids.forEach(function(id){var el=document.getElementById(id);if(el&&el.getBoundingClientRect().top<=line)act=id});
     if(innerHeight+scrollY>=document.documentElement.scrollHeight-4)act=ids[ids.length-1];
     setTab(act);
@@ -159,7 +201,7 @@
         setTimeout(function(){e.target.style.transitionDelay=''},900);
       });
     },{rootMargin:'0px 0px -8% 0px'});
-    var els=document.querySelectorAll('.ncard,.tlist,.side .card,.ccol,.todo,.archive');
+    var els=document.querySelectorAll('.ncard,.tlist,.side .card,.ccol,.ytc,.todo,.archive');
     els.forEach(function(el){el.classList.add('rv');if(el.getBoundingClientRect().top>innerHeight*0.92){el.classList.add('pre')}});
     requestAnimationFrame(function(){els.forEach(function(el){if(el.classList.contains('pre'))io.observe(el)})});
   }
