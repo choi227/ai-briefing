@@ -1,0 +1,575 @@
+{
+ "date": "2026-11-21",
+ "issue": 3,
+ "weekday": "토",
+ "headline": {
+  "kicker": "오늘의 헤드라인 · 시장",
+  "title": "AI주 투매에 나스닥 5.28% 급락, 반도체지수는 10% 넘게 빠져",
+  "body": "앤트로픽 상장 이튿날 AI 주식 매도가 더 커졌어요. 필라델피아 반도체지수 30개 종목이 모두 내렸고, 엔비디아는 SEC 회계 조사 보도까지 겹쳐 장중 약 13%까지 밀렸어요.",
+  "figures": [
+   {
+    "value": "−5.28%",
+    "label": "나스닥 종가"
+   },
+   {
+    "value": "−10.73%",
+    "label": "반도체지수(SOX)"
+   },
+   {
+    "value": "−3.70%",
+    "label": "S&P 500 종가"
+   }
+  ],
+  "source": {
+   "name": "TradingKey",
+   "url": "https://www.tradingkey.com/analysis/stocks/us-stocks/262316111-nasdaq-falls-ai-stock-selloff-nvidia-sec-probe-tradingkey"
+  }
+ },
+ "market": {
+  "label": "밤사이 미국 시장 · 11/20 종가",
+  "rows": [
+   {
+    "name": "나스닥",
+    "change": -5.28
+   },
+   {
+    "name": "S&P 500",
+    "change": -3.7
+   },
+   {
+    "name": "필라델피아 반도체",
+    "change": -10.73
+   }
+  ],
+  "note": "S&P 500과 다우는 장중 한때 사상 최고치 대비 10% 넘게 빠져 조정 구간에 들어섰어요. 엔비디아 종가는 확인하지 못해 뺐어요.",
+  "source": {
+   "name": "TradingKey",
+   "url": "https://www.tradingkey.com/analysis/stocks/us-stocks/262316111-nasdaq-falls-ai-stock-selloff-nvidia-sec-probe-tradingkey"
+  }
+ },
+ "oneline": {
+  "text": "AI 투자가 돈이 되느냐는 의심이 커지며 반도체주가 하루 만에 10% 넘게 빠졌고, 빅테크는 그 와중에도 컴퓨터를 대신 써 주는 에이전트 경쟁을 이어 갔어요.",
+  "tags": [
+   "#AI주급락",
+   "#엔비디아SEC조사",
+   "#컴퓨터쓰는에이전트",
+   "#코스피급락"
+  ]
+ },
+ "news": [
+  {
+   "cat": "chip",
+   "featured": true,
+   "title": "SEC, 엔비디아 회계 문제 검토 중 (로이터 보도)",
+   "summary": "로이터가 소식통 두 명을 인용해 SEC 집행 담당자들이 엔비디아의 회계 문제를 들여다보고 있다고 보도했어요. SEC는 답하지 않았고, 조사가 위법을 뜻하지는 않아요.",
+   "source": "TradingKey",
+   "url": "https://www.tradingkey.com/analysis/stocks/us-stocks/262316111-nasdaq-falls-ai-stock-selloff-nvidia-sec-probe-tradingkey"
+  },
+  {
+   "cat": "model",
+   "featured": true,
+   "title": "구글, 맥에서 제미나이가 앱을 직접 조작하는 기능 출시",
+   "summary": "제미나이 맥 앱이 백그라운드에서 앱을 다루고 웹을 탐색해 양식 작성·파일 정리를 해 줘요. 우선 미국 영어 사용자 중 AI Plus·Pro·Ultra 구독자에게 열렸어요.",
+   "source": "TechCrunch",
+   "url": "https://techcrunch.com/2026/11/19/google-gives-gemini-the-ability-to-use-your-mac-for-you/"
+  },
+  {
+   "cat": "model",
+   "featured": false,
+   "title": "애플도 컴퓨터를 쓰는 AI 에이전트 개발 중",
+   "summary": "블룸버그가 '컴퓨터를 사용하는 AI 에이전트' 채용 공고를 찾아냈어요. 이르면 내년 말 출시를 검토하지만 아직 초기 단계라고 해요.",
+   "source": "TechCrunch",
+   "url": "https://techcrunch.com/2026/11/19/apple-may-be-developing-its-own-ai-agent-that-runs-your-mac/"
+  },
+  {
+   "cat": "policy",
+   "featured": false,
+   "title": "메타 AI 에이전트 Muse, 다른 사람 대화·잔고 노출 의혹",
+   "summary": "직원 테스트에서 다른 계정의 대화와 은행 잔고 같은 정보가 섞여 보였다는 보도예요. Muse는 9월 출시 후 1천만 회 넘게 내려받아졌고, 메타는 직원용 버전이 공개판과 다르다고 밝혔어요.",
+   "source": "TechCrunch",
+   "url": "https://techcrunch.com/2026/11/19/metas-ai-agent-muse-is-mixing-up-conversations-and-exposing-private-data-report-says/"
+  },
+  {
+   "cat": "model",
+   "featured": false,
+   "title": "텐센트, Hy4 Flash 가중치 공개",
+   "summary": "총 약 2,240억 파라미터 중 토큰당 약 120억 개만 쓰는 모델로, 최대 100만 토큰 컨텍스트와 이미지 입력을 지원해요. FP8 버전과 기본 모델도 함께 풀었어요.",
+   "source": "TechNode",
+   "url": "https://technode.com/2026/11/19/tencent-releases-hy4-flash-model-weights-for-local-deployment/"
+  },
+  {
+   "cat": "korea",
+   "featured": false,
+   "title": "아시아 반도체주 동반 급락, 코스피 5.21% 하락",
+   "summary": "전날 미국 매도 여파로 대만 가권지수 5.65%, 코스피 5.21%, 닛케이 5.06%가 내렸고 소프트뱅크는 14.48% 빠졌어요(CNBC 인용).",
+   "source": "StockTitan",
+   "url": "https://www.stocktitan.net/articles/stock-market-today-live-november-20-2026"
+  },
+  {
+   "cat": "invest",
+   "featured": false,
+   "title": "앤트로픽 주가, 상장 이튿날 첫날 상승분 대부분 반납",
+   "summary": "11/20 오후 1시(미 동부) 기준 전날보다 12.80% 내린 약 84.73달러로, 공모가 83달러 근처까지 내려왔어요(장중 수치).",
+   "source": "StockTitan",
+   "url": "https://www.stocktitan.net/articles/stock-market-today-live-november-20-2026"
+  }
+ ],
+ "trending": {
+  "label": "github.com/trending 전체 9개 · 11/21 07:20 읽기 (어제와 같은 값이 보여 갱신 지연 가능성 있음)",
+  "repos": [
+   {
+    "name": "sherlock-project/sherlock",
+    "today": 2373,
+    "total": 103430,
+    "lang": "Python",
+    "skill": false,
+    "desc": "사용자 이름으로 여러 SNS 계정을 찾아주는 도구"
+   },
+   {
+    "name": "milind-soni/OpenMausBot",
+    "today": 1439,
+    "total": 18228,
+    "lang": "TypeScript",
+    "skill": false,
+    "desc": "봇이 쓸 가상머신을 갖춘 오픈소스 Grok 봇 대안"
+   },
+   {
+    "name": "meta/astryx",
+    "today": 875,
+    "total": 16693,
+    "lang": "TypeScript",
+    "skill": false,
+    "desc": "에이전트가 바로 쓸 수 있는 메타의 오픈소스 디자인 시스템"
+   },
+   {
+    "name": "vercel-labs/agent-browser",
+    "today": 815,
+    "total": 47569,
+    "lang": "Rust",
+    "skill": false,
+    "desc": "AI 에이전트용 브라우저 자동화 CLI"
+   },
+   {
+    "name": "anthropics/skills",
+    "today": 792,
+    "total": 189615,
+    "lang": "Python",
+    "skill": true,
+    "desc": "앤트로픽 공식 에이전트 스킬 모음"
+   },
+   {
+    "name": "ranxianglei/billion-context",
+    "today": 460,
+    "total": 5129,
+    "lang": "TypeScript",
+    "skill": false,
+    "desc": "긴 세션용 컨텍스트 압축 플러그인(토큰 5배 절약 주장)"
+   },
+   {
+    "name": "dsx-ai-factory/nvke",
+    "today": 345,
+    "total": 840,
+    "lang": "Go",
+    "skill": false,
+    "desc": "베어메탈 GPU 쿠버네티스 관리 엔진"
+   },
+   {
+    "name": "google-deepmind/mujoco",
+    "today": 41,
+    "total": 16399,
+    "lang": "C++",
+    "skill": false,
+    "desc": "범용 물리 시뮬레이터"
+   },
+   {
+    "name": "anthropics/claude-quickstarts",
+    "today": 32,
+    "total": 19406,
+    "lang": "Python",
+    "skill": false,
+    "desc": "Claude API로 앱을 빠르게 만드는 예제 모음"
+   }
+  ],
+  "categories": {
+   "title": "분야 분포 · 트렌딩 9개",
+   "items": [
+    {
+     "name": "에이전트 스킬",
+     "count": 1
+    },
+    {
+     "name": "에이전트 도구·인프라",
+     "count": 5
+    },
+    {
+     "name": "기타",
+     "count": 3
+    }
+   ]
+  },
+  "languages": [
+   {
+    "name": "Python",
+    "count": 3
+   },
+   {
+    "name": "TypeScript",
+    "count": 3
+   },
+   {
+    "name": "Go",
+    "count": 1
+   },
+   {
+    "name": "Rust",
+    "count": 1
+   },
+   {
+    "name": "C++",
+    "count": 1
+   }
+  ],
+  "insight": "오늘 읽은 트렌딩 페이지가 어제와 숫자까지 같아 <strong>갱신 지연</strong>된 화면일 수 있어요. 순위는 참고로만 봐 주세요."
+ },
+ "community": {
+  "label": "HN · GeekNews · HF 논문 · dev.to · 11/21 07:20 KST",
+  "items": [
+   {
+    "source": "hn",
+    "title": "Claude solves two open problems in the physics of black holes",
+    "title_ko": "Claude가 블랙홀 물리학의 미해결 문제 두 개를 풀다",
+    "url": "https://www.anthropic.com/research/claude-black-hole-physics",
+    "discuss": "https://news.ycombinator.com/item?id=50563148",
+    "points": 518,
+    "comments": 243
+   },
+   {
+    "source": "hn",
+    "title": "Frostbite: A new CPU architecture discovered, designed and verified by AI",
+    "title_ko": "Frostbite: AI가 찾고 설계하고 검증한 새 CPU 아키텍처",
+    "url": "https://architectlabs.com/blog/frostbite",
+    "discuss": "https://news.ycombinator.com/item?id=50572503",
+    "points": 281,
+    "comments": 188
+   },
+   {
+    "source": "hn",
+    "title": "What Comes After AGI?",
+    "title_ko": "AGI 다음에는 무엇이 오는가?",
+    "url": "https://institute.deepmind.com/essays/what-comes-after-agi/",
+    "discuss": "https://news.ycombinator.com/item?id=50569519",
+    "points": 101,
+    "comments": 205
+   },
+   {
+    "source": "hn",
+    "title": "Show HN: I made an audio-to-MIDI model 60x more efficient",
+    "title_ko": "Show HN: 60배 더 효율적인 오디오→MIDI 변환 모델을 만들었다",
+    "url": "https://kobi.music/research/dettato",
+    "discuss": "https://news.ycombinator.com/item?id=50526023",
+    "points": 12,
+    "comments": 2
+   },
+   {
+    "source": "gn",
+    "title": "Claude Code 팀이 검증을 바라보는 방식",
+    "title_ko": "Claude Code 팀이 검증을 바라보는 방식",
+    "url": "https://claude.dev/blog/how-the-claude-code-team-thinks-about-verification/",
+    "discuss": "https://news.hada.io/topic?id=37359",
+    "points": 36,
+    "comments": 1
+   },
+   {
+    "source": "gn",
+    "title": "LLM을 활용한 리버스 엔지니어링",
+    "title_ko": "LLM을 활용한 리버스 엔지니어링",
+    "url": "https://www.slowchronicle.com/posts/llm-assisted-reverse-engineering",
+    "discuss": "https://news.hada.io/topic?id=37466",
+    "points": 18,
+    "comments": 1
+   },
+   {
+    "source": "gn",
+    "title": "Reticle - AI 코딩 에이전트가 웹/데스크톱 앱을 직접 조작해 검증하는 도구",
+    "title_ko": "Reticle - AI 코딩 에이전트가 웹/데스크톱 앱을 직접 조작해 검증하는 도구",
+    "url": "https://github.com/reticlehq/reticle",
+    "discuss": "https://news.hada.io/topic?id=37440",
+    "points": 13,
+    "comments": 0
+   },
+   {
+    "source": "hf",
+    "title": "WeVisForensics: Self-Evolving Agent for Omni AI-Generated Video Detection",
+    "title_ko": "WeVisForensics: AI 생성 영상을 잡아내는 스스로 진화하는 에이전트",
+    "url": "https://huggingface.co/papers/2611.21373",
+    "discuss": "https://huggingface.co/papers/2611.21373",
+    "points": 48,
+    "comments": 2
+   },
+   {
+    "source": "hf",
+    "title": "Mind2Act World: A Diagnostic Benchmark for Embodied Mind, Physical Action, and Mind-Action Composition in Robotic Manipulation",
+    "title_ko": "Mind2Act World: 로봇 조작에서 판단·물리 행동·둘의 결합을 진단하는 벤치마크",
+    "url": "https://huggingface.co/papers/2611.26444",
+    "discuss": "https://huggingface.co/papers/2611.26444",
+    "points": 46,
+    "comments": 2
+   },
+   {
+    "source": "hf",
+    "title": "WeMM-Video: Pushing the Frontiers of Open-Source Omni-Modal Video Understanding",
+    "title_ko": "WeMM-Video: 오픈소스 옴니모달 영상 이해의 한계를 넓히다",
+    "url": "https://huggingface.co/papers/2611.26409",
+    "discuss": "https://huggingface.co/papers/2611.26409",
+    "points": 39,
+    "comments": 2
+   },
+   {
+    "source": "dev",
+    "title": "What team-wide AI adoption actually takes",
+    "title_ko": "팀 전체가 AI를 제대로 도입하려면 실제로 필요한 것",
+    "url": "https://dev.to/peter/what-team-wide-ai-adoption-actually-takes-1gbh",
+    "discuss": "https://dev.to/peter/what-team-wide-ai-adoption-actually-takes-1gbh",
+    "points": 49,
+    "comments": 10
+   },
+   {
+    "source": "dev",
+    "title": "Everybody Has an AI Apocalypse Story. Almost Nobody Reads the Fine Print.",
+    "title_ko": "누구나 AI 종말 이야기는 하지만, 깨알 같은 조건은 거의 안 읽는다",
+    "url": "https://dev.to/kenielzep97/everybody-has-an-ai-apocalypse-story-almost-nobody-reads-the-fine-print-43hm",
+    "discuss": "https://dev.to/kenielzep97/everybody-has-an-ai-apocalypse-story-almost-nobody-reads-the-fine-print-43hm",
+    "points": 33,
+    "comments": 1
+   },
+   {
+    "source": "dev",
+    "title": "Agentic engineering a smart home energy system with Antigravity and Gemini 4",
+    "title_ko": "Antigravity와 Gemini 4로 스마트홈 에너지 시스템을 에이전트 방식으로 만들기",
+    "url": "https://dev.to/googleai/agentic-engineering-a-smart-home-energy-system-with-antigravity-and-gemini-4-53md",
+    "discuss": "https://dev.to/googleai/agentic-engineering-a-smart-home-energy-system-with-antigravity-and-gemini-4-53md",
+    "points": 20,
+    "comments": 1
+   }
+  ]
+ },
+ "todo": [
+  "Gemini 맥 컴퓨터 사용 기능 발표 글에서 어떤 작업을 맡길 수 있는지 훑어보기",
+  "GeekNews 'Claude Code 팀이 검증을 바라보는 방식' 읽고 내 작업에 쓸 검증 습관 하나 고르기",
+  "필라델피아 반도체지수와 코스피 반도체주 다음 주 움직임 메모해 두기"
+ ],
+ "searchtrend": {
+  "label": "AI 서비스 검색 관심도 · 구글 트렌드 한국 · 최근 7일",
+  "dates": [
+   "11/13",
+   "11/14",
+   "11/15",
+   "11/16",
+   "11/17",
+   "11/18",
+   "11/19",
+   "11/20"
+  ],
+  "keywords": [
+   {
+    "name": "Gemini",
+    "series": [
+     31.0,
+     45.3,
+     48.5,
+     65.2,
+     62.9,
+     62.7,
+     63.6,
+     53.5
+    ],
+    "avg": 54.1
+   },
+   {
+    "name": "ChatGPT",
+    "series": [
+     26.5,
+     36.4,
+     40.8,
+     53.3,
+     52.1,
+     52.6,
+     49.3,
+     42.8
+    ],
+    "avg": 44.2
+   },
+   {
+    "name": "Claude",
+    "series": [
+     21.0,
+     32.2,
+     36.3,
+     48.9,
+     47.8,
+     47.3,
+     44.2,
+     39.5
+    ],
+    "avg": 39.6
+   },
+   {
+    "name": "Grok",
+    "series": [
+     3.0,
+     6.7,
+     5.2,
+     5.4,
+     4.6,
+     5.5,
+     4.6,
+     4.1
+    ],
+    "avg": 4.9
+   },
+   {
+    "name": "Perplexity",
+    "series": [
+     0.0,
+     1.2,
+     1.5,
+     2.5,
+     2.3,
+     2.2,
+     2.0,
+     1.7
+    ],
+    "avg": 1.7
+   }
+  ],
+  "rising": [
+   {
+    "query": "rsi",
+    "value": 150
+   },
+   {
+    "query": "범용 인공 지능",
+    "value": 60
+   },
+   {
+    "query": "한국 인공 지능 학회",
+    "value": 40
+   }
+  ]
+ },
+ "youtube": {
+  "label": "최근 3일 · AI 키워드 · 11/21 07:18 KST 수집",
+  "videos": [
+   {
+    "id": "KrVH-MKJviI",
+    "title": "Jeff Bezos on Jensen Huang, Getting Into The AI Race, & Picking James Bond",
+    "channel": "Semafor",
+    "subs": 42200,
+    "views": 654523,
+    "ratio": 15.51,
+    "seconds": 1933,
+    "lang": "en",
+    "title_ko": "제프 베이조스가 말하는 젠슨 황, AI 경쟁 참여, 제임스 본드 캐스팅",
+    "desc": "세마포 인터뷰 영상으로, 베이조스가 엔비디아 CEO와 AI 경쟁을 이야기하는 것으로 보여요."
+   },
+   {
+    "id": "KPrqrQ1QL2M",
+    "title": "제미나이 노트북이 완전히 달라졌습니다 | 무제한 소스로 성능 200% 올리는 AI 리서치 방법",
+    "channel": "오빠두엑셀 l 엑셀 강의 대표채널",
+    "subs": 1700000,
+    "views": 93703,
+    "ratio": 0.06,
+    "seconds": 892,
+    "lang": "ko",
+    "title_ko": "제미나이 노트북이 완전히 달라졌습니다 | 무제한 소스로 성능 200% 올리는 AI 리서치 방법",
+    "desc": "오빠두엑셀 채널의 제미나이 노트북 활용 강의예요."
+   },
+   {
+    "id": "hx1wLU9fldA",
+    "title": "GPT 6.2 Astra Just Shocked The A.I World",
+    "channel": "TheAIGRID",
+    "subs": 409000,
+    "views": 71982,
+    "ratio": 0.18,
+    "seconds": 2032,
+    "lang": "ko",
+    "title_ko": "GPT 6.2 Astra가 AI 업계를 놀라게 했다",
+    "desc": "TheAIGRID 채널의 GPT-6.2 Astra 출시 소식 정리 영상이에요."
+   },
+   {
+    "id": "pRLptrDdxKA",
+    "title": "챗GPT, 클로드 진짜 활용법? MCP에 있습니다 | API와의 차이부터 구글 카톡 연동까지",
+    "channel": "보스턴빌더 | AI 시대 생존기",
+    "subs": 5910,
+    "views": 50222,
+    "ratio": 8.5,
+    "seconds": 994,
+    "lang": "ko",
+    "title_ko": "AI 시대 생존기 | 챗GPT, 클로드 진짜 활용법? MCP에 있습니다 | API와의 차이부터 구글 카톡 연동까지",
+    "desc": "MCP 개념과 API 차이, 외부 서비스 연동을 다루는 활용 영상이에요."
+   },
+   {
+    "id": "IQgz1x3saDQ",
+    "title": "와.. 챗GPT 아스트라 6.2 vs 클로드 페이블 vs 제미나이 카본 완전 비교",
+    "channel": "스마트대디_SmartDaddy",
+    "subs": 104000,
+    "views": 35030,
+    "ratio": 0.34,
+    "seconds": 734,
+    "lang": "ko",
+    "title_ko": "와.. 챗GPT 아스트라 6.2 vs 클로드 페이블 vs 제미나이 카본 완전 비교",
+    "desc": "세 회사 최신 모델을 나란히 비교하는 영상이에요."
+   }
+  ],
+  "shorts": [
+   {
+    "id": "63YNyKx_G3Y",
+    "title": "ChatGPT Called My Checkmate Invalid 😭",
+    "channel": "Premove Clips",
+    "subs": 6320,
+    "views": 2169056,
+    "ratio": 343.21,
+    "seconds": 22,
+    "lang": "en",
+    "title_ko": "ChatGPT가 내 체크메이트를 무효라고 했다 😭",
+    "desc": "체스에서 ChatGPT가 틀린 판정을 내리는 장면을 담은 숏츠예요."
+   },
+   {
+    "id": "cfNHMnYfpxE",
+    "title": "was this AI ad latte art printer a scam?",
+    "channel": "Dave K",
+    "subs": 2020000,
+    "views": 1787736,
+    "ratio": 0.89,
+    "seconds": 46,
+    "lang": "en",
+    "title_ko": "AI 광고 속 라테 아트 프린터, 사기였을까?",
+    "desc": "AI 광고 제품을 직접 확인해 보는 숏츠예요."
+   },
+   {
+    "id": "t46zrtG74-k",
+    "title": "everything is breaking (because of AI) #gaming #news",
+    "channel": "JtheSlopFrog",
+    "subs": 643000,
+    "views": 1552891,
+    "ratio": 2.42,
+    "seconds": 150,
+    "lang": "en",
+    "title_ko": "모든 게 망가지고 있다 (AI 때문에)",
+    "desc": "AI 붐이 게임·하드웨어 쪽에 주는 영향을 다룬 뉴스성 숏츠로 보여요."
+   },
+   {
+    "id": "GZdGfloYB84",
+    "title": "\"속성 과외\" 요청한 그 문제 그대로 AI에…결과는 '오답' / JTBC 뉴스룸",
+    "channel": "JTBC News",
+    "subs": 4920000,
+    "views": 1270678,
+    "ratio": 0.26,
+    "seconds": 136,
+    "lang": "en",
+    "title_ko": "\"속성 과외\" 요청한 그 문제 그대로 AI에…결과는 '오답' / JTBC 뉴스룸",
+    "desc": "JTBC 뉴스룸이 수능 문제를 AI에 풀려 본 결과를 전하는 숏츠예요."
+   }
+  ]
+ }
+}
