@@ -155,7 +155,8 @@ main{display:grid;gap:44px;padding-block:28px 64px}
 footer{color:var(--muted);font-size:12px;padding-block:0 40px}
 
 /* 등장 효과: 화면 아래 요소에만 적용 */
-.pre{opacity:0;transform:translateY(16px)}
+.rv{transition:opacity .6s cubic-bezier(.2,.7,.2,1),transform .6s cubic-bezier(.2,.7,.2,1),border-color .2s}
+.pre{opacity:0;transform:translateY(24px)}
 .pre .bar i,.pre .mbar i{transform:scaleX(0)}
 
 @media (max-width:900px){

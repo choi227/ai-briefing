@@ -141,10 +141,17 @@
   // 화면 아래쪽 요소만 스크롤할 때 나타나는 효과
   function reveal(){
     if(matchMedia('(prefers-reduced-motion: reduce)').matches||!('IntersectionObserver' in window))return;
-    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.remove('pre');io.unobserve(e.target)}})},{rootMargin:'0px 0px -6% 0px'});
-    document.querySelectorAll('.ncard,.tlist,.side .card,.todo,.archive').forEach(function(el){
-      if(el.getBoundingClientRect().top>innerHeight){el.classList.add('pre');io.observe(el)}
-    });
+    var io=new IntersectionObserver(function(es){
+      var shown=es.filter(function(e){return e.isIntersecting});
+      shown.forEach(function(e,i){
+        e.target.style.transitionDelay=Math.min(i,4)*70+'ms';
+        e.target.classList.remove('pre');io.unobserve(e.target);
+        setTimeout(function(){e.target.style.transitionDelay=''},900);
+      });
+    },{rootMargin:'0px 0px -8% 0px'});
+    var els=document.querySelectorAll('.ncard,.tlist,.side .card,.todo,.archive');
+    els.forEach(function(el){el.classList.add('rv');if(el.getBoundingClientRect().top>innerHeight*0.92){el.classList.add('pre')}});
+    requestAnimationFrame(function(){els.forEach(function(el){if(el.classList.contains('pre'))io.observe(el)})});
   }
 
   var cache={};
