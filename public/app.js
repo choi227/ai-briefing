@@ -78,10 +78,10 @@
     if(d.youtube&&((ysrc().videos||[]).length||(ysrc().shorts||[]).length)){
       html+='<section id="youtube"><div class="sec-title"><div><h2>'+(YR?'유튜브 지금 인기':'유튜브 인기')+'</h2><p>'+esc(d.youtube.label)+'</p></div><div class="ytctl">'+
         (YR?'<div class="seg" role="group" aria-label="지역" id="ytReg">'+Object.keys(YR).map(function(k,i){return '<button type="button" data-r="'+k+'" aria-pressed="'+(i===0)+'">'+esc(YR[k].name)+'</button>'}).join('')+'</div>':'')+
-        '<div class="seg" role="group" aria-label="정렬"><button type="button" id="ytViews" aria-pressed="true">'+(YR?'인기 순위':'조회수')+'</button><button type="button" id="ytRatio" aria-pressed="false">구독자 대비</button></div></div></div>'+
+        '<div class="ytsort"><span class="ytleg"><span class="ytx">×숫자</span>= 조회수 ÷ 구독자</span><div class="seg" role="group" aria-label="정렬"><button type="button" id="ytViews" aria-pressed="true">'+(YR?'인기 순위':'조회수')+'</button><button type="button" id="ytRatio" aria-pressed="false">구독자 대비</button></div></div></div></div>'+
         '<div class="label">영상</div><div class="ytgrid" id="ytVideos"></div>'+
         '<div class="label ytl">'+(YR?'짧은 영상 (3분 이하)':'숏츠')+'</div><div class="ytgrid'+(YR?'':' shorts')+'" id="ytShorts"></div>'+
-        '<p class="note ytnote">구독자 대비 = 조회수 ÷ 채널 구독자 수. 3배 이상이면 채널 평소보다 크게 터진 영상이에요.</p></section>';
+        '</section>';
     }
     html+='<section id="todo"><div class="sec-title"><div><h2>오늘 할 일</h2><p>5분이면 끝나는 행동과 지난 브리핑</p></div></div><div class="grid"><div class="card todo"><div class="label">오늘 해볼 것</div><ul>'+
       d.todo.map(function(x,i){return '<li><label><input type="checkbox" id="t'+i+'"><span>'+esc(x)+'</span></label></li>'}).join('')+

@@ -258,7 +258,11 @@ main>section .oneline .pill{background:var(--surface);color:var(--muted);border-
 .filters button[aria-pressed="true"]{background:var(--violet-soft);color:var(--violet);border-color:transparent}
 
 /* 유튜브 지역 전환 · 네이버 급상승 검색어 */
-.ytctl{display:flex;gap:8px;flex-wrap:wrap}
+.ytctl{display:flex;gap:8px;flex-wrap:wrap;align-items:flex-end}
+.ytsort{display:flex;flex-direction:column;align-items:flex-end;gap:6px}
+.ytleg{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);white-space:nowrap;padding-right:6px}
+.ytleg .ytx{font-size:11px}
+@media (max-width:640px){.ytsort{align-items:flex-start}.ytleg{padding-right:0;padding-left:6px}}
 .nvhot{grid-column:1/-1}
 .nvhead{display:flex;flex-direction:column;gap:10px;margin-bottom:6px}
 .nvkw button small{font-size:11px;color:var(--muted);font-family:var(--f-mono)}
