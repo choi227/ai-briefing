@@ -133,7 +133,7 @@
           var hot=v.ratio!=null&&v.ratio>=3,t=v.title_ko||v.title;
           return '<article class="card ytc"><button type="button" class="yth" data-id="'+esc(v.id)+'" aria-label="'+esc(t)+' 재생">'+
             '<img loading="lazy" alt="" src="https://i.ytimg.com/vi/'+esc(v.id)+'/'+(short?'hqdefault':'mqdefault')+'.jpg">'+
-            '<span class="ytr">'+(ymode==='views'&&v.rank!=null?v.rank+'위':(i+1))+'</span>'+(v.seconds?'<span class="ytd mono">'+dur(v.seconds)+'</span>':'')+'<span class="ytp" aria-hidden="true">▶</span></button>'+
+            '<span class="ytr">'+(ymode==='views'&&v.rank!=null?(i+1)+'위':(i+1))+'</span>'+(v.seconds?'<span class="ytd mono">'+dur(v.seconds)+'</span>':'')+'<span class="ytp" aria-hidden="true">▶</span></button>'+
             '<div class="ytb"><h3><a href="https://www.youtube.com/'+(short?'shorts/':'watch?v=')+esc(v.id)+'" target="_blank" rel="noopener">'+esc(t)+'</a></h3>'+
             (v.title_ko&&v.title_ko!==v.title?'<div class="co">'+esc(v.title)+'</div>':'')+
             (v.desc?'<p>'+esc(v.desc)+'</p>':'')+
