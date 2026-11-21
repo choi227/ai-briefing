@@ -230,11 +230,13 @@
 
     // 헤더
     var idx=issues.indexOf(d.date);
-    document.getElementById('issueLabel').textContent=fmtDate(d.date,d.weekday)+' · No.'+String(d.issue).padStart(3,'0');
+    var fd0=fmtDate(d.date,d.weekday);
+    document.getElementById('issueLabel').innerHTML='<span class="yr">'+esc(fd0.slice(0,5))+'</span>'+esc(fd0.slice(5,10))+'<span class="wd">'+esc(fd0.slice(10))+'</span> · No.'+String(d.issue).padStart(3,'0');
     var pv=document.getElementById('prev'),nx=document.getElementById('next');
     pv.disabled=idx<=0;nx.disabled=idx<0||idx>=issues.length-1;
     pv.onclick=function(){if(idx>0)location.hash=issues[idx-1]};
     nx.onclick=function(){if(idx<issues.length-1)location.hash=issues[idx+1]};
+    datePicker(d);
     document.title='AI 모닝 브리핑 · '+fmtDate(d.date);
     observeTabs();
     reveal();
@@ -287,6 +289,57 @@
     requestAnimationFrame(function(){els.forEach(function(el){if(el.classList.contains('pre'))io.observe(el)})});
   }
 
+
+  // 날짜를 누르면 지난 호 목록, 날짜 띠를 좌우로 밀면 이전/다음 호
+  var pickBound=false;
+  var swipeDir=0,RM=matchMedia('(prefers-reduced-motion: reduce)');
+  function datePicker(d){
+    var nav=document.querySelector('.datenav'),lbl=document.getElementById('issueLabel');
+    if(swipeDir&&!RM.matches){var dir=swipeDir;swipeDir=0;
+      [lbl,app].forEach(function(el){el.style.transition='none';el.style.transform='translateX('+(dir*(el===app?40:50))+'px)';el.style.opacity='0'});
+      void app.offsetWidth;
+      [lbl,app].forEach(function(el){el.style.transition='transform .32s cubic-bezier(.2,.7,.2,1),opacity .32s';el.style.transform='';el.style.opacity=''});
+      setTimeout(function(){lbl.style.transition='';app.style.transition=''},400);
+    }else swipeDir=0;
+    var pop=document.getElementById('issuePop');
+    if(!pop){pop=document.createElement('div');pop.id='issuePop';pop.className='issuepop';pop.hidden=true;pop.setAttribute('role','listbox');pop.setAttribute('aria-label','지난 브리핑');nav.appendChild(pop)}
+    lbl.setAttribute('role','button');lbl.tabIndex=0;lbl.setAttribute('aria-haspopup','listbox');lbl.setAttribute('aria-expanded','false');
+    var fill=function(){
+      var list=issues.slice().reverse();
+      pop.innerHTML=list.map(function(iso){var on=iso===cur;
+        return '<a href="#'+iso+'" role="option" aria-selected="'+on+'" class="ipo'+(on?' on':'')+'"><span class="no mono" data-no="'+iso+'">'+fmtDate(iso).slice(5)+'</span><span class="tt" data-t="'+iso+'"></span></a>'}).join('');
+      list.forEach(function(iso){getIssue(iso).then(function(x){
+        var n=pop.querySelector('[data-no="'+iso+'"]'),t=pop.querySelector('[data-t="'+iso+'"]');
+        if(n)n.textContent='No.'+String(x.issue).padStart(3,'0')+' · '+fmtDate(iso).slice(5);if(t)t.textContent=x.headline.title}).catch(function(){})});
+    };
+    var open=function(){fill();pop.hidden=false;lbl.setAttribute('aria-expanded','true');var o=pop.querySelector('.on');if(o)o.scrollIntoView({block:'nearest'})};
+    var close=function(){pop.hidden=true;lbl.setAttribute('aria-expanded','false')};
+    lbl.onclick=function(e){e.stopPropagation();pop.hidden?open():close()};
+    lbl.onkeydown=function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();lbl.onclick(e)}};
+    pop.onclick=function(e){if(e.target.closest('a'))close()};
+    close();
+    if(pickBound)return;pickBound=true;
+    document.addEventListener('click',function(e){if(!e.target.closest('.datenav'))close()});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')close()});
+    var sx=null,sy=0;
+    var L=function(){return document.getElementById('issueLabel')};
+    var back=function(){var l=L();l.style.transition='transform .25s cubic-bezier(.2,.7,.2,1),opacity .25s';l.style.transform='';l.style.opacity='';setTimeout(function(){l.style.transition=''},300)};
+    nav.addEventListener('touchstart',function(e){if(e.target.closest('.issuepop'))return;sx=e.touches[0].clientX;sy=e.touches[0].clientY;L().style.transition='none'},{passive:true});
+    nav.addEventListener('touchmove',function(e){if(sx==null||RM.matches)return;var dx=e.touches[0].clientX-sx;
+      var i=issues.indexOf(cur),edge=(dx<0&&i>=issues.length-1)||(dx>0&&i<=0),m=edge?dx*0.25:dx*0.7;
+      L().style.transform='translateX('+Math.max(-90,Math.min(90,m))+'px)';L().style.opacity=String(Math.max(.35,1-Math.abs(m)/140))},{passive:true});
+    nav.addEventListener('touchend',function(e){if(sx==null)return;var dx=e.changedTouches[0].clientX-sx,dy=e.changedTouches[0].clientY-sy;sx=null;
+      if(Math.abs(dx)<40||Math.abs(dx)<Math.abs(dy)*1.5){back();return}
+      var i=issues.indexOf(cur),to=null;
+      if(dx<0&&i<issues.length-1)to=issues[i+1];else if(dx>0&&i>0)to=issues[i-1];
+      if(!to){back();nav.classList.remove('bump');void nav.offsetWidth;nav.classList.add('bump');return}
+      var dir=dx<0?1:-1;
+      if(RM.matches){location.hash=to;return}
+      var l=L();l.style.transition='transform .2s ease-in,opacity .2s';l.style.transform='translateX('+(-dir*90)+'px)';l.style.opacity='0';
+      app.style.transition='transform .2s ease-in,opacity .2s';app.style.transform='translateX('+(-dir*40)+'px)';app.style.opacity='0';
+      setTimeout(function(){swipeDir=dir;location.hash=to},190);
+    },{passive:true});
+  }
   var cache={};
   function getIssue(date){
     if(!cache[date])cache[date]=fetch('data/'+date+'.json',{cache:'no-cache'}).then(function(r){if(!r.ok)throw new Error(r.status);return r.json()});
@@ -312,13 +365,13 @@
 
 // 기본·시스템·다크 모드 버튼 (이 브라우저에 기억, 처음엔 시스템)
 (function(){
-  var root=document.documentElement,seg=document.querySelector('.themeseg');
-  if(!seg)return;
+  var root=document.documentElement,segs=document.querySelectorAll('.themeseg');
+  if(!segs.length)return;var all=function(){return document.querySelectorAll('.themeseg button')};
   var pick=function(){var t=null;try{t=localStorage.getItem('brief-theme')}catch(e){}return t==='light'||t==='dark'?t:'system'};
   var apply=function(t){if(t==='system')root.removeAttribute('data-theme');else root.setAttribute('data-theme',t);
-    seg.querySelectorAll('button').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.t===t))});
+    all().forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.t===t))});
     var m=document.querySelector('meta[name="theme-color"]');if(m)m.content=getComputedStyle(document.body).backgroundColor};
-  seg.querySelectorAll('button').forEach(function(b){b.onclick=function(){try{localStorage.setItem('brief-theme',b.dataset.t)}catch(e){}apply(b.dataset.t)}});
+  all().forEach(function(b){b.onclick=function(){try{localStorage.setItem('brief-theme',b.dataset.t)}catch(e){}apply(b.dataset.t)}});
   var mq=matchMedia('(prefers-color-scheme: dark)');if(mq.addEventListener)mq.addEventListener('change',function(){apply(pick())});
   apply(pick());
 })();
