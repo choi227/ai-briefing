@@ -269,10 +269,10 @@ main>section .oneline .pill{background:var(--surface);color:var(--muted);border-
 .nvcols .clist{display:flex;flex-direction:column;gap:10px}
 .nvcols .citem,.nvcols .citem:first-child{border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:12px 14px;grid-template-columns:22px minmax(0,1fr);gap:10px}
 .nvcols .rank{font-size:13px;line-height:1.5}
-.nvcols .ct{display:block;font-size:14px}
+.nvcols .ct{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font-size:14px;line-height:1.45;height:2.9em}
 .nvcols .ct:hover{color:var(--violet,var(--accent))}
-.nvcols .co{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin-top:4px;line-height:1.5}
-.nvcols .cm{margin-top:6px}
+.nvcols .co{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin-top:4px;line-height:1.5;height:3em}
+.nvcols .cm{margin-top:6px;height:1.5em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;display:block}
 </style>
 
 </head>

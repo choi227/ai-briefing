@@ -179,7 +179,7 @@
         var nlist=function(items){return '<ol class="clist">'+items.map(function(x,i){
             var meta=[x.source,fd(x.date)].filter(Boolean).join(' · ');
             return '<li class="citem"><span class="rank">'+(i+1)+'</span><div class="cbody"><a class="ct" href="'+esc(x.url)+'" target="_blank" rel="noopener">'+esc(x.title)+'</a>'+
-              '<div class="co">'+esc(x.desc)+'</div>'+(meta?'<div class="cm"><span>'+esc(meta)+'</span></div>':'')+'</div></li>'}).join('')+'</ol>'};
+              '<div class="co">'+esc(x.desc)+'</div><div class="cm"><span>'+esc(meta)+'</span></div></div></li>'}).join('')+'</ol>'};
         if(nv.hot&&nv.hot.keywords&&nv.hot.keywords.length){
           var H=nv.hot.keywords,hel=document.createElement('div');hel.className='card nvhot';
           hel.innerHTML='<div class="nvhead"><div class="label">네이버 · 지금 뜨는 검색어로 찾은 글</div><div class="filters nvkw" role="group" aria-label="급상승 검색어">'+
