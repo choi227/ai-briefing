@@ -226,7 +226,7 @@
       }).catch(function(){});
     });
     list.querySelector('.now .no').textContent='No.'+String(d.issue).padStart(3,'0')+' · '+fmtDate(d.date).slice(5);
-    document.getElementById('archNote').textContent='지금까지 '+issues.length+'호 발행 · 매일 아침 8시에 새 호가 올라와요';
+    document.getElementById('archNote').textContent='지금까지 '+issues.length+'호 발행 · 매일 아침 9시 반쯤 새 호가 올라와요';
 
     // 헤더
     var idx=issues.indexOf(d.date);
