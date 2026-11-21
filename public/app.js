@@ -44,7 +44,7 @@
     var h=d.headline,m=d.market,o=d.oneline,t=d.trending;
     var mmax=Math.max.apply(null,m.rows.map(function(r){return Math.abs(r.change)}))||1;
     var html='';
-    html+='<section id="summary" class="grid">'+
+    html+='<section id="summary"><div class="sec-title"><div><h2>오늘의 요약</h2><p>'+esc(fmtDate(d.date,d.weekday))+' · 가장 큰 소식과 밤사이 시장</p></div></div><div class="grid">'+
       '<article class="card lead"><div class="label">'+esc(h.kicker)+'</div><h1>'+esc(h.title)+'</h1><p>'+esc(h.body)+'</p>'+
       '<div class="stats">'+h.figures.map(function(f){return '<div class="stat"><b>'+esc(f.value)+'</b><span>'+esc(f.label)+'</span></div>'}).join('')+'</div>'+
       '<span class="src">출처: '+link(h.source)+'</span></article>'+
@@ -53,7 +53,7 @@
       '<div class="note">'+esc(m.note)+' · '+link(m.source)+'</div></article>'+
       '<article class="card oneline"><div class="label">한 줄 요약</div><p>'+esc(o.text)+'</p><div class="pills">'+o.tags.map(function(x){return '<span class="pill">'+esc(x)+'</span>'}).join('')+'</div></article>'+
       (d.searchtrend&&d.searchtrend.keywords&&d.searchtrend.keywords.length?trendCard(d.searchtrend):'')+
-      '</section>';
+      '</div></section>';
     html+='<section id="news"><div class="sec-title"><div><h2>AI 뉴스</h2><p>밤사이 나온 소식 '+d.news.length+'건, 원문 링크 포함</p></div><div class="filters" id="filters" role="group" aria-label="분야 필터"></div></div><div class="news" id="newsGrid">'+
       d.news.map(function(n){var c=CATS[n.cat]||[n.cat,"--muted"];return '<article class="card ncard'+(n.featured?' big':'')+'" data-cat="'+esc(n.cat)+'"><div class="cat" style="color:var('+c[1]+')"><i style="background:var('+c[1]+')"></i>'+esc(c[0])+'</div><h3>'+esc(n.title)+'</h3><p>'+esc(n.summary)+'</p><a href="'+esc(n.url)+'" target="_blank" rel="noopener">'+esc(n.source)+' ↗</a></article>'}).join('')+
       '</div></section>';
@@ -83,9 +83,9 @@
         '<div class="label ytl">'+(YR?'짧은 영상 (3분 이하)':'숏츠')+'</div><div class="ytgrid'+(YR?'':' shorts')+'" id="ytShorts"></div>'+
         '<p class="note ytnote">구독자 대비 = 조회수 ÷ 채널 구독자 수. 3배 이상이면 채널 평소보다 크게 터진 영상이에요.</p></section>';
     }
-    html+='<section id="todo" class="grid"><div class="card todo"><div class="label">오늘 해볼 것</div><ul>'+
+    html+='<section id="todo"><div class="sec-title"><div><h2>오늘 할 일</h2><p>5분이면 끝나는 행동과 지난 브리핑</p></div></div><div class="grid"><div class="card todo"><div class="label">오늘 해볼 것</div><ul>'+
       d.todo.map(function(x,i){return '<li><label><input type="checkbox" id="t'+i+'"><span>'+esc(x)+'</span></label></li>'}).join('')+
-      '</ul></div><div class="card archive"><div class="label">지난 브리핑</div><ol class="issues" id="issueList"></ol><div class="note" id="archNote"></div></div></section>';
+      '</ul></div><div class="card archive"><div class="label">지난 브리핑</div><ol class="issues" id="issueList"></ol><div class="note" id="archNote"></div></div></div></section>';
     app.innerHTML=html;
     var tc=document.getElementById('tabCommunity');if(tc)tc.hidden=!document.getElementById('community');
     var ty=document.getElementById('tabYoutube');if(ty)ty.hidden=!document.getElementById('youtube');
@@ -264,7 +264,7 @@
           if(!el)return;
           setTab(id);
           clearTimeout(tabLock);tabLock=setTimeout(function(){tabLock=null},800);
-          el.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});
+          var hb=document.querySelector('.top').offsetHeight;scrollTo({top:Math.max(0,el.getBoundingClientRect().top+scrollY-hb-16),behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
         });
       });
     }
