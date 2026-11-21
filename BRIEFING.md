@@ -44,16 +44,14 @@
 - `label`은 실제로 넣은 소스 이름을 나열하고 수집 시각을 붙인다. 예: "HN · GeekNews · HF 논문 · dev.to · 11/21 07:30 KST".
 - Reddit은 이 환경에서 막혀 있으니 쓰지 않는다. 형식 기준은 `public/data/2026-11-20.json`의 `community`.
 
-## 3-2. 유튜브 인기 (`youtube`)
-- `python3 scripts/youtube.py --out /tmp/yt.json` 을 실행한다. (`YOUTUBE_API_KEY` 환경 변수 필요. 없거나 실패하면 이 섹션은 빼고 계속한다.)
-- 후보 중 AI·테크 소식과 관련된 것만 고른다. AI로 만든 노래·애니메이션·짜깁기 영상, 낚시성 제목, 같은 채널 중복은 뺀다.
-- `videos`, `shorts` 각각 최대 5개. 후보의 `id`, `title`, `channel`, `subs`, `views`, `ratio`, `seconds`, `lang` 값은 **그대로 복사**한다(숫자를 고치거나 지어내지 않는다).
-- 직접 채우는 것: `title_ko`(영어 제목이면 한국어 번역, 한국어면 원제 그대로), `desc`(제목과 채널로 알 수 있는 범위의 한국어 한 줄. 영상을 보지 않았으니 내용을 단정하지 않는다).
-- `label`은 "최근 3일 · AI 키워드 · MM/DD HH:MM 수집"(후보 파일의 `collected` 값).
-- 순서는 조회수 많은 순. 사이트에서 "구독자 대비" 정렬로 바꿔 볼 수 있다.
+## 3-2. 유튜브 지금 인기 (`youtube`)
+- 호 JSON을 다 쓴 뒤(5-1 다음) `python3 scripts/youtube.py --issue public/data/<오늘>.json` 을 실행한다. 스크립트가 `youtube` 항목을 직접 채운다. (`YOUTUBE_API_KEY` 필요. 실패하면 이 섹션 없이 계속한다.)
+- 검색어 없이 유튜브의 한국·미국 인기 순위를 그대로 쓴다. **AI 여부로 거르거나 고르지 않고, 값도 고치지 않는다.** 사용자 요청: "지금 뜨는 영상이 뭔지 아는 게 목적"(2026-11-22).
+- 3분 초과는 영상, 3분 이하는 짧은 영상으로 지역별 10개씩 들어간다.
 
-## 3-3. 네이버 뉴스·블로그·카페·검색어 트렌드·쇼핑인사이트 (`public/data/naver.json`)
+## 3-3. 네이버 급상승 검색어 글·검색어 트렌드·쇼핑인사이트 (`public/data/naver.json`)
 - `python3 scripts/naver.py` 를 실행한다. 키가 없거나 실패하면 건너뛴다.
+- 검색어는 사람이 정하지 않는다. 스크립트가 구글 트렌드 '지금 한국 급상승 검색어' 10개를 받아, 각각 네이버 뉴스·블로그·카페를 5개씩 검색한다.
 - **이 파일은 열어보거나 고치지 않는다.** 네이버 검색 API 약관상 결과를 AI가 읽고 가공·선별하면 안 된다. 스크립트가 네이버가 준 순서 그대로 쓰고, 화면이 그대로 보여준다.
 - 신청하지 않은 API는 스크립트가 알아서 건너뛴다. 호 JSON(`community`)에 네이버 글을 넣지 않는다. 매일 덮어쓰는 이 파일 하나만 쓴다.
 
@@ -61,7 +59,7 @@
 - 오늘 소식과 이어지는 5분짜리 행동 2~3개.
 
 ## 5. 저장과 배포
-1. `public/data/<오늘>.json` 작성, `public/data/index.json`의 `issues` 배열 끝에 날짜 추가.
+1. `public/data/<오늘>.json` 작성, `public/data/index.json`의 `issues` 배열 끝에 날짜 추가. 그다음 3-2의 `youtube.py --issue` 실행.
 2. `python3 -c "import json;json.load(open(...))"`로 두 파일이 올바른 JSON인지 확인.
 3. 이 두 파일(+ `public/data/naver.json`이 바뀌었으면 그것도)만 커밋한다. 메시지: `브리핑 No.XXX (YYYY-MM-DD)`.
 4. `main`에 push. Cloudflare가 1~2분 안에 https://ai-briefing.a2teosis.workers.dev 에 반영한다.

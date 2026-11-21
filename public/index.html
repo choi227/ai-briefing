@@ -228,6 +228,16 @@ footer{color:var(--muted);font-size:12px;padding-block:0 40px}
   .pre .bar i,.pre .mbar i{transform:none}
   *{transition:none!important}
 }
+
+/* 유튜브 지역 전환 · 네이버 급상승 검색어 */
+.ytctl{display:flex;gap:8px;flex-wrap:wrap}
+.nvhot{grid-column:1/-1}
+.nvhead{display:flex;flex-direction:column;gap:10px;margin-bottom:6px}
+.nvkw button small{font-size:11px;color:var(--muted);font-family:var(--f-mono)}
+.nvkw button .mono{font-size:11px;opacity:.7}
+.nvcols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:10px}
+.nvcol>.label{margin:8px 0 2px}
+@media (max-width:900px){.nvcols{grid-template-columns:1fr}}
 </style>
 </head>
 <body>

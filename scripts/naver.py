@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
-"""네이버 검색결과(블로그·뉴스·카페)와 데이터랩(검색어 트렌드·쇼핑인사이트)을
-그대로 public/data/naver.json 에 덮어쓴다.
+"""지금 뜨는 검색어로 찾은 네이버 검색결과(뉴스·블로그·카페)와
+데이터랩(검색어 트렌드·쇼핑인사이트)을 그대로 public/data/naver.json 에 덮어쓴다.
+
+검색어는 사람이 정하지 않는다. 구글 트렌드 '지금 한국 급상승 검색어' RSS(최대 10개)를
+스크립트가 받아 그 순서대로 네이버에 검색한다. (네이버 검색 API는 검색어가 필수라 빈 검색은 불가)
 
 네이버 검색 API 약관(특약 2.2~2.4)에 맞추기 위해:
   - 네이버가 준 순서와 내용을 그대로 쓴다 (고르거나 고치지 않는다).
@@ -14,14 +17,14 @@
 API HUB에서 신청하지 않은 API는 실패하고 건너뛴다.
 사용: python3 scripts/naver.py
 """
-import datetime as dt, html, json, os, re, sys, urllib.parse, urllib.request
+import datetime as dt, html, json, os, re, sys, urllib.parse, urllib.request, xml.etree.ElementTree as ET
 
 OUT = os.path.join(os.path.dirname(__file__), "..", "public", "data", "naver.json")
-SEARCHES = {  # 키: (API 종류, 검색어, 정렬)
-    "blog": ("blog", "인공지능 AI", "sim"),
-    "news": ("news", "인공지능 AI", "sim"),
-    "cafe": ("cafearticle", "인공지능 AI", "sim"),
-}
+HOT_RSS = "https://trends.google.com/trending/rss?geo=KR"
+HOT_MAX = 10   # 급상승 검색어 개수 (RSS가 주는 최대치)
+PER = 5        # 검색어·종류별 글 개수
+KINDS = [("news", "news"), ("blog", "blog"), ("cafe", "cafearticle")]
+SORT = "sim"
 SORT_KO = {"sim": "정확도순", "date": "최신순"}
 TREND_GROUPS = [
     {"groupName": "ChatGPT", "keywords": ["챗GPT", "ChatGPT", "챗지피티"]},
@@ -64,6 +67,21 @@ def call(url, h, body=None):
         return json.load(r)
 
 
+def hot_keywords():
+    req = urllib.request.Request(HOT_RSS, headers={"User-Agent": "ai-briefing/1.0"})
+    with urllib.request.urlopen(req, timeout=30) as r:
+        root = ET.fromstring(r.read())
+    ns = {"ht": "https://trends.google.com/trending/rss"}
+    out = []
+    for it in root.iter("item"):
+        t = (it.findtext("title") or "").strip()
+        if t:
+            out.append((t, (it.findtext("ht:approx_traffic", namespaces=ns) or "").strip()))
+    num = lambda x: int(re.sub(r"\D", "", x) or 0)
+    out.sort(key=lambda r: num(r[1]), reverse=True)  # 검색량 많은 순 (같으면 RSS 순서)
+    return out[:HOT_MAX]
+
+
 def series_of(results, dates, key):
     rows = []
     for g in results:
@@ -79,22 +97,33 @@ def main():
     now = dt.datetime.now(dt.timezone(dt.timedelta(hours=9)))
     out = {"updated": now.strftime("%m/%d %H:%M KST"), "errors": {}}
 
-    for key, (kind, q, sort) in SEARCHES.items():
-        try:
-            d = call(sbase + kind + "?" + urllib.parse.urlencode({"query": q, "display": 5, "sort": sort}), h)
-            items = []
-            for i in d.get("items", []):
-                it = {"title": clean(i.get("title")), "url": i.get("link"), "desc": clean(i.get("description"))}
-                if kind == "blog":
-                    it.update(source=clean(i.get("bloggername")), date=i.get("postdate"))
-                elif kind == "cafearticle":
-                    it.update(source=clean(i.get("cafename")))
-                elif kind == "news":
-                    it.update(date=i.get("pubDate"))
-                items.append(it)
-            out[key] = {"query": q, "sort": SORT_KO[sort], "items": items}
-        except Exception as ex:
-            out["errors"][key] = f"{type(ex).__name__}: {ex}"[:200]
+    try:
+        hot = hot_keywords()
+    except Exception as ex:
+        hot = []
+        out["errors"]["hot"] = f"{type(ex).__name__}: {ex}"[:200]
+    rows = []
+    for kw, traffic in hot:
+        row = {"keyword": kw, "traffic": traffic}
+        for key, kind in KINDS:
+            try:
+                d = call(sbase + kind + "?" + urllib.parse.urlencode({"query": kw, "display": PER, "sort": SORT}), h)
+                items = []
+                for i in d.get("items", []):
+                    it = {"title": clean(i.get("title")), "url": i.get("link"), "desc": clean(i.get("description"))}
+                    if kind == "blog":
+                        it.update(source=clean(i.get("bloggername")), date=i.get("postdate"))
+                    elif kind == "cafearticle":
+                        it.update(source=clean(i.get("cafename")))
+                    elif kind == "news":
+                        it.update(date=i.get("pubDate"))
+                    items.append(it)
+                row[key] = items
+            except Exception as ex:
+                out["errors"][f"{key}:{kw}"] = f"{type(ex).__name__}: {ex}"[:200]
+        rows.append(row)
+    if rows:
+        out["hot"] = {"source": "구글 트렌드 한국 급상승 검색어", "sort": SORT_KO[SORT], "keywords": rows}
 
     # 데이터랩은 전날 집계가 아침에 아직 안 들어와 0이 나온다 → 그저께까지 7일
     end, start = now.date() - dt.timedelta(days=2), now.date() - dt.timedelta(days=8)
@@ -114,7 +143,7 @@ def main():
 
     with open(OUT, "w", encoding="utf-8") as f:
         json.dump(out, f, ensure_ascii=False, indent=1)
-    got = [k for k in ("blog", "news", "cafe", "trend", "shopping") if k in out]
+    got = [k for k in ("hot", "trend", "shopping") if k in out]
     print("네이버 수집:", ", ".join(got) or "없음", "| 실패:", out["errors"] or "없음")
 
 

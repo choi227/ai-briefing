@@ -74,11 +74,13 @@
             '<div class="cm">'+(x.points!=null?'<span class="mono">'+(k==='dev'?'♥ ':'▲ ')+x.points.toLocaleString('en-US')+'</span>':'')+(x.meta?'<span>'+esc(x.meta)+'</span>':'')+(x.discuss?'<a href="'+esc(x.discuss)+'" target="_blank" rel="noopener">댓글 '+(x.comments!=null?x.comments.toLocaleString('en-US')+' ':'')+'↗</a>':(x.comments!=null?'<span>댓글 '+x.comments.toLocaleString('en-US')+'</span>':''))+'</div></div></li>'}).join('')+'</ol></div>'};
       html+='<section id="community"><div class="sec-title"><div><h2>커뮤니티 화제</h2><p>'+esc(d.community.label)+'</p></div></div><div class="cgrid">'+col('hn')+col('gn')+col('hf')+col('dev')+col('nv')+'</div></section>';
     }
-    if(d.youtube&&((d.youtube.videos||[]).length||(d.youtube.shorts||[]).length)){
-      html+='<section id="youtube"><div class="sec-title"><div><h2>유튜브 인기</h2><p>'+esc(d.youtube.label)+'</p></div>'+
-        '<div class="seg" role="group" aria-label="정렬"><button type="button" id="ytViews" aria-pressed="true">조회수</button><button type="button" id="ytRatio" aria-pressed="false">구독자 대비</button></div></div>'+
-        ((d.youtube.videos||[]).length?'<div class="label">영상</div><div class="ytgrid" id="ytVideos"></div>':'')+
-        ((d.youtube.shorts||[]).length?'<div class="label ytl">숏츠</div><div class="ytgrid shorts" id="ytShorts"></div>':'')+
+    var YR=d.youtube&&d.youtube.regions,yreg=YR?Object.keys(YR)[0]:null,ysrc=function(){return YR?YR[yreg]:d.youtube};
+    if(d.youtube&&((ysrc().videos||[]).length||(ysrc().shorts||[]).length)){
+      html+='<section id="youtube"><div class="sec-title"><div><h2>'+(YR?'유튜브 지금 인기':'유튜브 인기')+'</h2><p>'+esc(d.youtube.label)+'</p></div><div class="ytctl">'+
+        (YR?'<div class="seg" role="group" aria-label="지역" id="ytReg">'+Object.keys(YR).map(function(k,i){return '<button type="button" data-r="'+k+'" aria-pressed="'+(i===0)+'">'+esc(YR[k].name)+'</button>'}).join('')+'</div>':'')+
+        '<div class="seg" role="group" aria-label="정렬"><button type="button" id="ytViews" aria-pressed="true">'+(YR?'인기 순위':'조회수')+'</button><button type="button" id="ytRatio" aria-pressed="false">구독자 대비</button></div></div></div>'+
+        '<div class="label">영상</div><div class="ytgrid" id="ytVideos"></div>'+
+        '<div class="label ytl">'+(YR?'짧은 영상 (3분 이하)':'숏츠')+'</div><div class="ytgrid'+(YR?'':' shorts')+'" id="ytShorts"></div>'+
         '<p class="note ytnote">구독자 대비 = 조회수 ÷ 채널 구독자 수. 3배 이상이면 채널 평소보다 크게 터진 영상이에요.</p></section>';
     }
     html+='<section id="todo" class="grid"><div class="card todo"><div class="label">오늘 해볼 것</div><ul>'+
@@ -126,12 +128,12 @@
       var ymode='views';
       var yr=function(id,arr,short){
         var el=document.getElementById(id);if(!el)return;
-        var a=arr.slice().sort(function(x,y){return (y[ymode]||0)-(x[ymode]||0)});
+        var a=arr.slice().sort(function(x,y){return ymode==='views'&&x.rank!=null?x.rank-y.rank:(y[ymode]||0)-(x[ymode]||0)});
         el.innerHTML=a.map(function(v,i){
           var hot=v.ratio!=null&&v.ratio>=3,t=v.title_ko||v.title;
           return '<article class="card ytc"><button type="button" class="yth" data-id="'+esc(v.id)+'" aria-label="'+esc(t)+' 재생">'+
             '<img loading="lazy" alt="" src="https://i.ytimg.com/vi/'+esc(v.id)+'/'+(short?'hqdefault':'mqdefault')+'.jpg">'+
-            '<span class="ytr">'+(i+1)+'</span>'+(v.seconds?'<span class="ytd mono">'+dur(v.seconds)+'</span>':'')+'<span class="ytp" aria-hidden="true">▶</span></button>'+
+            '<span class="ytr">'+(ymode==='views'&&v.rank!=null?v.rank+'위':(i+1))+'</span>'+(v.seconds?'<span class="ytd mono">'+dur(v.seconds)+'</span>':'')+'<span class="ytp" aria-hidden="true">▶</span></button>'+
             '<div class="ytb"><h3><a href="https://www.youtube.com/'+(short?'shorts/':'watch?v=')+esc(v.id)+'" target="_blank" rel="noopener">'+esc(t)+'</a></h3>'+
             (v.title_ko&&v.title_ko!==v.title?'<div class="co">'+esc(v.title)+'</div>':'')+
             (v.desc?'<p>'+esc(v.desc)+'</p>':'')+
@@ -139,7 +141,11 @@
             '<div class="ytm"><span class="mono"><b>'+kn(v.views)+'</b> 회</span>'+(v.ratio!=null?'<span class="ytx mono'+(hot?' hot':'')+'">×'+(v.ratio>=10?Math.round(v.ratio):v.ratio.toFixed(1))+'</span>':'')+'</div></div></article>';
         }).join('');
       };
-      var yall=function(){yr('ytVideos',d.youtube.videos||[],false);yr('ytShorts',d.youtube.shorts||[],true)};
+      var yall=function(){var s=ysrc();yr('ytVideos',s.videos||[],false);yr('ytShorts',s.shorts||[],!YR);
+        document.getElementById('ytVideos').previousElementSibling.hidden=document.getElementById('ytVideos').hidden=!(s.videos||[]).length;
+        document.getElementById('ytShorts').previousElementSibling.hidden=document.getElementById('ytShorts').hidden=!(s.shorts||[]).length};
+      var rg=document.getElementById('ytReg');
+      if(rg)rg.querySelectorAll('button').forEach(function(b){b.onclick=function(){yreg=b.dataset.r;rg.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed',String(x===b))});yall()}});
       yall();
       document.getElementById('youtube').addEventListener('click',function(e){
         var b=e.target.closest('.yth');if(!b)return;
@@ -170,6 +176,21 @@
         }
         if(!cg)return;
         var fd=function(x){if(!x)return '';if(/^\d{8}$/.test(x))return x.slice(4,6)+'/'+x.slice(6);var t=new Date(x);return isNaN(t)?'':String(t.getMonth()+1).padStart(2,'0')+'/'+String(t.getDate()).padStart(2,'0')};
+        var nlist=function(items){return '<ol class="clist">'+items.map(function(x,i){
+            var meta=[x.source,fd(x.date)].filter(Boolean).join(' · ');
+            return '<li class="citem"><span class="rank">'+(i+1)+'</span><div class="cbody"><a class="ct" href="'+esc(x.url)+'" target="_blank" rel="noopener">'+esc(x.title)+'</a>'+
+              '<div class="co">'+esc(x.desc)+'</div>'+(meta?'<div class="cm"><span>'+esc(meta)+'</span></div>':'')+'</div></li>'}).join('')+'</ol>'};
+        if(nv.hot&&nv.hot.keywords&&nv.hot.keywords.length){
+          var H=nv.hot.keywords,hel=document.createElement('div');hel.className='card nvhot';
+          hel.innerHTML='<div class="nvhead"><div class="label">네이버 · 지금 뜨는 검색어로 찾은 글</div><div class="filters nvkw" role="group" aria-label="급상승 검색어">'+
+            H.map(function(k,i){return '<button type="button" data-i="'+i+'" aria-pressed="'+(i===0)+'"><span class="mono">'+(i+1)+'</span>'+esc(k.keyword)+(k.traffic?'<small>'+esc(k.traffic)+'</small>':'')+'</button>'}).join('')+
+            '</div></div><div class="nvcols"></div><div class="note">검색어: '+esc(nv.hot.source)+'(검색량 많은 순) · 글: 출처 NAVER 검색, '+esc(nv.hot.sort)+' 그대로 · '+esc(nv.updated)+'</div>';
+          var cols=hel.querySelector('.nvcols'),show=function(i){var k=H[i];
+            cols.innerHTML=[['news','뉴스'],['blog','블로그'],['cafe','카페']].map(function(c){var it=k[c[0]]||[];
+              return '<div class="nvcol"><div class="label">네이버 '+c[1]+' · "'+esc(k.keyword)+'"</div>'+(it.length?nlist(it):'<p class="note">결과 없음</p>')+'</div>'}).join('')};
+          hel.querySelectorAll('.nvkw button').forEach(function(b){b.onclick=function(){hel.querySelectorAll('.nvkw button').forEach(function(x){x.setAttribute('aria-pressed',String(x===b))});show(+b.dataset.i)}});
+          show(0);cg.appendChild(hel);
+        }
         [['news','네이버 뉴스'],['blog','네이버 블로그'],['cafe','네이버 카페']].forEach(function(k){
           var b=nv[k[0]];if(!b||!b.items||!b.items.length)return;
           var el=document.createElement('div');el.className='card ccol';
