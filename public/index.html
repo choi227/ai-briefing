@@ -9,6 +9,9 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2314161b'/%3E%3Ctext x='16' y='21' font-family='monospace' font-size='13' font-weight='700' fill='white' text-anchor='middle'%3EAI%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@500;700;800;900&family=IBM+Plex+Sans+KR:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<script>
+(function(){var t=null;try{t=localStorage.getItem('brief-theme')}catch(e){}if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)})();
+</script>
 <style>
 /* Layout: 12칸 벤토 그리드. 요약(헤드라인·시장·한 줄) → 뉴스 카드 그리드(분야 필터) → 트렌딩(순위 막대 + 분포 패널) → 할 일·지난 호 */
 :root{
@@ -277,6 +280,13 @@ main>section .oneline .pill{background:var(--surface);color:var(--muted);border-
 .nvcols .ct:hover{color:var(--violet,var(--accent))}
 .nvcols .co{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin-top:4px;line-height:1.5;height:3em}
 .nvcols .cm{margin-top:6px;height:1.5em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;display:block}
+
+/* 기본·다크 모드 전환 */
+.hctl{margin-left:auto;display:flex;flex-direction:column;align-items:flex-end;gap:6px}
+.hctl .datenav{margin-left:0}
+.themeseg{padding:2px}
+.themeseg button{font-size:12px;padding:3px 10px;display:inline-flex;align-items:center;gap:5px}
+@media (max-width:900px){.hctl{margin-left:0;flex-direction:row;align-items:center;flex-wrap:wrap}}
 </style>
 
 </head>
@@ -285,10 +295,15 @@ main>section .oneline .pill{background:var(--surface);color:var(--muted);border-
   <div class="wrap">
     <div class="row1">
       <div class="brand"><span class="mark">AI</span>모닝 브리핑</div>
+      <div class="hctl">
       <div class="datenav" aria-label="날짜 이동">
         <button type="button" id="prev" disabled aria-label="이전 호">‹</button>
         <span id="issueLabel">불러오는 중</span>
         <button type="button" id="next" disabled aria-label="다음 호">›</button>
+      </div>
+      <div class="seg themeseg" role="group" aria-label="화면 모드">
+        <button type="button" data-t="light" aria-pressed="false"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>기본</button><button type="button" data-t="system" aria-pressed="true"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>시스템</button><button type="button" data-t="dark" aria-pressed="false"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>다크</button>
+      </div>
       </div>
     </div>
     <nav class="tabs" aria-label="섹션">

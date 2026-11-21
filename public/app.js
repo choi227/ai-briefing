@@ -309,3 +309,16 @@
     addEventListener('hashchange',route);
   }).catch(function(){app.innerHTML='<p class="loading">브리핑 목록을 불러오지 못했어요. 잠시 후 새로고침해 주세요</p>'});
 })();
+
+// 기본·시스템·다크 모드 버튼 (이 브라우저에 기억, 처음엔 시스템)
+(function(){
+  var root=document.documentElement,seg=document.querySelector('.themeseg');
+  if(!seg)return;
+  var pick=function(){var t=null;try{t=localStorage.getItem('brief-theme')}catch(e){}return t==='light'||t==='dark'?t:'system'};
+  var apply=function(t){if(t==='system')root.removeAttribute('data-theme');else root.setAttribute('data-theme',t);
+    seg.querySelectorAll('button').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.t===t))});
+    var m=document.querySelector('meta[name="theme-color"]');if(m)m.content=getComputedStyle(document.body).backgroundColor};
+  seg.querySelectorAll('button').forEach(function(b){b.onclick=function(){try{localStorage.setItem('brief-theme',b.dataset.t)}catch(e){}apply(b.dataset.t)}});
+  var mq=matchMedia('(prefers-color-scheme: dark)');if(mq.addEventListener)mq.addEventListener('change',function(){apply(pick())});
+  apply(pick());
+})();
