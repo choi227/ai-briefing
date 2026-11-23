@@ -1,0 +1,972 @@
+{
+ "date": "2026-11-23",
+ "issue": 5,
+ "weekday": "월",
+ "headline": {
+  "kicker": "오늘의 헤드라인 · 스타트업",
+  "title": "싼 AI 추론 업체 일부가 이용자 키를 훔쳐봤다… OpenRouter, 업체 3곳 퇴출",
+  "body": "보안업체 Dragos가 가짜 자격증명을 넣은 AI 요청 약 200만 건으로 추론 업체들을 시험한 결과, 최소 3곳이 침해된 상태였고 가장 큰 사례에서는 미끼 AWS 키 수백 개가 빼돌려졌어요. OpenRouter는 일부는 이번 결과 때문에, 일부는 예방 차원에서 업체 3곳을 내보내고 엔드포인트 125개의 '데이터 미보관(ZDR)' 인증을 거둬들였어요.",
+  "figures": [
+   {
+    "value": "약 200만 건",
+    "label": "Dragos 시험 요청"
+   },
+   {
+    "value": "3곳",
+    "label": "퇴출된 추론 업체"
+   },
+   {
+    "value": "125개",
+    "label": "ZDR 인증 취소 엔드포인트"
+   }
+  ],
+  "source": {
+   "name": "The Decoder",
+   "url": "https://the-decoder.com/security-researchers-show-how-cheap-ai-inference-providers-steal-keys-and-snoop-on-users/"
+  }
+ },
+ "market": {
+  "label": "밤사이 미국 시장 · 최근 거래일(11/20) 종가",
+  "rows": [
+   {
+    "name": "나스닥",
+    "change": -5.28
+   },
+   {
+    "name": "S&P 500",
+    "change": -3.7
+   },
+   {
+    "name": "필라델피아 반도체",
+    "change": -10.73
+   },
+   {
+    "name": "엔비디아",
+    "change": -14.0
+   }
+  ],
+  "note": "주말이라 지난 금요일(11/20) 종가 그대로예요. 엔비디아 14%, 필라델피아 반도체지수 10.7% 하락이 이번 주 출발점이에요.",
+  "source": {
+   "name": "StockAnalysis",
+   "url": "https://stockanalysis.com/news/nasdaq-100-ends-just-short-of-bear-market/"
+  }
+ },
+ "oneline": {
+  "text": "AI 요청이 거쳐 가는 중간 업체들에서 키와 프롬프트가 새어 나간 사실이 잇따라 드러나, AI 공급망 보안이 주말의 화두였어요.",
+  "tags": [
+   "#AI공급망보안",
+   "#OpenRouter",
+   "#Signal",
+   "#앤트로픽IPO"
+  ]
+ },
+ "news": [
+  {
+   "cat": "startup",
+   "featured": true,
+   "title": "Together AI, 코딩 에이전트가 올린 자격증명 탓에 프롬프트 샘플 유출",
+   "summary": "AI 코딩 에이전트가 비공개 Hugging Face 저장소 자격증명을 공개 GitHub 저장소에 커밋했고, 외부인이 이를 써서 MiniMax M3·GLM-5.2·Kimi K2.6 프롬프트 샘플을 내려받았어요. Together AI는 새 계정의 기본값을 데이터 미보관(ZDR)으로 바꿨어요.",
+   "source": "Unite.AI",
+   "url": "https://www.unite.ai/together-ai-discloses-prompt-leak-after-coding-agent-exposed-credential/"
+  },
+  {
+   "cat": "invest",
+   "featured": true,
+   "title": "앤트로픽, IPO 주관사 22곳에 '경쟁사 일 6개월 제한' 요구",
+   "summary": "로이터 보도를 인용한 기사에 따르면 일부 주관사는 딜팀을 시니어 뱅커 4명으로 묶고, OpenAI·Cursor·DeepSeek·Hugging Face 같은 경쟁사 업무를 6개월 제한받았어요. 은행 수수료는 5억 달러를 넘었고, 주가는 첫날 17% 오른 뒤 11/20 8.5% 내렸어요.",
+   "source": "Unite.AI (로이터 인용)",
+   "url": "https://www.unite.ai/anthropic-sought-limits-on-ipo-deal-teams-and-work-with-rivals/"
+  },
+  {
+   "cat": "policy",
+   "title": "Signal, AI 감시를 '존재적 위협'이라며 모바일 스크린샷 제한",
+   "summary": "Signal이 안드로이드·iOS 앱에서 스크린샷을 막기 시작했어요. 메러디스 휘태커 대표는 운영체제에 들어오는 에이전트형 AI가 Signal의 프라이버시 보장을 무너뜨린다며, 이번 조치는 불완전한 대책이라고 밝혔어요.",
+   "source": "TechCrunch",
+   "url": "https://techcrunch.com/2026/11/21/signal-restricts-mobile-screenshots-as-it-confronts-existential-threat-of-ai-surveillance/"
+  },
+  {
+   "cat": "invest",
+   "title": "아마존, AI 영상 모델 스타트업 Decart를 75억 달러에 인수 임박",
+   "summary": "FT가 토요일 보도한 내용으로, 창업 3년 된 이스라엘 스타트업 Decart는 다른 곳보다 빠르게 도는 영상 모델에 집중해 왔어요. 본문은 유료라 요약 설명만 확인했어요.",
+   "source": "The Information (FT 인용)",
+   "url": "https://www.theinformation.com/briefings/amazon-nearing-7-5-billion-purchase-decart"
+  },
+  {
+   "cat": "model",
+   "title": "인도 Sarvam, 엔터프라이즈 에이전트용 오픈 가중치 Sarvam-105B-1711 공개",
+   "summary": "105B 전문가 혼합(활성 10.3B) 모델의 후속 학습 버전으로, 4비트 NVFP4 버전(65GB)은 96GB GPU 한 장에 들어가요. Tau2 46.2→85.5 등 점수는 회사 자체 측정 기준이에요.",
+   "source": "Unite.AI",
+   "url": "https://www.unite.ai/sarvam-ai-releases-open-weight-105b-checkpoint-for-enterprise-agents/"
+  },
+  {
+   "cat": "startup",
+   "title": "Perplexity, 웹 변화를 에이전트에 웹훅으로 알려 주는 Monitor API 출시",
+   "summary": "15분~주 단위로 검색을 자동 반복해 새 소식만 골라 보내요. 가격은 1,000회 실행당 1달러이고, 60개 주제 초기 시험에서 Firecrawl·Exa보다 새 페이지를 더 찾았다는 건 회사 내부 결과예요.",
+   "source": "The Decoder",
+   "url": "https://the-decoder.com/perplexitys-new-monitor-api-turns-web-search-from-a-one-off-query-into-a-nonstop-watchdog/"
+  },
+  {
+   "cat": "chip",
+   "title": "머스크 \"테슬라 AI5 칩은 옵티머스용, 차는 AI4 유지\"",
+   "summary": "머스크는 11/22 X 답글에서 AI5를 로봇 옵티머스에 쓰고, 차량은 AI4로도 사람을 넘는 자율주행이 충분하다고 했어요. AI5가 약 12배 연산이라는 말엔 비교 기준이 없었어요.",
+   "source": "Unite.AI",
+   "url": "https://www.unite.ai/musk-allocates-ai5-to-optimus-leaving-tesla-cars-on-ai4/"
+  }
+ ],
+ "trending": {
+  "label": "github.com/trending 전체 15개 · 11/23 09:25 읽기",
+  "repos": [
+   {
+    "name": "elementalsouls/Claude-BugHunter",
+    "today": 1794,
+    "total": 15897,
+    "lang": "Python",
+    "skill": true,
+    "desc": "버그 헌팅·레드팀용 Claude Code 스킬 묶음(스킬 82개)"
+   },
+   {
+    "name": "firecrawl/firecrawl",
+    "today": 999,
+    "total": 206108,
+    "lang": "TypeScript",
+    "skill": false,
+    "desc": "검색·스크래핑·550여 데이터 소스를 API 하나로"
+   },
+   {
+    "name": "obra/superpowers",
+    "today": 884,
+    "total": 323660,
+    "lang": "Shell",
+    "skill": true,
+    "desc": "에이전트 스킬 프레임워크이자 개발 방법론"
+   },
+   {
+    "name": "HKUDS/CLI-Anything",
+    "today": 767,
+    "total": 62021,
+    "lang": "Python",
+    "skill": false,
+    "desc": "어떤 소프트웨어든 CLI로 에이전트가 쓰게 만드는 도구"
+   },
+   {
+    "name": "mjmirza/app-store-compliance",
+    "today": 724,
+    "total": 3337,
+    "lang": "Shell",
+    "skill": false,
+    "desc": "앱스토어·구글플레이 심사 거절 대비 체크리스트"
+   },
+   {
+    "name": "cathrynlavery/diagram-design",
+    "today": 582,
+    "total": 69760,
+    "lang": "HTML",
+    "skill": true,
+    "desc": "코딩 에이전트용 다이어그램 스킬(45종 HTML/SVG)"
+   },
+   {
+    "name": "toeverything/AFFiNE",
+    "today": 577,
+    "total": 76236,
+    "lang": "TypeScript",
+    "skill": false,
+    "desc": "프라이버시 중심 오픈소스 지식 베이스"
+   },
+   {
+    "name": "mvanhorn/last30days-skill",
+    "today": 566,
+    "total": 71948,
+    "lang": "Python",
+    "skill": true,
+    "desc": "레딧·X·유튜브·HN 등에서 주제를 조사해 요약하는 스킬"
+   },
+   {
+    "name": "jingyaogong/minimind",
+    "today": 488,
+    "total": 68112,
+    "lang": "Python",
+    "skill": false,
+    "desc": "6,400만 파라미터 LLM을 두 시간 만에 처음부터 학습"
+   },
+   {
+    "name": "Tracer-Cloud/opensre",
+    "today": 450,
+    "total": 13954,
+    "lang": "Python",
+    "skill": false,
+    "desc": "CI/CD 안정성을 지키는 오픈소스 에이전트"
+   }
+  ],
+  "categories": {
+   "title": "분야 분포 · 트렌딩 15개",
+   "items": [
+    {
+     "name": "에이전트 스킬",
+     "count": 5
+    },
+    {
+     "name": "에이전트 도구·인프라",
+     "count": 5
+    },
+    {
+     "name": "기타",
+     "count": 5
+    }
+   ]
+  },
+  "languages": [
+   {
+    "name": "Python",
+    "count": 6
+   },
+   {
+    "name": "TypeScript",
+    "count": 4
+   },
+   {
+    "name": "Shell",
+    "count": 2
+   },
+   {
+    "name": "C",
+    "count": 1
+   },
+   {
+    "name": "C++",
+    "count": 1
+   },
+   {
+    "name": "HTML",
+    "count": 1
+   }
+  ],
+  "insight": "오늘 읽은 목록이 어제와 저장소·별 수까지 똑같아 <strong>갱신 지연</strong>이 의심돼요. 어제 목록 기준으로 보시고, 15개 중 5개가 코딩 에이전트 스킬 저장소예요."
+ },
+ "community": {
+  "label": "HN · GeekNews · HF 논문 · dev.to · 11/23 09:25 KST",
+  "items": [
+   {
+    "source": "hn",
+    "title": "87% of the Anthropic power will come from gas and 11% from coal in 2028",
+    "title_ko": "2028년 앤트로픽 전력의 87%는 가스, 11%는 석탄에서",
+    "url": "https://betterdatacenterproject.com/2026/11/16/how-ai-is-powered-a-breakdown-of-byop-and-grid-power/",
+    "discuss": "https://news.ycombinator.com/item?id=50597612",
+    "points": 862,
+    "comments": 868
+   },
+   {
+    "source": "hn",
+    "title": "Perplexity and Intelligence",
+    "title_ko": "Perplexity와 지능",
+    "url": "https://openai.com/index/perplexity-and-intelligence/",
+    "discuss": "https://news.ycombinator.com/item?id=50601525",
+    "points": 456,
+    "comments": 308
+   },
+   {
+    "source": "hn",
+    "title": "Show HN: I built a game where you are an LLM's subagent",
+    "title_ko": "LLM의 서브에이전트가 되어 보는 게임을 만들었어요",
+    "url": "https://github.com/gulivan/worker755",
+    "discuss": "https://news.ycombinator.com/item?id=50599762",
+    "points": 264,
+    "comments": 60
+   },
+   {
+    "source": "hn",
+    "title": "A Beginner's Guide to Local AI with Inkling, Qwen, and Unsloth",
+    "title_ko": "Inkling·Qwen·Unsloth로 시작하는 로컬 AI 입문",
+    "url": "https://www.gpupartner.com/blog/beginners-guide-local-ai-inkling-qwen-unsloth",
+    "discuss": "https://news.ycombinator.com/item?id=50603845",
+    "points": 152,
+    "comments": 56
+   },
+   {
+    "source": "hn",
+    "title": "Agent swarm trying to solve P vs. NP",
+    "title_ko": "P 대 NP 문제에 도전하는 에이전트 군단",
+    "url": "https://pequalnp.com/",
+    "discuss": "https://news.ycombinator.com/item?id=50604314",
+    "points": 76,
+    "comments": 68
+   },
+   {
+    "source": "gn",
+    "title": "Claude Code 팀이 검증을 바라보는 방식",
+    "title_ko": "Claude Code 팀이 검증을 바라보는 방식",
+    "url": "https://claude.dev/blog/how-the-claude-code-team-thinks-about-verification/",
+    "discuss": "https://news.hada.io/topic?id=37359",
+    "points": 40,
+    "comments": 1
+   },
+   {
+    "source": "gn",
+    "title": "LLM을 활용한 리버스 엔지니어링",
+    "title_ko": "LLM을 활용한 리버스 엔지니어링",
+    "url": "https://www.slowchronicle.com/posts/llm-assisted-reverse-engineering",
+    "discuss": "https://news.hada.io/topic?id=37466",
+    "points": 25,
+    "comments": 1
+   },
+   {
+    "source": "gn",
+    "title": "AGI 다음에는 무엇이 올까?",
+    "title_ko": "AGI 다음에는 무엇이 올까?",
+    "url": "https://institute.deepmind.com/essays/what-comes-after-agi/",
+    "discuss": "https://news.hada.io/topic?id=37558",
+    "points": 4,
+    "comments": 1
+   },
+   {
+    "source": "hf",
+    "title": "WeVisForensics: Self-Evolving Agent for Omni AI-Generated Video Detection",
+    "title_ko": "WeVisForensics: AI 생성 영상을 잡아내는 자기 진화 에이전트",
+    "url": "https://huggingface.co/papers/2611.21373",
+    "discuss": "https://huggingface.co/papers/2611.21373",
+    "points": 56,
+    "comments": 3
+   },
+   {
+    "source": "hf",
+    "title": "Mind2Act World: A Diagnostic Benchmark for Embodied Mind, Physical Action, and Mind-Action Composition in Robotic Manipulation",
+    "title_ko": "Mind2Act World: 로봇 조작의 사고·행동 진단 벤치마크",
+    "url": "https://huggingface.co/papers/2611.26444",
+    "discuss": "https://huggingface.co/papers/2611.26444",
+    "points": 53,
+    "comments": 4
+   },
+   {
+    "source": "hf",
+    "title": "WeMM-Video: Pushing the Frontiers of Open-Source Omni-Modal Video Understanding",
+    "title_ko": "WeMM-Video: 오픈소스 옴니모달 영상 이해 모델",
+    "url": "https://huggingface.co/papers/2611.26409",
+    "discuss": "https://huggingface.co/papers/2611.26409",
+    "points": 45,
+    "comments": 3
+   },
+   {
+    "source": "dev",
+    "title": "I Made My RAG Safer. It Got Worse Under Load",
+    "title_ko": "RAG를 더 안전하게 만들었더니 부하에서 나빠졌다",
+    "url": "https://dev.to/ayush_singh_9b0d83152be5b/i-made-my-rag-safer-it-got-worse-under-load-3olm",
+    "discuss": "https://dev.to/ayush_singh_9b0d83152be5b/i-made-my-rag-safer-it-got-worse-under-load-3olm",
+    "points": 29,
+    "comments": 29
+   },
+   {
+    "source": "dev",
+    "title": "I built AI agents that apply to jobs. The forms were harder than the AI.",
+    "title_ko": "입사 지원하는 AI 에이전트를 만들었더니 AI보다 양식이 더 어려웠다",
+    "url": "https://dev.to/hirescoot/i-built-ai-agents-that-apply-to-jobs-the-forms-were-harder-than-the-ai-37h4",
+    "discuss": "https://dev.to/hirescoot/i-built-ai-agents-that-apply-to-jobs-the-forms-were-harder-than-the-ai-37h4",
+    "points": 16,
+    "comments": 9
+   },
+   {
+    "source": "dev",
+    "title": "Local AI Code Review Before a PR: Tools That Catch Bugs Before You Push",
+    "title_ko": "PR 전 로컬 AI 코드 리뷰: 푸시 전에 버그 잡는 도구들",
+    "url": "https://dev.to/dev_kiran/local-ai-code-review-before-a-pr-tools-that-catch-bugs-before-you-push-b8e",
+    "discuss": "https://dev.to/dev_kiran/local-ai-code-review-before-a-pr-tools-that-catch-bugs-before-you-push-b8e",
+    "points": 11,
+    "comments": 3
+   }
+  ]
+ },
+ "todo": [
+  "쓰고 있는 AI API 중개 서비스(OpenRouter 등)의 데이터 미보관(ZDR) 설정 확인해 보기",
+  "GeekNews의 'Claude Code 팀이 검증을 바라보는 방식' 글 훑어보기",
+  "HN의 'LLM 서브에이전트 게임' 한 판 해 보기"
+ ],
+ "searchtrend": {
+  "label": "AI 서비스 검색 관심도 · 구글 트렌드 한국 · 최근 7일",
+  "dates": [
+   "11/16",
+   "11/17",
+   "11/18",
+   "11/19",
+   "11/20",
+   "11/21",
+   "11/22",
+   "11/23"
+  ],
+  "keywords": [
+   {
+    "name": "Gemini",
+    "series": [
+     65.2,
+     62.5,
+     61.9,
+     63.5,
+     58.5,
+     47.2,
+     46.8,
+     74.0
+    ],
+    "avg": 60.0
+   },
+   {
+    "name": "ChatGPT",
+    "series": [
+     53.4,
+     51.8,
+     52.9,
+     49.3,
+     46.2,
+     37.7,
+     37.7,
+     58.0
+    ],
+    "avg": 48.4
+   },
+   {
+    "name": "Claude",
+    "series": [
+     48.8,
+     47.2,
+     47.1,
+     44.5,
+     42.4,
+     33.8,
+     33.5,
+     66.0
+    ],
+    "avg": 45.4
+   },
+   {
+    "name": "Grok",
+    "series": [
+     4.8,
+     4.8,
+     5.4,
+     4.5,
+     4.3,
+     4.6,
+     3.8,
+     4.0
+    ],
+    "avg": 4.5
+   },
+   {
+    "name": "Perplexity",
+    "series": [
+     2.4,
+     2.2,
+     1.8,
+     1.5,
+     1.8,
+     1.1,
+     1.8,
+     0.0
+    ],
+    "avg": 1.6
+   }
+  ],
+  "rising": [
+   {
+    "query": "인공 일반 지능",
+    "value": 1050
+   }
+  ]
+ },
+ "youtube": {
+  "label": "검색어 없이 유튜브 지역별 인기 순위 그대로 · 11/23 09:24 수집",
+  "collected": "11/23 09:24 KST",
+  "regions": {
+   "KR": {
+    "name": "한국",
+    "videos": [
+     {
+      "id": "izlRpHOlgFE",
+      "title": "≪무기 강화하는 게임≫ 드디어...전설의 검 강화성공!!!!!!!",
+      "channel": "혜안",
+      "subs": 3130000,
+      "views": 1369000,
+      "likes": 21092,
+      "published": "2026-11-21T10:10:45Z",
+      "seconds": 2057,
+      "ratio": 0.44,
+      "rank": 3
+     },
+     {
+      "id": "XKYp0bYquv4",
+      "title": "난 못해 (Feat. 이병철)",
+      "channel": "Private Story - Topic",
+      "subs": 282,
+      "views": 596549,
+      "likes": 7370,
+      "published": "2026-11-18T03:01:56Z",
+      "seconds": 251,
+      "ratio": 2115.42,
+      "rank": 4
+     },
+     {
+      "id": "u201uSiHiko",
+      "title": "멸망전 팀 결정 마지막날 클리드에게 선수들 다 뺏긴 맵교ㅋㅋㅋ",
+      "channel": "튜브김민교",
+      "subs": 814000,
+      "views": 330938,
+      "likes": 876,
+      "published": "2026-11-22T09:58:49Z",
+      "seconds": 3766,
+      "ratio": 0.41,
+      "rank": 5
+     },
+     {
+      "id": "eZ_slVaJ9lo",
+      "title": "Please Be Happy",
+      "channel": "Roy Kim - Topic",
+      "subs": 1070,
+      "views": 38045,
+      "likes": 713,
+      "published": "2026-11-22T09:00:29Z",
+      "seconds": 241,
+      "ratio": 35.56,
+      "rank": 6
+     },
+     {
+      "id": "utP5cFNvBs4",
+      "title": "감스트 GTA6 오픈런!! 웃긴 장면 모음 ㅋㅋㅋ",
+      "channel": "감스트GAMST",
+      "subs": 3070000,
+      "views": 1752765,
+      "likes": 6907,
+      "published": "2026-11-21T11:50:27Z",
+      "seconds": 860,
+      "ratio": 0.57,
+      "rank": 7
+     },
+     {
+      "id": "FVNI7zBuk-4",
+      "title": "베스티(BESTie) - 연애의 조건(Love Options) | Suit Dance | 수트댄스 | Performance | 4K",
+      "channel": "1theK Originals - 원더케이 오리지널",
+      "subs": 2550000,
+      "views": 1834697,
+      "likes": 54077,
+      "published": "2026-11-20T09:00:15Z",
+      "seconds": 204,
+      "ratio": 0.72,
+      "rank": 8
+     },
+     {
+      "id": "mCd3lzBY5Uw",
+      "title": "금단의 기술",
+      "channel": "PAKA",
+      "subs": 786000,
+      "views": 375111,
+      "likes": 1340,
+      "published": "2026-11-22T08:30:11Z",
+      "seconds": 1504,
+      "ratio": 0.48,
+      "rank": 9
+     },
+     {
+      "id": "LOLXD85SThc",
+      "title": "Do you know (2026 Version)",
+      "channel": "SOMEDAY - Topic",
+      "subs": 908,
+      "views": 949815,
+      "likes": 20107,
+      "published": "2026-11-17T09:04:44Z",
+      "seconds": 245,
+      "ratio": 1046.05,
+      "rank": 10
+     },
+     {
+      "id": "ks4cTu5dNgM",
+      "title": "입단했습니다",
+      "channel": "괴물쥐 유튜브",
+      "subs": 1210000,
+      "views": 819674,
+      "likes": 2512,
+      "published": "2026-11-21T13:00:10Z",
+      "seconds": 2233,
+      "ratio": 0.68,
+      "rank": 11
+     },
+     {
+      "id": "hwD4dOfPobI",
+      "title": "특급 용병 불렀습니다.. \"돌아왔구나 존 스미스!!\"｜멸망전 EP.03",
+      "channel": "저라뎃 JUSTLIKETHAT",
+      "subs": 730000,
+      "views": 233200,
+      "likes": 743,
+      "published": "2026-11-22T08:23:38Z",
+      "seconds": 3081,
+      "ratio": 0.32,
+      "rank": 13
+     }
+    ],
+    "shorts": [
+     {
+      "id": "IQI2qaqHFlg",
+      "title": "GiiiRIP",
+      "channel": "BIGBANG - Topic",
+      "subs": 244000,
+      "views": 3075660,
+      "likes": 116112,
+      "published": "2026-11-20T05:02:15Z",
+      "seconds": 165,
+      "ratio": 12.61,
+      "rank": 1
+     },
+     {
+      "id": "pVFdva-Ifns",
+      "title": "추성훈 vs 크리스 리벤 [Official Trailer]",
+      "channel": "블랙컴뱃",
+      "subs": 783000,
+      "views": 1091043,
+      "likes": 4030,
+      "published": "2026-11-19T08:40:26Z",
+      "seconds": 125,
+      "ratio": 1.39,
+      "rank": 2
+     },
+     {
+      "id": "nnffnIqaTrk",
+      "title": "ICONIC",
+      "channel": "CL (from 2NE1) - Topic",
+      "subs": 10600,
+      "views": 87119,
+      "likes": 1233,
+      "published": "2026-11-20T09:03:05Z",
+      "seconds": 143,
+      "ratio": 8.22,
+      "rank": 12
+     },
+     {
+      "id": "Z8ehh3ANZak",
+      "title": "BABY ANGEL",
+      "channel": "NAYEON - Topic",
+      "subs": 344000,
+      "views": 352943,
+      "likes": 14634,
+      "published": "2026-11-20T05:02:23Z",
+      "seconds": 135,
+      "ratio": 1.03,
+      "rank": 14
+     },
+     {
+      "id": "i3xU56BTjhs",
+      "title": "KISS N TELL",
+      "channel": "aespa - Topic",
+      "subs": 7100,
+      "views": 17532,
+      "likes": 108,
+      "published": "2026-11-19T15:00:24Z",
+      "seconds": 166,
+      "ratio": 2.47,
+      "rank": 20
+     },
+     {
+      "id": "A_H1EH6p4A0",
+      "title": "CL - ‘ICONIC’ M/V",
+      "channel": "THEBLACKLABEL",
+      "subs": 4350000,
+      "views": 8169311,
+      "likes": null,
+      "published": "2026-11-20T08:59:07Z",
+      "seconds": 160,
+      "ratio": 1.88,
+      "rank": 24
+     },
+     {
+      "id": "9OE7nhqfo70",
+      "title": "That′s Not It",
+      "channel": "Kim Siwon - Topic",
+      "subs": 2050,
+      "views": 102714,
+      "likes": 3347,
+      "published": "2026-11-19T03:01:57Z",
+      "seconds": 170,
+      "ratio": 50.1,
+      "rank": 28
+     },
+     {
+      "id": "0JQ9k6kcKVs",
+      "title": "NAYEON “BABY ANGEL” M/V",
+      "channel": "JYP Entertainment",
+      "subs": 32300000,
+      "views": 9777371,
+      "likes": 211567,
+      "published": "2026-11-20T05:00:03Z",
+      "seconds": 141,
+      "ratio": 0.3,
+      "rank": 30
+     },
+     {
+      "id": "4EBsTi__6n8",
+      "title": "쏭쏭핑송",
+      "channel": "Catch! Teenieping - Topic",
+      "subs": 55300,
+      "views": 72822,
+      "likes": 725,
+      "published": "2026-11-17T03:04:42Z",
+      "seconds": 99,
+      "ratio": 1.32,
+      "rank": 60
+     },
+     {
+      "id": "C4Ynks_2zyg",
+      "title": "Ready to Love",
+      "channel": "MINAMI - Topic",
+      "subs": 239,
+      "views": 154641,
+      "likes": 2480,
+      "published": "2026-11-18T09:02:40Z",
+      "seconds": 170,
+      "ratio": 647.03,
+      "rank": 66
+     }
+    ]
+   },
+   "US": {
+    "name": "미국",
+    "videos": [
+     {
+      "id": "UWa8xqMLwhw",
+      "title": "Christmas Songs Playlist 🎅  Top Christmas Songs of All Time Playlist 🎄 Best Christmas Music 2027",
+      "channel": "Christmas Songs and Carols - Love to Sing",
+      "subs": 3060000,
+      "views": 452712,
+      "likes": 1169,
+      "published": "2026-11-21T14:45:19Z",
+      "seconds": 9153,
+      "ratio": 0.15,
+      "rank": 1
+     },
+     {
+      "id": "qEF9Q0cIjDQ",
+      "title": "Top 50 Christmas Songs of All Time 🎅🏼 Classic Christmas Music with Fireplace 🎅🏼 Merry Christmas 2027",
+      "channel": "Merry Christmas Vibes",
+      "subs": 8520,
+      "views": 387291,
+      "likes": 638,
+      "published": "2026-11-21T01:38:02Z",
+      "seconds": 8622,
+      "ratio": 45.46,
+      "rank": 3
+     },
+     {
+      "id": "Ra6sNe8s2Hc",
+      "title": "If You Steal a Car in GTA 6, I’ll Pay For It!",
+      "channel": "MrBeast Gaming",
+      "subs": 62700000,
+      "views": 20275003,
+      "likes": 233717,
+      "published": "2026-11-21T20:45:16Z",
+      "seconds": 1273,
+      "ratio": 0.32,
+      "rank": 5
+     },
+     {
+      "id": "1lOvAvBlzSM",
+      "title": "Anuel AA | SE TOCO EL T*TITO CON MI GL*CK (Video Oficial)",
+      "channel": "Anuel AA",
+      "subs": 30100000,
+      "views": 7704141,
+      "likes": 274030,
+      "published": "2026-11-20T20:51:51Z",
+      "seconds": 265,
+      "ratio": 0.26,
+      "rank": 6
+     },
+     {
+      "id": "dWOYaZ2gb9I",
+      "title": "BHOGI Official Trailer | Sharwanand | Sampath Nandi | Anupama | Dimple Hayathi | Bheems Ceciroleo",
+      "channel": "Aditya Music",
+      "subs": 37000000,
+      "views": 866803,
+      "likes": 14006,
+      "published": "2026-11-22T15:14:14Z",
+      "seconds": 186,
+      "ratio": 0.02,
+      "rank": 7
+     },
+     {
+      "id": "izXcd-bU72k",
+      "title": "🔴EXPLORING VICE CITY - GTA 6 STREAM (EASTER EGGS)",
+      "channel": "IShowSpeed",
+      "subs": 63200000,
+      "views": 9194970,
+      "likes": 116656,
+      "published": "2026-11-22T22:05:59Z",
+      "seconds": 20703,
+      "ratio": 0.15,
+      "rank": 8
+     },
+     {
+      "id": "9Z4ZL6LWvXA",
+      "title": "SANDAUN LEWA (Meri Waromo)",
+      "channel": "JNR VIGI - Topic",
+      "subs": 2530,
+      "views": 17193,
+      "likes": 395,
+      "published": "2026-11-19T10:03:59Z",
+      "seconds": 242,
+      "ratio": 6.8,
+      "rank": 9
+     },
+     {
+      "id": "6iJnsH4424g",
+      "title": "Wait... Netflix's Steps Is Actually GOOD??",
+      "channel": "DazzReviews",
+      "subs": 646000,
+      "views": 61206,
+      "likes": 2164,
+      "published": "2026-11-22T17:15:33Z",
+      "seconds": 1412,
+      "ratio": 0.09,
+      "rank": 10
+     },
+     {
+      "id": "Mfc6Um3v8tc",
+      "title": "Killing Cutelings To Feed The Masses [Can Em All 1/2]",
+      "channel": "Joe Bart Games",
+      "subs": 2830000,
+      "views": 278617,
+      "likes": 5924,
+      "published": "2026-11-22T15:49:48Z",
+      "seconds": 7181,
+      "ratio": 0.1,
+      "rank": 11
+     },
+     {
+      "id": "kajwjHIQRPs",
+      "title": "Enrique Iglesias, Descemer Bueno, Gente De Zona - Bailando (Lyrics)",
+      "channel": "7clouds Tropical",
+      "subs": 62600,
+      "views": 296845,
+      "likes": 2376,
+      "published": "2026-11-22T00:30:28Z",
+      "seconds": 244,
+      "ratio": 4.74,
+      "rank": 12
+     }
+    ],
+    "shorts": [
+     {
+      "id": "3aUdjso171Q",
+      "title": "Heal: A Princess of Wales Special | Official Trailer | NBC",
+      "channel": "NBC",
+      "subs": 1290000,
+      "views": 198190,
+      "likes": 1668,
+      "published": "2026-11-21T11:59:48Z",
+      "seconds": 102,
+      "ratio": 0.15,
+      "rank": 2
+     },
+     {
+      "id": "UZKnefrEP-E",
+      "title": "Al & Stella Return | Financial Audit Trailer",
+      "channel": "Caleb Hammer - Clips",
+      "subs": 270000,
+      "views": 17058,
+      "likes": 567,
+      "published": "2026-11-22T20:04:29Z",
+      "seconds": 93,
+      "ratio": 0.06,
+      "rank": 4
+     },
+     {
+      "id": "-1Doa1tmSAY",
+      "title": "Flunky x Jammin - Otendewa ( Official Audio )",
+      "channel": "Flunky",
+      "subs": 4780,
+      "views": 206126,
+      "likes": 3493,
+      "published": "2026-11-06T12:59:25Z",
+      "seconds": 145,
+      "ratio": 43.12,
+      "rank": 14
+     },
+     {
+      "id": "HlhBZvKChWU",
+      "title": "Family Time - Steam Gameplay Trailer",
+      "channel": "sgthale - Indie Dev!",
+      "subs": 283000,
+      "views": 327876,
+      "likes": 24946,
+      "published": "2026-11-22T03:13:44Z",
+      "seconds": 67,
+      "ratio": 1.16,
+      "rank": 15
+     },
+     {
+      "id": "ySUWIqERwt8",
+      "title": "🇷🇺 TO RUSSIA WITH LOVE — OFFICIAL TRAILER!",
+      "channel": "Mr. Newberger's AI Funnies",
+      "subs": 240000,
+      "views": 8529,
+      "likes": 1383,
+      "published": "2026-11-22T21:06:27Z",
+      "seconds": 61,
+      "ratio": 0.04,
+      "rank": 18
+     },
+     {
+      "id": "FXtPpXbrNkQ",
+      "title": "Michael Bublé - Holly Jolly Christmas (Official Lyric Video)",
+      "channel": "Michael Bublé",
+      "subs": 4410000,
+      "views": 437859,
+      "likes": 2369,
+      "published": "2026-11-13T16:22:24Z",
+      "seconds": 119,
+      "ratio": 0.1,
+      "rank": 22
+     },
+     {
+      "id": "p8i5SiUrpjg",
+      "title": "Quando Rondo -  HEAD GONE [Official Video]",
+      "channel": "Quando Rondo",
+      "subs": 2410000,
+      "views": 1159904,
+      "likes": 55091,
+      "published": "2026-11-20T04:52:19Z",
+      "seconds": 173,
+      "ratio": 0.48,
+      "rank": 40
+     },
+     {
+      "id": "NCsjZDuX_YM",
+      "title": "Jingle Bells Christmas Music - Jingle Bells",
+      "channel": "JingleBellsVEVO",
+      "subs": 472,
+      "views": 768333,
+      "likes": 1375,
+      "published": "2026-11-06T23:03:26Z",
+      "seconds": 153,
+      "ratio": 1627.82,
+      "rank": 48
+     },
+     {
+      "id": "rSKTZdvd-yI",
+      "title": "Anime Adventures | Misty Village Teaser",
+      "channel": "Gomu",
+      "subs": 122000,
+      "views": 26790,
+      "likes": 3424,
+      "published": "2026-11-22T22:30:08Z",
+      "seconds": 109,
+      "ratio": 0.22,
+      "rank": 77
+     },
+     {
+      "id": "2_s1s8nujSI",
+      "title": "GTA 6 Has Become A Meme",
+      "channel": "Lessons in Meme Culture",
+      "subs": 2270000,
+      "views": 634196,
+      "likes": 13275,
+      "published": "2026-11-22T12:00:20Z",
+      "seconds": 159,
+      "ratio": 0.28,
+      "rank": 104
+     }
+    ]
+   }
+  }
+ }
+}
