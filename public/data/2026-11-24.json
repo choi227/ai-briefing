@@ -1,0 +1,961 @@
+{
+ "date": "2026-11-24",
+ "issue": 6,
+ "weekday": "화",
+ "headline": {
+  "kicker": "오늘의 헤드라인 · 반도체",
+  "title": "엔비디아, 물러났던 젠슨 황을 CEO로 복귀시켜… 주가 31% 급등",
+  "body": "엔비디아가 11/23 젠슨 황을 CEO로 다시 앉혔어요. 세마포는 트럼프 대통령이 이사회 회의에 직접 전화로 참여해 복귀를 밀었다고 보도했어요. 이날 엔비디아 주가는 31.48% 올라 165.05달러로 마감했고, 황은 12월 1일 하원 3개 위원회에서 비공개 증언할 예정이에요.",
+  "figures": [
+   {
+    "value": "+31.48%",
+    "label": "엔비디아 11/23 종가 등락"
+   },
+   {
+    "value": "33년",
+    "label": "황의 CEO 재임 기간"
+   },
+   {
+    "value": "12/1",
+    "label": "하원 비공개 증언 예정"
+   }
+  ],
+  "source": {
+   "name": "TechCrunch",
+   "url": "https://techcrunch.com/2026/11/23/trump-reportedly-called-into-nvidia-board-meeting-to-advocate-for-huangs-return/"
+  }
+ },
+ "market": {
+  "label": "밤사이 미국 시장 · 11/23 종가",
+  "rows": [
+   {
+    "name": "나스닥",
+    "change": 6.51
+   },
+   {
+    "name": "S&P 500",
+    "change": 4.74
+   },
+   {
+    "name": "엔비디아",
+    "change": 31.48
+   }
+  ],
+  "note": "황 복귀 소식에 엔비디아가 시가총액 1조 달러 가까이 늘며 급반등했어요. 필라델피아 반도체지수는 확인한 기사에 없어 뺐어요.",
+  "source": {
+   "name": "The Motley Fool",
+   "url": "https://www.fool.com/coverage/stock-market-today/2026/11/23/stock-market-today-nov-23-nvidia-surges-31-adding-nearly-usd1-trillion-in-market-value-as-jensen-huang-reclaims-ceo-role/"
+  }
+ },
+ "oneline": {
+  "text": "젠슨 황의 복귀 하루 만에 엔비디아와 나스닥이 크게 반등했고, AI 에이전트가 양자 알고리즘과 CPU 설계까지 해냈다는 발표가 이어졌어요.",
+  "tags": [
+   "#젠슨황복귀",
+   "#나스닥반등",
+   "#Sierra",
+   "#AI에이전트"
+  ]
+ },
+ "news": [
+  {
+   "cat": "invest",
+   "featured": true,
+   "title": "고객 응대 AI Sierra, 반년 만에 기업가치 두 배 300억 달러",
+   "summary": "브렛 테일러의 Sierra가 Greenoaks·Lightspeed 주도로 17.5억 달러 시리즈 F를 받았어요. 성과 기반 요금제 덕에 연 환산 매출이 5개월 만에 4억 달러로 두 배가 됐다고 회사가 밝혔어요.",
+   "source": "TechCrunch",
+   "url": "https://techcrunch.com/2026/11/23/sierra-doubles-valuation-to-30b-within-six-months-as-demand-for-ai-in-cx-takes-off/"
+  },
+  {
+   "cat": "model",
+   "featured": true,
+   "title": "구글 딥마인드, 에이전트 팀이 더 빠른 양자 알고리즘 찾고 Lean으로 증명",
+   "summary": "Gemini 4 에이전트 팀이 핵융합 회로 계산 비용을 11.8배 줄이고 필요한 큐비트를 5,650개에서 4,338개로 낮췄어요. 모든 결과는 Lean 정리 증명기로 검증했어요(회사 발표 기준).",
+   "source": "Google DeepMind",
+   "url": "https://deepmind.google/blog/finding-faster-quantum-algorithms-with-agents-and-formal-verification/"
+  },
+  {
+   "cat": "policy",
+   "title": "버지니아·오리건주, Grok 성적 딥페이크 문제로 SpaceX 소송",
+   "summary": "두 주 법무장관이 X·xAI·Grok을 가진 SpaceX Super Intelligence Corp를 상대로 조율된 소송을 따로 냈어요. Grok의 '스파이시 모드'가 실제 사진을 동의 없이 나체 이미지로 바꾼다는 게 핵심 주장이에요.",
+   "source": "The Next Web",
+   "url": "https://thenextweb.com/news/virginia-oregon-spacex-grok-lawsuit"
+  },
+  {
+   "cat": "chip",
+   "title": "AI 에이전트가 처음부터 설계한 CPU 'Frostbite', 전력당 성능 4.59배 주장",
+   "summary": "스타트업 Architect Labs가 새 명령어 집합까지 AI가 만든 CPU를 공개했어요. 다만 아직 칩으로 만들지 않은 7nm 설계의 시뮬레이션 결과이고, AI 맞춤 조정이 없는 15개 작업에선 3.83배로 줄어요.",
+   "source": "Tom's Hardware",
+   "url": "https://www.tomshardware.com/tech-industry/semiconductors/ai-agents-design-an-entirely-new-cpu-architecture-from-scratch-startup-claims-frostbite-posts-4-59x-the-performance-per-watt-of-an-in-order-core-in-pre-silicon-tests"
+  },
+  {
+   "cat": "model",
+   "title": "구글, AI 에이전트 전용 격리 실행 환경 Agent Compute Engine 발표",
+   "summary": "에이전트를 작은 가상머신에 가두고, API 키 같은 자격증명은 샌드박스 밖 게이트웨이가 넣어 주는 방식이에요. 아직 출시 전이고 가격도 미정이며, 프리뷰는 몇 달 안에 나올 예정이에요.",
+   "source": "InfoQ",
+   "url": "https://www.infoq.com/news/2026/11/google-agent-compute-engine/"
+  },
+  {
+   "cat": "market",
+   "title": "SpaceX, AI 데이터센터에 740억 달러… 전기요금은 누가 내나",
+   "summary": "애리조나 약 500억, 텍사스 스타베이스 240억 달러 이상을 들여 AI 슈퍼컴퓨터 단지를 짓는 계획이에요. 애리조나 단지는 다 지으면 6,000MW를 써서 지역 전력회사 역대 최대 수요의 3분의 2에 가까워요.",
+   "source": "Fortune",
+   "url": "https://fortune.com/2026/11/22/spacex-74-billion-ai-data-centers-texas-arizona-who-pays/"
+  }
+ ],
+ "trending": {
+  "label": "github.com/trending 전체 15개 · 11/24 09:25 읽기",
+  "repos": [
+   {
+    "name": "elementalsouls/Claude-BugHunter",
+    "today": 1794,
+    "total": 15897,
+    "lang": "Python",
+    "skill": true,
+    "desc": "버그 헌팅·레드팀용 Claude Code 스킬 묶음(스킬 82개)"
+   },
+   {
+    "name": "firecrawl/firecrawl",
+    "today": 999,
+    "total": 206108,
+    "lang": "TypeScript",
+    "skill": false,
+    "desc": "검색·스크래핑·550여 데이터 소스를 API 하나로"
+   },
+   {
+    "name": "obra/superpowers",
+    "today": 884,
+    "total": 323660,
+    "lang": "Shell",
+    "skill": true,
+    "desc": "에이전트 스킬 프레임워크이자 개발 방법론"
+   },
+   {
+    "name": "HKUDS/CLI-Anything",
+    "today": 767,
+    "total": 62021,
+    "lang": "Python",
+    "skill": false,
+    "desc": "어떤 소프트웨어든 CLI로 에이전트가 쓰게 만드는 도구"
+   },
+   {
+    "name": "mjmirza/app-store-compliance",
+    "today": 724,
+    "total": 3337,
+    "lang": "Shell",
+    "skill": false,
+    "desc": "앱스토어·구글플레이 심사 거절 대비 체크리스트"
+   },
+   {
+    "name": "cathrynlavery/diagram-design",
+    "today": 582,
+    "total": 69760,
+    "lang": "HTML",
+    "skill": true,
+    "desc": "코딩 에이전트용 다이어그램 스킬(45종 HTML/SVG)"
+   },
+   {
+    "name": "toeverything/AFFiNE",
+    "today": 577,
+    "total": 76236,
+    "lang": "TypeScript",
+    "skill": false,
+    "desc": "프라이버시 중심 오픈소스 지식 베이스"
+   },
+   {
+    "name": "mvanhorn/last30days-skill",
+    "today": 566,
+    "total": 71948,
+    "lang": "Python",
+    "skill": true,
+    "desc": "레딧·X·유튜브·HN 등에서 주제를 조사해 요약하는 스킬"
+   },
+   {
+    "name": "jingyaogong/minimind",
+    "today": 488,
+    "total": 68112,
+    "lang": "Python",
+    "skill": false,
+    "desc": "6,400만 파라미터 LLM을 두 시간 만에 처음부터 학습"
+   },
+   {
+    "name": "Tracer-Cloud/opensre",
+    "today": 450,
+    "total": 13954,
+    "lang": "Python",
+    "skill": false,
+    "desc": "CI/CD 안정성을 지키는 오픈소스 에이전트"
+   }
+  ],
+  "categories": {
+   "title": "분야 분포 · 트렌딩 15개",
+   "items": [
+    {
+     "name": "에이전트 스킬",
+     "count": 5
+    },
+    {
+     "name": "에이전트 도구·인프라",
+     "count": 5
+    },
+    {
+     "name": "기타",
+     "count": 5
+    }
+   ]
+  },
+  "languages": [
+   {
+    "name": "Python",
+    "count": 6
+   },
+   {
+    "name": "TypeScript",
+    "count": 4
+   },
+   {
+    "name": "Shell",
+    "count": 2
+   },
+   {
+    "name": "C",
+    "count": 1
+   },
+   {
+    "name": "C++",
+    "count": 1
+   },
+   {
+    "name": "HTML",
+    "count": 1
+   }
+  ],
+  "insight": "사흘째 저장소·별 수가 11/22 목록과 똑같이 읽혀 <strong>갱신 지연</strong>이 이어지고 있어요. 11/22 기준 목록으로 봐 주세요."
+ },
+ "community": {
+  "label": "HN · GeekNews · HF 논문 · dev.to · 11/24 09:30 KST",
+  "items": [
+   {
+    "source": "hn",
+    "title": "Nvidia Reinstates Jensen Huang as CEO",
+    "title_ko": "엔비디아, 젠슨 황 CEO 복귀",
+    "url": "https://www.cnbc.com/2026/11/23/nvidia-jensen-huang-ceo.html",
+    "discuss": "https://news.ycombinator.com/item?id=50611576",
+    "points": 1969,
+    "comments": 3061
+   },
+   {
+    "source": "hn",
+    "title": "GLM-5.4: Toward generalized coding with our first loop transformer",
+    "title_ko": "GLM-5.4: 첫 루프 트랜스포머로 범용 코딩에 다가가기",
+    "url": "https://z.ai/blog/glm-5.4",
+    "discuss": "https://news.ycombinator.com/item?id=50609685",
+    "points": 1031,
+    "comments": 336
+   },
+   {
+    "source": "hn",
+    "title": "Dario is hyping the dangers so OSS models are illegal and he stays in control",
+    "title_ko": "얀 르쿤 \"다리오는 오픈소스 모델을 불법화하려고 위험을 과장한다\"",
+    "url": "https://twitter.com/ylecun/status/2124550037912920090",
+    "discuss": "https://news.ycombinator.com/item?id=50615308",
+    "points": 1027,
+    "comments": 595
+   },
+   {
+    "source": "hn",
+    "title": "VP ≠ VNP over Every Field",
+    "title_ko": "모든 체에서 VP ≠ VNP (앤트로픽 형식 수학 저장소)",
+    "url": "https://github.com/anthropics/formal-math/tree/main/vp-vnp",
+    "discuss": "https://news.ycombinator.com/item?id=50620102",
+    "points": 184,
+    "comments": 140
+   },
+   {
+    "source": "hn",
+    "title": "NariQ: BF16-level Qwen3.8-27B in a 10 GB file",
+    "title_ko": "NariQ: BF16급 Qwen3.8-27B를 10GB 파일에",
+    "url": "https://huggingface.co/nari-labs/Qwen3.8-27B-NariQ-GGUF",
+    "discuss": "https://news.ycombinator.com/item?id=50611402",
+    "points": 110,
+    "comments": 21
+   },
+   {
+    "source": "gn",
+    "title": "AI 시대, 컴퓨터공학과 소프트웨어공학적 사고의 가치",
+    "title_ko": "AI 시대, 컴퓨터공학과 소프트웨어공학적 사고의 가치",
+    "url": "https://okky.kr/articles/1566284",
+    "discuss": "https://news.hada.io/topic?id=37637",
+    "points": 13,
+    "comments": 1
+   },
+   {
+    "source": "gn",
+    "title": "Words - AI 응답을 실시간으로 표시하는 고속 Markdown 렌더러",
+    "title_ko": "Words - AI 응답을 실시간으로 표시하는 고속 Markdown 렌더러",
+    "url": "https://diffs.com/words",
+    "discuss": "https://news.hada.io/topic?id=37676",
+    "points": 5,
+    "comments": 0
+   },
+   {
+    "source": "gn",
+    "title": "퍼플렉시티와 지능: OpenAI의 공동 개발 한계선 제안",
+    "title_ko": "퍼플렉시티와 지능: OpenAI의 공동 개발 한계선 제안",
+    "url": "https://openai.com/index/perplexity-and-intelligence/",
+    "discuss": "https://news.hada.io/topic?id=37649",
+    "points": 3,
+    "comments": 1
+   },
+   {
+    "source": "hf",
+    "title": "cmHC: Balancing Stream Mixing in Hyper-Connections via Geometric Contraction",
+    "title_ko": "cmHC: 기하학적 수축으로 하이퍼커넥션의 스트림 혼합 균형 잡기",
+    "url": "https://huggingface.co/papers/2611.27193",
+    "discuss": "https://huggingface.co/papers/2611.27193",
+    "points": 88,
+    "comments": 2
+   },
+   {
+    "source": "hf",
+    "title": "Non-penetrating World Models",
+    "title_ko": "서로 뚫고 지나가지 않는 월드 모델",
+    "url": "https://huggingface.co/papers/2611.27963",
+    "discuss": "https://huggingface.co/papers/2611.27963",
+    "points": 54,
+    "comments": 2
+   },
+   {
+    "source": "hf",
+    "title": "Clover-35B-A3B-Preview Technical Report",
+    "title_ko": "Clover-35B-A3B-Preview 기술 보고서",
+    "url": "https://huggingface.co/papers/2611.24636",
+    "discuss": "https://huggingface.co/papers/2611.24636",
+    "points": 36,
+    "comments": 3
+   },
+   {
+    "source": "dev",
+    "title": "8 Best MCP Gateways",
+    "title_ko": "MCP 게이트웨이 8선",
+    "url": "https://dev.to/varshithvhegde/8-best-mcp-gateways-4ddf",
+    "discuss": "https://dev.to/varshithvhegde/8-best-mcp-gateways-4ddf",
+    "points": 25,
+    "comments": 6
+   },
+   {
+    "source": "dev",
+    "title": "Your agent's tool registry is an API. Stop reviewing it like config.",
+    "title_ko": "에이전트의 도구 목록은 API다, 설정 파일처럼 리뷰하지 마라",
+    "url": "https://dev.to/cyclopt_dimitrisk/your-agents-tool-registry-is-an-api-stop-reviewing-it-like-config-40op",
+    "discuss": "https://dev.to/cyclopt_dimitrisk/your-agents-tool-registry-is-an-api-stop-reviewing-it-like-config-40op",
+    "points": 21,
+    "comments": 19
+   },
+   {
+    "source": "dev",
+    "title": "Three Agents, One Repo: The Coordination Problem Nobody Designed For",
+    "title_ko": "에이전트 셋, 저장소 하나: 아무도 설계하지 않은 협업 문제",
+    "url": "https://dev.to/debashish_ghosal/three-agents-one-repo-the-coordination-problem-nobody-designed-for-4ag3",
+    "discuss": "https://dev.to/debashish_ghosal/three-agents-one-repo-the-coordination-problem-nobody-designed-for-4ag3",
+    "points": 17,
+    "comments": 3
+   }
+  ]
+ },
+ "todo": [
+  "딥마인드 양자 알고리즘 글에서 'Lean으로 검증'이 어떤 단계에 쓰였는지 찾아보기",
+  "HN의 르쿤-다리오 논쟁 스레드에서 오픈소스 규제 찬반 근거 한 가지씩 적어 보기",
+  "dev.to의 'MCP 게이트웨이 8선'에서 써 볼 만한 도구 하나 골라 보기"
+ ],
+ "searchtrend": {
+  "label": "AI 서비스 검색 관심도 · 구글 트렌드 한국 · 최근 7일",
+  "dates": [
+   "11/17",
+   "11/18",
+   "11/19",
+   "11/20",
+   "11/21",
+   "11/22",
+   "11/23",
+   "11/24"
+  ],
+  "keywords": [
+   {
+    "name": "Gemini",
+    "series": [
+     59.1,
+     59.0,
+     60.3,
+     55.0,
+     44.8,
+     49.7,
+     61.0,
+     81.0
+    ],
+    "avg": 58.7
+   },
+   {
+    "name": "ChatGPT",
+    "series": [
+     48.8,
+     49.9,
+     46.2,
+     43.8,
+     35.8,
+     40.0,
+     46.0,
+     68.0
+    ],
+    "avg": 47.3
+   },
+   {
+    "name": "Claude",
+    "series": [
+     44.7,
+     44.6,
+     41.7,
+     39.8,
+     32.0,
+     35.3,
+     44.6,
+     67.0
+    ],
+    "avg": 43.7
+   },
+   {
+    "name": "Grok",
+    "series": [
+     4.2,
+     5.4,
+     4.2,
+     4.0,
+     3.8,
+     3.9,
+     8.2,
+     8.0
+    ],
+    "avg": 5.2
+   },
+   {
+    "name": "Perplexity",
+    "series": [
+     2.0,
+     1.9,
+     1.7,
+     1.8,
+     1.0,
+     1.5,
+     2.2,
+     5.0
+    ],
+    "avg": 2.1
+   }
+  ],
+  "rising": [
+   {
+    "query": "인공 일반 지능",
+    "value": 950
+   }
+  ]
+ },
+ "youtube": {
+  "label": "검색어 없이 유튜브 지역별 인기 순위 그대로 · 11/24 09:24 수집",
+  "collected": "11/24 09:24 KST",
+  "regions": {
+   "KR": {
+    "name": "한국",
+    "videos": [
+     {
+      "id": "Oae1ZnQ15gQ",
+      "title": "[어벤져스: 둠스데이] 메인 예고편",
+      "channel": "MarvelKorea",
+      "subs": 383000,
+      "views": 1424252,
+      "likes": 28619,
+      "published": "2026-11-23T14:19:20Z",
+      "seconds": 204,
+      "ratio": 3.72,
+      "rank": 2
+     },
+     {
+      "id": "2zznukklrfs",
+      "title": "멸망전 기간 갑자기 떡상해버린 김민교의 수상한 폼",
+      "channel": "튜브김민교",
+      "subs": 814000,
+      "views": 342058,
+      "likes": 870,
+      "published": "2026-11-23T09:55:38Z",
+      "seconds": 2628,
+      "ratio": 0.42,
+      "rank": 3
+     },
+     {
+      "id": "eZ_slVaJ9lo",
+      "title": "Please Be Happy",
+      "channel": "Roy Kim - Topic",
+      "subs": 1070,
+      "views": 173920,
+      "likes": 1366,
+      "published": "2026-11-22T09:00:29Z",
+      "seconds": 241,
+      "ratio": 162.54,
+      "rank": 4
+     },
+     {
+      "id": "8lp4WukqcT4",
+      "title": "드디어 떴습니다. ≪어벤져스: 둠스데이≫ 메인 예고편 나노 분석 & 떡밥 총정리",
+      "channel": "무비띵크_Movie Think",
+      "subs": 604000,
+      "views": 82359,
+      "likes": 6767,
+      "published": "2026-11-23T21:33:23Z",
+      "seconds": 1202,
+      "ratio": 0.14,
+      "rank": 5
+     },
+     {
+      "id": "-RKmRsz6Jys",
+      "title": "*23,426*개의 벽돌을 직접 만들고 설치해 피라미드를 만드는 게임",
+      "channel": "YouTube지누",
+      "subs": 338000,
+      "views": 327713,
+      "likes": 2932,
+      "published": "2026-11-23T04:42:16Z",
+      "seconds": 2439,
+      "ratio": 0.97,
+      "rank": 6
+     },
+     {
+      "id": "mXveasS7ZRY",
+      "title": "한해, 문세윤 - Love Again (feat. 제나 of RESCENE)｜야외녹음실｜Beyond the Studio｜LIVE",
+      "channel": "1theK Live - 원더케이 라이브",
+      "subs": 461000,
+      "views": 277798,
+      "likes": 11523,
+      "published": "2026-11-23T09:00:17Z",
+      "seconds": 236,
+      "ratio": 0.6,
+      "rank": 7
+     },
+     {
+      "id": "LfIXOqxQCsg",
+      "title": "AVENGERS DOOMSDAY FINAL TRAILER REACTION!",
+      "channel": "The Media Knights",
+      "subs": 590000,
+      "views": 512549,
+      "likes": 15284,
+      "published": "2026-11-23T15:15:34Z",
+      "seconds": 818,
+      "ratio": 0.87,
+      "rank": 8
+     },
+     {
+      "id": "tbWDrwQOq60",
+      "title": "비비는 맛",
+      "channel": "괴물쥐 유튜브",
+      "subs": 1210000,
+      "views": 660379,
+      "likes": 1801,
+      "published": "2026-11-22T14:00:21Z",
+      "seconds": 1467,
+      "ratio": 0.55,
+      "rank": 9
+     },
+     {
+      "id": "bXGa92yC3t4",
+      "title": "I Wish I’d Never Been Happy",
+      "channel": "Cha ga eul - Topic",
+      "subs": 2800,
+      "views": 36580,
+      "likes": 209,
+      "published": "2026-11-21T09:02:13Z",
+      "seconds": 208,
+      "ratio": 13.06,
+      "rank": 10
+     },
+     {
+      "id": "6h40zNOPiy8",
+      "title": "\"그럼 나가\" 하루 만에 터져버린 팀..?｜멸망전 EP.05",
+      "channel": "저라뎃 JUSTLIKETHAT",
+      "subs": 731000,
+      "views": 179536,
+      "likes": 762,
+      "published": "2026-11-23T14:17:57Z",
+      "seconds": 4258,
+      "ratio": 0.25,
+      "rank": 11
+     }
+    ],
+    "shorts": [
+     {
+      "id": "IQI2qaqHFlg",
+      "title": "GiiiRIP",
+      "channel": "BIGBANG - Topic",
+      "subs": 244000,
+      "views": 3986091,
+      "likes": 126368,
+      "published": "2026-11-20T05:02:15Z",
+      "seconds": 165,
+      "ratio": 16.34,
+      "rank": 1
+     },
+     {
+      "id": "5e5Q-_ZdEK4",
+      "title": "Irony of Love",
+      "channel": "Yiya - Topic",
+      "subs": 79,
+      "views": 115235,
+      "likes": 5881,
+      "published": "2026-11-23T03:03:08Z",
+      "seconds": 140,
+      "ratio": 1458.67,
+      "rank": 12
+     },
+     {
+      "id": "i3xU56BTjhs",
+      "title": "KISS N TELL",
+      "channel": "aespa - Topic",
+      "subs": 7100,
+      "views": 43305,
+      "likes": 179,
+      "published": "2026-11-19T15:00:24Z",
+      "seconds": 166,
+      "ratio": 6.1,
+      "rank": 20
+     },
+     {
+      "id": "QsqQRGR_bcQ",
+      "title": "晩餐歌 (만찬가) Covered by IVE GAEUL",
+      "channel": "IVE",
+      "subs": 5420000,
+      "views": 421286,
+      "likes": 28122,
+      "published": "2026-11-23T12:24:17Z",
+      "seconds": 151,
+      "ratio": 0.08,
+      "rank": 30
+     },
+     {
+      "id": "nnffnIqaTrk",
+      "title": "ICONIC",
+      "channel": "CL (from 2NE1) - Topic",
+      "subs": 10600,
+      "views": 139083,
+      "likes": 1723,
+      "published": "2026-11-20T09:03:05Z",
+      "seconds": 143,
+      "ratio": 13.12,
+      "rank": 32
+     },
+     {
+      "id": "Z8ehh3ANZak",
+      "title": "BABY ANGEL",
+      "channel": "NAYEON - Topic",
+      "subs": 344000,
+      "views": 496032,
+      "likes": 17627,
+      "published": "2026-11-20T05:02:23Z",
+      "seconds": 135,
+      "ratio": 1.44,
+      "rank": 40
+     },
+     {
+      "id": "UKuRGUsQwLk",
+      "title": "Angel Bite (BEOMGYU Ver.)",
+      "channel": "TOMORROW X TOGETHER - Topic",
+      "subs": 84000,
+      "views": 137792,
+      "likes": 15097,
+      "published": "2026-11-23T05:00:05Z",
+      "seconds": 167,
+      "ratio": 1.64,
+      "rank": 48
+     },
+     {
+      "id": "A_H1EH6p4A0",
+      "title": "CL - ‘ICONIC’ M/V",
+      "channel": "THEBLACKLABEL",
+      "subs": 4350000,
+      "views": 10161699,
+      "likes": null,
+      "published": "2026-11-20T08:59:07Z",
+      "seconds": 160,
+      "ratio": 2.34,
+      "rank": 56
+     },
+     {
+      "id": "9OE7nhqfo70",
+      "title": "That′s Not It",
+      "channel": "Kim Siwon - Topic",
+      "subs": 2050,
+      "views": 117090,
+      "likes": 3374,
+      "published": "2026-11-19T03:01:57Z",
+      "seconds": 170,
+      "ratio": 57.12,
+      "rank": 62
+     },
+     {
+      "id": "0JQ9k6kcKVs",
+      "title": "NAYEON “BABY ANGEL” M/V",
+      "channel": "JYP Entertainment",
+      "subs": 32300000,
+      "views": 11476491,
+      "likes": 220862,
+      "published": "2026-11-20T05:00:03Z",
+      "seconds": 141,
+      "ratio": 0.36,
+      "rank": 69
+     }
+    ]
+   },
+   "US": {
+    "name": "미국",
+    "videos": [
+     {
+      "id": "FTQVONPGlus",
+      "title": "Burn This Shit Down (from GTAVI: The Album)",
+      "channel": "Travis Scott - Topic",
+      "subs": 84300,
+      "views": 158008,
+      "likes": 14063,
+      "published": "2026-11-23T14:04:28Z",
+      "seconds": 260,
+      "ratio": 1.87,
+      "rank": 1
+     },
+     {
+      "id": "Wb8Tq_HD4E8",
+      "title": "Avengers: Doomsday | Final Trailer | In Theaters December 18",
+      "channel": "Marvel Entertainment",
+      "subs": 24300000,
+      "views": 27451980,
+      "likes": 1230340,
+      "published": "2026-11-23T14:00:01Z",
+      "seconds": 196,
+      "ratio": 1.13,
+      "rank": 2
+     },
+     {
+      "id": "2pKaKXIyDW0",
+      "title": "GTA 6 just exposed every game critic..",
+      "channel": "Asmongold TV  ",
+      "subs": 4760000,
+      "views": 1735415,
+      "likes": 66556,
+      "published": "2026-11-23T13:15:31Z",
+      "seconds": 3493,
+      "ratio": 0.36,
+      "rank": 3
+     },
+     {
+      "id": "2sUhJahVWyQ",
+      "title": "Travis Scott - Burn This Shit Down [from Grand Theft Auto VI: The Album (Deluxe Edition)]",
+      "channel": "Atlantic Records",
+      "subs": 16100000,
+      "views": 342182,
+      "likes": 13980,
+      "published": "2026-11-23T14:00:35Z",
+      "seconds": 261,
+      "ratio": 0.02,
+      "rank": 4
+     },
+     {
+      "id": "7vkXwEp3oak",
+      "title": "DOOMSDAY FINAL TRAILER | Reaction and Q&A! | New Rockstars",
+      "channel": "New Rockstars",
+      "subs": 4450000,
+      "views": 414909,
+      "likes": 7560,
+      "published": "2026-11-23T18:44:46Z",
+      "seconds": 5359,
+      "ratio": 0.09,
+      "rank": 5
+     },
+     {
+      "id": "qvR50Jh7OmU",
+      "title": "10,000 Players Simulate WORLD WAR in Minecraft",
+      "channel": "Spoke",
+      "subs": 2960000,
+      "views": 1077724,
+      "likes": 81272,
+      "published": "2026-11-23T18:41:51Z",
+      "seconds": 14255,
+      "ratio": 0.36,
+      "rank": 6
+     },
+     {
+      "id": "5WNr3Vmgq0A",
+      "title": "Maluma - Sobrio (Letra/Lyrics)",
+      "channel": "7clouds Spain",
+      "subs": 39400,
+      "views": 434100,
+      "likes": 1068,
+      "published": "2026-11-22T17:30:21Z",
+      "seconds": 202,
+      "ratio": 11.02,
+      "rank": 7
+     },
+     {
+      "id": "2kOH5w8I2FU",
+      "title": "Avengers: Doomsday Final Trailer BREAKDOWN - Easter Eggs You Missed!",
+      "channel": "ScreenCrush",
+      "subs": 1950000,
+      "views": 180594,
+      "likes": 6047,
+      "published": "2026-11-23T20:19:46Z",
+      "seconds": 1676,
+      "ratio": 0.09,
+      "rank": 8
+     },
+     {
+      "id": "KB97gc8GqwU",
+      "title": "DO NOT Cheat in This Game",
+      "channel": "SMii7Y",
+      "subs": 9130000,
+      "views": 418334,
+      "likes": 21988,
+      "published": "2026-11-23T20:43:13Z",
+      "seconds": 3009,
+      "ratio": 0.05,
+      "rank": 9
+     },
+     {
+      "id": "-wNMKJaUE6M",
+      "title": "AVENGERS DOOMSDAY FINAL TRAILER Doctor Doom, X-Men & Every Hidden Detail!",
+      "channel": "Emergency Awesome",
+      "subs": 4790000,
+      "views": 346070,
+      "likes": 7824,
+      "published": "2026-11-23T17:25:01Z",
+      "seconds": 1813,
+      "ratio": 0.07,
+      "rank": 11
+     }
+    ],
+    "shorts": [
+     {
+      "id": "PuMm2jLGz3k",
+      "title": "Pero Nimodo",
+      "channel": "Doble Efecto - Topic",
+      "subs": 3770,
+      "views": 115502,
+      "likes": 1493,
+      "published": "2026-11-18T10:15:46Z",
+      "seconds": 143,
+      "ratio": 30.64,
+      "rank": 10
+     },
+     {
+      "id": "qbXruk-8ig8",
+      "title": "Kevin Gates - Care In The World",
+      "channel": "kevingatesTV",
+      "subs": 9300000,
+      "views": 112209,
+      "likes": 5166,
+      "published": "2026-11-23T02:07:52Z",
+      "seconds": 145,
+      "ratio": 0.01,
+      "rank": 13
+     },
+     {
+      "id": "GotN7bLCgpU",
+      "title": "GTA 6 - What's New In the First Patch?",
+      "channel": "IGN",
+      "subs": 20100000,
+      "views": 255331,
+      "likes": 4017,
+      "published": "2026-11-23T18:57:31Z",
+      "seconds": 74,
+      "ratio": 0.01,
+      "rank": 18
+     },
+     {
+      "id": "Co6mdOPD5j0",
+      "title": "better than ONE.",
+      "channel": "YFN Lucci - Topic",
+      "subs": 13300,
+      "views": 54154,
+      "likes": 1569,
+      "published": "2026-11-20T05:03:28Z",
+      "seconds": 123,
+      "ratio": 4.07,
+      "rank": 30
+     },
+     {
+      "id": "0zIPyHJxEBU",
+      "title": "Kane Rodriguez - Filoso (En Vivo)",
+      "channel": "Kane Rodriguez",
+      "subs": 237000,
+      "views": 240412,
+      "likes": 5463,
+      "published": "2026-11-20T06:00:07Z",
+      "seconds": 170,
+      "ratio": 1.01,
+      "rank": 33
+     },
+     {
+      "id": "-1Doa1tmSAY",
+      "title": "Flunky x Jammin - Otendewa ( Official Audio )",
+      "channel": "Flunky",
+      "subs": 4800,
+      "views": 218712,
+      "likes": 3576,
+      "published": "2026-11-06T12:59:25Z",
+      "seconds": 145,
+      "ratio": 45.56,
+      "rank": 39
+     },
+     {
+      "id": "sDMNuKvCXOc",
+      "title": "TIMBERLAKE — Official Trailer | Apple TV",
+      "channel": "Apple TV",
+      "subs": 2510000,
+      "views": 256455,
+      "likes": 1513,
+      "published": "2026-11-23T13:59:58Z",
+      "seconds": 151,
+      "ratio": 0.1,
+      "rank": 59
+     },
+     {
+      "id": "36a-E7A35F8",
+      "title": "Panchayat Season 5 - Official Trailer | Jitendra Kumar, Raghubir Yadav, Neena Gupta, Sanvikaa",
+      "channel": "Prime Video India",
+      "subs": 39200000,
+      "views": 7909189,
+      "likes": 180444,
+      "published": "2026-11-23T11:29:52Z",
+      "seconds": 157,
+      "ratio": 0.2,
+      "rank": 65
+     },
+     {
+      "id": "Fj-t10GhOUU",
+      "title": "Lord Give Me Patience",
+      "channel": "Release - Topic",
+      "subs": 152,
+      "views": 80593,
+      "likes": 4123,
+      "published": "2026-11-15T02:25:55Z",
+      "seconds": 170,
+      "ratio": 530.22,
+      "rank": 66
+     },
+     {
+      "id": "jBFXw5rcyrk",
+      "title": "Genocida",
+      "channel": "Release - Topic",
+      "subs": 0,
+      "views": 8308,
+      "likes": 661,
+      "published": "2026-11-22T23:56:52Z",
+      "seconds": 80,
+      "ratio": null,
+      "rank": 72
+     }
+    ]
+   }
+  }
+ }
+}
