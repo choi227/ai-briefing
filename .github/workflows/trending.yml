@@ -1,7 +1,7 @@
 name: 트렌딩 수집
 on:
   schedule:
-    - cron: "5 0 * * *"   # 매일 09:05 KST
+    - cron: "7 21 * * *"   # 매일 06:07 KST (GitHub 예약이 밀리는 걸 감안해 새벽에)
   workflow_dispatch:
 permissions:
   contents: write

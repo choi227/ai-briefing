@@ -28,7 +28,7 @@
 - `label`: "AI 서비스 검색 관심도 · 구글 트렌드 한국 · 최근 7일". `trends`가 실패했으면 이 키를 넣지 않는다.
 
 ## 3. GitHub 트렌딩 (`trending`)
-- `git pull` 후 `public/data/trending-raw.json` 을 읽는다. GitHub Actions(트렌딩 수집)가 매일 09:05 KST에 github.com/trending 을 GitHub 서버에서 직접 읽어 저장한 파일이다. `fetched`가 오늘 날짜인지 먼저 확인한다.
+- `git pull` 후 `public/data/trending-raw.json` 을 읽는다. GitHub Actions(트렌딩 수집)가 매일 06:07 KST에 github.com/trending 을 GitHub 서버에서 직접 읽어 저장한 파일이다. `fetched`가 오늘 날짜인지 먼저 확인한다.
 - 오늘 날짜가 아니면(작업 실패 등) `gh api -X POST repos/choi227/ai-briefing/actions/workflows/trending.yml/dispatches -f ref=main` 로(`gh workflow run`은 이 환경에서 막힘) 한 번 다시 돌리고 2~3분 뒤 다시 pull 한다. 그래도 안 되면 그때만 https://github.com/trending 을 웹페이지 읽기로 열되, 캐시된 옛 목록일 수 있으니 전날 호와 같으면 insight에 갱신 지연을 밝힌다. (이 환경의 curl로는 github.com이 막혀 있다.)
 - `label`은 "github.com/trending 전체 N개 · MM/DD HH:MM 수집" (N과 시각은 trending-raw.json 기준).
 - 오늘 받은 별(`today`) 많은 순 상위 10개(목록이 10개 미만이면 전부)를 `repos`에 넣는다. `total`은 누적 별, `lang`은 언어, `desc`는 한국어 한 줄 설명.
