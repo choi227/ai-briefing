@@ -1,118 +1,118 @@
 {
  "source": "https://github.com/trending?since=daily",
- "fetched": "2026-11-26 17:05 KST",
+ "fetched": "2026-11-27 09:21 KST",
  "repos": [
   {
    "name": "elementalsouls/Claude-BugHunter",
-   "today": 1652,
-   "total": 23469,
+   "today": 1597,
+   "total": 24554,
    "lang": "Python",
    "desc": "A Claude Code skill bundle for bug hunting and external red-team work - 85 skills, 16 slash commands, 681 disclosed-report patterns curated across 24 core vulnerability classes, plus enterprise identity + infrastructure attack matrices."
   },
   {
    "name": "obra/superpowers",
-   "today": 903,
-   "total": 326896,
+   "today": 854,
+   "total": 327477,
    "lang": "Shell",
    "desc": "An agentic skills framework & software development methodology that works."
   },
   {
    "name": "HKUDS/CLI-Anything",
-   "today": 1106,
-   "total": 65924,
+   "today": 746,
+   "total": 66351,
    "lang": "Python",
    "desc": "\"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: https://clianything.cc/"
   },
   {
    "name": "jingyaogong/minimind",
-   "today": 826,
-   "total": 71270,
+   "today": 702,
+   "total": 71619,
    "lang": "Python",
    "desc": "🧠 两小时从 0 训出你的 64M 大模型。Train your own 64M LLM from scratch in 2 hours."
   },
   {
    "name": "cursor/plugins",
-   "today": 416,
-   "total": 19621,
+   "today": 270,
+   "total": 19783,
    "lang": "TypeScript",
    "desc": "Cursor plugin specification and official plugins"
   },
   {
    "name": "firecrawl/firecrawl",
-   "today": 1135,
-   "total": 210361,
+   "today": 1046,
+   "total": 210933,
    "lang": "TypeScript",
    "desc": "Knowledge infrastructure to make your agents smarter. Search, scrape and access 550+ data providers through one API."
   },
   {
    "name": "nginx/nginx",
-   "today": 176,
-   "total": 33426,
+   "today": 150,
+   "total": 33521,
    "lang": "C",
    "desc": "The official NGINX Open Source repository."
   },
   {
    "name": "openvinotoolkit/openvino",
-   "today": 191,
-   "total": 12710,
+   "today": 176,
+   "total": 12819,
    "lang": "C++",
    "desc": "OpenVINO™ is an open source toolkit for optimizing and deploying AI inference"
   },
   {
    "name": "cathrynlavery/diagram-design",
-   "today": 1141,
-   "total": 73351,
+   "today": 955,
+   "total": 73834,
    "lang": "HTML",
    "desc": "Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, Qoder, and Pi. 52 diagram types. Self-contained HTML + SVG. No shadows. No Mermaid slop."
   },
   {
    "name": "mvanhorn/last30days-skill",
-   "today": 945,
-   "total": 75340,
+   "today": 759,
+   "total": 75743,
    "lang": "Python",
    "desc": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary"
   },
   {
    "name": "google-labs-code/stitch-skills",
-   "today": 355,
-   "total": 13096,
+   "today": 309,
+   "total": 13287,
    "lang": "TypeScript",
    "desc": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents such as Antigravity, Gemini CLI, Claude Code, Cursor."
   },
   {
    "name": "mjmirza/app-store-compliance",
-   "today": 858,
-   "total": 6657,
+   "today": 562,
+   "total": 7024,
    "lang": "Shell",
-   "desc": "Avoid common App Store and Google Play rejections. Open playbook and pre-submission guard with 124 documented rejection patterns and fixes, privacy manifest and Data safety checks, 114 tracked deadlines (EU AI Act, DSA, COPPA, age laws), and a skill for AI coding agents."
+   "desc": "Avoid common App Store and Google Play rejections. Open playbook and pre-submission guard with 125 documented rejection patterns and fixes, privacy manifest and Data safety checks, 117 tracked deadlines (EU AI Act, DSA, COPPA, age laws), and a skill for AI coding agents."
   },
   {
    "name": "Tracer-Cloud/opensre",
-   "today": 348,
-   "total": 15623,
+   "today": 327,
+   "total": 15816,
    "lang": "Python",
    "desc": "The open-source agent for CI/CD reliability."
   },
   {
    "name": "toeverything/AFFiNE",
-   "today": 574,
-   "total": 78659,
+   "today": 525,
+   "total": 78968,
    "lang": "TypeScript",
    "desc": "There can be more than Notion and Miro. AFFiNE(pronounced [ə‘fain]) is a next-gen knowledge base that brings planning, sorting and creating all together. Privacy first, open-source, customizable and ready to use."
   },
   {
    "name": "XiaoYouChR/Ghost-Downloader-3",
-   "today": 951,
-   "total": 18583,
+   "today": 889,
+   "total": 19101,
    "lang": "Python",
    "desc": "The only downloader you need. 下载器的集大成者。"
   },
   {
    "name": "zhouxiaoka/autoclip",
-   "today": 880,
-   "total": 16497,
+   "today": 774,
+   "total": 16926,
    "lang": "Python",
-   "desc": "AutoClip｜一个链接，一键出片。开源 AI 视频剪辑桌面工具，将播客、访谈、课程等长视频自动剪成短视频，生成字幕、封面和发布文案，适配抖音、小红书、TikTok、Reels 与 YouTube Shorts。Open-source AI video clipping & content repurposing."
+   "desc": "AutoClip｜The open-source OpusClip alternative — local-first AI clipping & MCP server, zero subscriptions. 一个链接，一键出片。开源 AI 视频剪辑桌面工具，将播客、访谈、课程等长视频自动剪成短视频，生成字幕、封面和发布文案，适配抖音、小红书、TikTok、Reels 与 YouTube Shorts。"
   }
  ]
 }
