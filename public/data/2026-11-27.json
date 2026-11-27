@@ -1,0 +1,968 @@
+{
+ "date": "2026-11-27",
+ "issue": 9,
+ "weekday": "금",
+ "headline": {
+  "kicker": "오늘의 헤드라인 · 반도체",
+  "title": "미 FCC, SpaceX의 '우주 AI 데이터센터' 위성 최대 100만 기 승인",
+  "body": "미국 연방통신위원회가 SpaceX의 'Starmind' 위성군을 최대 100만 기까지 허가했어요. 궤도에서 AI 연산을 하는 데이터센터용이에요. 2033년 11월까지 발사를 시작하고 2035년 11월까지 10만 기를 올려야 해요. 지금 궤도에 있는 스타링크 위성은 1만 1천여 기예요.",
+  "figures": [
+   {
+    "value": "100만 기",
+    "label": "승인된 최대 위성 수"
+   },
+   {
+    "value": "10만 기",
+    "label": "2035년 11월까지 배치 의무"
+   },
+   {
+    "value": "1.1만 기",
+    "label": "현재 스타링크 위성"
+   }
+  ],
+  "source": {
+   "name": "Analytics India Magazine",
+   "url": "https://analyticsindiamag.com/ai-news/spacex-gets-us-nod-to-deploy-1-million-satellites-for-orbital-ai-data-centres"
+  }
+ },
+ "market": {
+  "label": "밤사이 미국 시장 · 최근 거래일(11/25) 종가",
+  "rows": [
+   {
+    "name": "나스닥",
+    "change": -0.62
+   },
+   {
+    "name": "S&P 500",
+    "change": -0.25
+   },
+   {
+    "name": "엔비디아",
+    "change": -3.91
+   }
+  ],
+  "note": "11/26은 미국 추수감사절 휴장이라 수요일 종가 그대로예요. 물가 지표와 새 관세안 부담으로 기술주가 약했어요.",
+  "source": {
+   "name": "The Motley Fool",
+   "url": "https://www.fool.com/coverage/stock-market-today/2026/11/25/stock-market-today-nov-25-nvidia-slides-3-9-as-the-market-considers-hot-pce-inflation-data-and-new-tariff-proposals/"
+  }
+ },
+ "oneline": {
+  "text": "AI 데이터센터를 우주로 올리는 허가가 나온 날, 땅 위에선 AI 돈줄이 너무 얽혀 있다는 경고와 신용등급 경고가 함께 나왔어요.",
+  "tags": [
+   "#우주데이터센터",
+   "#엔비디아신용",
+   "#영란은행",
+   "#AI장난감금지"
+  ]
+ },
+ "news": [
+  {
+   "cat": "chip",
+   "featured": true,
+   "title": "S&P, 엔비디아 AA 신용등급을 '하향 검토' 대상에 올려",
+   "summary": "S&P가 11/25 엔비디아 등급 전망을 '안정'에서 '부정적 관찰'로 바꿨어요. 이사회 독립성과 승계 문제가 이유이고, 90일 안에 한 단계 내릴 수 있다고 밝혔어요.",
+   "source": "Unite.AI",
+   "url": "https://www.unite.ai/s-and-p-global-ratings-puts-nvidias-aa-ratings-on-creditwatch/"
+  },
+  {
+   "cat": "market",
+   "featured": true,
+   "title": "영란은행 \"AI 자금 흐름이 복잡하고 순환적이며 불투명해지고 있다\"",
+   "summary": "금융안정보고서에서 빅테크가 올해 3,050억 달러 넘게 채권을 낸다며 위험을 짚었어요. 전 세계 투자등급 채권 발행의 약 8% 규모예요.",
+   "source": "The Next Web",
+   "url": "https://thenextweb.com/news/ai-financing-bank-of-england-financial-stability-hyperscaler-bonds"
+  },
+  {
+   "cat": "policy",
+   "title": "뉴욕주, AI 챗봇 장난감 판매 5년 금지",
+   "summary": "호컬 주지사가 서명한 법으로, 어기면 위반 건당 하루 최대 1만 5천 달러 벌금을 주 법무장관이 물려요. 미성년자 대상 챗봇 제한법도 따로 있어요.",
+   "source": "Engadget",
+   "url": "https://www.engadget.com/2328996/new-york-state-bans-ai-chatbot-toys-for-kids/"
+  },
+  {
+   "cat": "korea",
+   "title": "심텍, AI 메모리 기판 증설에 영구채 1,500억 원씩 두 차례 발행",
+   "summary": "이사회가 11/26 SOCAMM 모듈 기판과 고다층 MSAP 기판 증설을 위한 사모 영구채 2건을 승인했어요. 3분기 잠정 영업이익은 1,018억 원으로 721.6% 늘었어요(감사 전).",
+   "source": "Unite.AI",
+   "url": "https://www.unite.ai/simmtech-approves-two-krw-150b-perpetual-bonds-for-ai-substrate-expansion/"
+  },
+  {
+   "cat": "chip",
+   "title": "로보센스 3분기 라이다 판매 210% 증가, 로봇용이 끌어",
+   "summary": "매출은 6억 7,270만 위안으로 65.2% 늘었고, 1~9월 로봇 등 비차량용 라이다 출하가 423% 늘었어요. 4분기엔 100만 대를 넘길 것으로 회사가 내다봤어요.",
+   "source": "Unite.AI",
+   "url": "https://www.unite.ai/robosense-lidar-sales-surge-as-robotics-and-ai-sensing-expand/"
+  },
+  {
+   "cat": "invest",
+   "title": "의료 AI Tempus, Personalis 인수 위해 3억 8,500만 달러 대출",
+   "summary": "공시에 따르면 대출 3억 8,500만 달러와 한도 대출 1억 1,500만 달러를 확보했어요. Personalis 주주는 현금 약 6억 달러와 주식 약 9억 달러를 받아요.",
+   "source": "Unite.AI",
+   "url": "https://www.unite.ai/tempus-ai-secures-385m-term-loan-facility-to-fund-personalis-deal/"
+  },
+  {
+   "cat": "policy",
+   "title": "폴란드 국방부, 팔란티어와 AI 의사결정 지원 소프트웨어 계약",
+   "summary": "11/27 정오 바르샤바에서 서명할 예정이에요. 계약 금액과 쓰는 부대는 밝히지 않았고, 이달 초 보안·개인정보 우려로 항의 시위도 있었어요.",
+   "source": "The Next Web",
+   "url": "https://thenextweb.com/news/poland-palantir-ai-software-contract"
+  }
+ ],
+ "trending": {
+  "label": "github.com/trending 전체 16개 · 11/27 09:21 수집",
+  "repos": [
+   {
+    "name": "elementalsouls/Claude-BugHunter",
+    "today": 1597,
+    "total": 24554,
+    "lang": "Python",
+    "skill": true,
+    "desc": "버그 헌팅·레드팀용 Claude Code 스킬 묶음(스킬 85개)"
+   },
+   {
+    "name": "firecrawl/firecrawl",
+    "today": 1046,
+    "total": 210933,
+    "lang": "TypeScript",
+    "skill": false,
+    "desc": "검색·스크래핑·550여 데이터 소스를 API 하나로"
+   },
+   {
+    "name": "cathrynlavery/diagram-design",
+    "today": 955,
+    "total": 73834,
+    "lang": "HTML",
+    "skill": true,
+    "desc": "코딩 에이전트용 다이어그램 디자인 스킬(52종)"
+   },
+   {
+    "name": "XiaoYouChR/Ghost-Downloader-3",
+    "today": 889,
+    "total": 19101,
+    "lang": "Python",
+    "skill": false,
+    "desc": "여러 방식을 한데 모은 다운로더"
+   },
+   {
+    "name": "obra/superpowers",
+    "today": 854,
+    "total": 327477,
+    "lang": "Shell",
+    "skill": true,
+    "desc": "에이전트 스킬 프레임워크와 개발 방법론"
+   },
+   {
+    "name": "zhouxiaoka/autoclip",
+    "today": 774,
+    "total": 16926,
+    "lang": "Python",
+    "skill": false,
+    "desc": "긴 영상을 쇼츠로 자르는 로컬 AI 편집 도구(MCP 서버 포함)"
+   },
+   {
+    "name": "mvanhorn/last30days-skill",
+    "today": 759,
+    "total": 75743,
+    "lang": "Python",
+    "skill": true,
+    "desc": "여러 플랫폼을 조사해 요약하는 에이전트 스킬"
+   },
+   {
+    "name": "HKUDS/CLI-Anything",
+    "today": 746,
+    "total": 66351,
+    "lang": "Python",
+    "skill": false,
+    "desc": "모든 소프트웨어를 CLI로 감싸 에이전트가 쓰게 하는 도구"
+   },
+   {
+    "name": "jingyaogong/minimind",
+    "today": 702,
+    "total": 71619,
+    "lang": "Python",
+    "skill": false,
+    "desc": "2시간 만에 64M 파라미터 LLM을 처음부터 학습"
+   },
+   {
+    "name": "mjmirza/app-store-compliance",
+    "today": 562,
+    "total": 7024,
+    "lang": "Shell",
+    "skill": true,
+    "desc": "앱스토어·구글플레이 심사 반려를 막는 점검표와 에이전트 스킬"
+   }
+  ],
+  "categories": {
+   "title": "분야 분포 · 트렌딩 16개",
+   "items": [
+    {
+     "name": "에이전트 스킬",
+     "count": 6
+    },
+    {
+     "name": "에이전트 도구·인프라",
+     "count": 5
+    },
+    {
+     "name": "기타",
+     "count": 5
+    }
+   ]
+  },
+  "languages": [
+   {
+    "name": "Python",
+    "count": 7
+   },
+   {
+    "name": "TypeScript",
+    "count": 4
+   },
+   {
+    "name": "Shell",
+    "count": 2
+   },
+   {
+    "name": "HTML",
+    "count": 1
+   },
+   {
+    "name": "C++",
+    "count": 1
+   },
+   {
+    "name": "C",
+    "count": 1
+   }
+  ],
+  "insight": "나흘째 같은 16개가 자리만 바꾸고 있어요. 1위 Claude-BugHunter도 하루 별이 1,800개대에서 1,597개로 줄어 <strong>열기</strong>가 조금씩 식는 모습이에요."
+ },
+ "community": {
+  "label": "HN · GeekNews · HF 논문 · dev.to · 11/27 09:30 KST",
+  "items": [
+   {
+    "source": "hn",
+    "title": "Holy shit holy shit holy shit holy shit: The magnitude of what's now happening",
+    "title_ko": "스콧 애런슨: 지금 벌어지는 일의 규모",
+    "url": "https://scottaaronson.blog/?p=10379",
+    "discuss": "https://news.ycombinator.com/item?id=50646108",
+    "points": 1971,
+    "comments": 1800
+   },
+   {
+    "source": "hn",
+    "title": "AMD-specific fork of llama.cpp",
+    "title_ko": "AMD 전용으로 갈라진 llama.cpp",
+    "url": "https://devnull.land/amd-specific-llama-cpp",
+    "discuss": "https://news.ycombinator.com/item?id=50657265",
+    "points": 269,
+    "comments": 63
+   },
+   {
+    "source": "hn",
+    "title": "OpenAI may be in cost control mode",
+    "title_ko": "OpenAI가 비용 절감 모드에 들어간 듯하다",
+    "url": "https://micjm.com/blog/openai-is-in-cost-control-mode/",
+    "discuss": "https://news.ycombinator.com/item?id=50652527",
+    "points": 247,
+    "comments": 232
+   },
+   {
+    "source": "hn",
+    "title": "Moat: OpenRouter replacement",
+    "title_ko": "Moat: OpenRouter 대안",
+    "url": "https://commandcode.ai/moat",
+    "discuss": "https://news.ycombinator.com/item?id=50652184",
+    "points": 244,
+    "comments": 138
+   },
+   {
+    "source": "hn",
+    "title": "Google Will Make AI Agents Use Its MCP Servers. The Gmail One Can't Send Email",
+    "title_ko": "구글, AI 에이전트에 자사 MCP 서버를 쓰게 한다… Gmail용은 메일을 못 보낸다",
+    "url": "https://techstackups.com/articles/google-workspace-ai-agents-mcp/",
+    "discuss": "https://news.ycombinator.com/item?id=50653477",
+    "points": 215,
+    "comments": 188
+   },
+   {
+    "source": "gn",
+    "title": "평가는 AI 엔지니어링에서 가장 과소평가된 역량이다",
+    "title_ko": "평가는 AI 엔지니어링에서 가장 과소평가된 역량이다",
+    "url": "https://x.com/divaagurlxw/status/2115418017891020888",
+    "discuss": "https://news.hada.io/topic?id=37745",
+    "points": 25,
+    "comments": 1
+   },
+   {
+    "source": "gn",
+    "title": "세상에, 세상에, 세상에, 세상에: 지금 벌어지는 일의 엄청난 규모",
+    "title_ko": "세상에, 세상에, 세상에, 세상에: 지금 벌어지는 일의 엄청난 규모",
+    "url": "https://scottaaronson.blog/?p=10379",
+    "discuss": "https://news.hada.io/topic?id=37850",
+    "points": 9,
+    "comments": 2
+   },
+   {
+    "source": "gn",
+    "title": "과학자들은 인공지능 에이전트에 대해 어디까지 허용 범위를 정해야 할까요?",
+    "title_ko": "과학자들은 인공지능 에이전트에 대해 어디까지 허용 범위를 정해야 할까요?",
+    "url": "https://huggingface.co/blog/allenai/where-scientists-draw-the-line-on-ai-agents",
+    "discuss": "https://news.hada.io/topic?id=37880",
+    "points": 1,
+    "comments": 0
+   },
+   {
+    "source": "hf",
+    "title": "Real2SimLab: A Unified Platform for Real-to-Simulation Transfer",
+    "title_ko": "Real2SimLab: 현실→시뮬레이션 전이 통합 플랫폼",
+    "url": "https://huggingface.co/papers/2611.34849",
+    "discuss": "https://huggingface.co/papers/2611.34849",
+    "points": 102,
+    "comments": 2
+   },
+   {
+    "source": "hf",
+    "title": "Sage-Med: Scaling Medical Multimodal Intelligence",
+    "title_ko": "Sage-Med: 의료 멀티모달 지능 확장",
+    "url": "https://huggingface.co/papers/2611.34575",
+    "discuss": "https://huggingface.co/papers/2611.34575",
+    "points": 85,
+    "comments": 1
+   },
+   {
+    "source": "hf",
+    "title": "Mixture-of-Loops Transformer",
+    "title_ko": "루프 혼합(Mixture-of-Loops) 트랜스포머",
+    "url": "https://huggingface.co/papers/2611.34923",
+    "discuss": "https://huggingface.co/papers/2611.34923",
+    "points": 59,
+    "comments": 1
+   },
+   {
+    "source": "dev",
+    "title": "I Built AI Test Automation. Today, I Went Back to Manual Testing.",
+    "title_ko": "AI 테스트 자동화를 만들었다가 오늘 수동 테스트로 돌아갔다",
+    "url": "https://dev.to/thethirdcup/i-built-ai-test-automation-today-i-went-back-to-manual-testing-mlh",
+    "discuss": "https://dev.to/thethirdcup/i-built-ai-test-automation-today-i-went-back-to-manual-testing-mlh",
+    "points": 83,
+    "comments": 64
+   },
+   {
+    "source": "dev",
+    "title": "Nostalgia and the AI Productivity Paradox",
+    "title_ko": "향수, 그리고 AI 생산성의 역설",
+    "url": "https://dev.to/gramli/nostalgia-and-the-ai-productivity-paradox-4f33",
+    "discuss": "https://dev.to/gramli/nostalgia-and-the-ai-productivity-paradox-4f33",
+    "points": 60,
+    "comments": 42
+   },
+   {
+    "source": "dev",
+    "title": "On reviewing AI-generated code",
+    "title_ko": "AI가 만든 코드를 리뷰하는 법",
+    "url": "https://dev.to/nfrankel/on-reviewing-ai-generated-code-3olj",
+    "discuss": "https://dev.to/nfrankel/on-reviewing-ai-generated-code-3olj",
+    "points": 15,
+    "comments": 12
+   }
+  ]
+ },
+ "todo": [
+  "우주 데이터센터 기사에서 2033·2035·2038년 의무 일정만 표로 정리해 보기",
+  "HN의 'OpenAI 비용 절감 모드' 글에서 근거로 든 신호 한 가지 찾아보기",
+  "dev.to의 'AI 테스트 자동화에서 수동으로 돌아간 이유' 글의 결론 한 줄 적어 보기"
+ ],
+ "searchtrend": {
+  "label": "AI 서비스 검색 관심도 · 구글 트렌드 한국 · 최근 7일",
+  "dates": [
+   "11/20",
+   "11/21",
+   "11/22",
+   "11/23",
+   "11/24",
+   "11/25",
+   "11/26",
+   "11/27"
+  ],
+  "keywords": [
+   {
+    "name": "Gemini",
+    "series": [
+     55.6,
+     44.8,
+     50.0,
+     66.3,
+     65.6,
+     64.3,
+     56.2,
+     74.0
+    ],
+    "avg": 59.6
+   },
+   {
+    "name": "ChatGPT",
+    "series": [
+     44.1,
+     35.8,
+     40.2,
+     50.5,
+     50.4,
+     48.8,
+     43.2,
+     67.0
+    ],
+    "avg": 47.5
+   },
+   {
+    "name": "Claude",
+    "series": [
+     40.3,
+     32.2,
+     35.5,
+     48.2,
+     48.2,
+     48.1,
+     41.1,
+     69.0
+    ],
+    "avg": 45.3
+   },
+   {
+    "name": "Grok",
+    "series": [
+     4.2,
+     4.4,
+     4.2,
+     9.2,
+     4.7,
+     4.3,
+     3.9,
+     4.0
+    ],
+    "avg": 4.9
+   },
+   {
+    "name": "Perplexity",
+    "series": [
+     1.6,
+     1.0,
+     1.9,
+     2.5,
+     2.1,
+     2.0,
+     1.9,
+     0.0
+    ],
+    "avg": 1.6
+   }
+  ],
+  "rising": [
+   {
+    "query": "인공 일반 지능",
+    "value": 1100
+   }
+  ]
+ },
+ "youtube": {
+  "label": "검색어 없이 유튜브 지역별 인기 순위 그대로 · 11/27 09:24 수집",
+  "collected": "11/27 09:24 KST",
+  "regions": {
+   "KR": {
+    "name": "한국",
+    "videos": [
+     {
+      "id": "Dp2xVG6YHf0",
+      "title": "있어도 그만 없어도 그만",
+      "channel": "MEOMURU - Topic",
+      "subs": 14,
+      "views": 51009,
+      "likes": 355,
+      "published": "2026-11-26T03:00:07Z",
+      "seconds": 261,
+      "ratio": 3643.5,
+      "rank": 1
+     },
+     {
+      "id": "lw5QpAdo3WI",
+      "title": "아니 마블 진짜 미치셨어요..? ≪어벤져스: 둠스데이≫ 메인 예고편 나노 분석 3탄 & 떡밥 총정리",
+      "channel": "무비띵크_Movie Think",
+      "subs": 610000,
+      "views": 845182,
+      "likes": 9375,
+      "published": "2026-11-26T10:35:45Z",
+      "seconds": 755,
+      "ratio": 1.39,
+      "rank": 2
+     },
+     {
+      "id": "32KECPoRi2U",
+      "title": "랄부",
+      "channel": "랄로",
+      "subs": 1330000,
+      "views": 1145647,
+      "likes": 5626,
+      "published": "2026-11-25T07:50:08Z",
+      "seconds": 4198,
+      "ratio": 0.86,
+      "rank": 3
+     },
+     {
+      "id": "Oae1ZnQ15gQ",
+      "title": "[어벤져스: 둠스데이] 메인 예고편",
+      "channel": "MarvelKorea",
+      "subs": 386000,
+      "views": 5388635,
+      "likes": 45216,
+      "published": "2026-11-23T14:19:20Z",
+      "seconds": 204,
+      "ratio": 13.96,
+      "rank": 5
+     },
+     {
+      "id": "c12fD7gMMHg",
+      "title": "IWALY (Remain in Love)",
+      "channel": "izna - Topic",
+      "subs": 7520,
+      "views": 146138,
+      "likes": 2838,
+      "published": "2026-11-25T09:03:11Z",
+      "seconds": 182,
+      "ratio": 19.43,
+      "rank": 7
+     },
+     {
+      "id": "TZU9OpJLwaE",
+      "title": "하 진짜 미친놈들 ㅋㅋㅋㅋㅋ [어벤져스 둠스데이 예고편 리뷰]",
+      "channel": "김채호의 필름찢기",
+      "subs": 286000,
+      "views": 180164,
+      "likes": 1411,
+      "published": "2026-11-26T11:45:22Z",
+      "seconds": 837,
+      "ratio": 0.63,
+      "rank": 8
+     },
+     {
+      "id": "N2jkSsS5sUg",
+      "title": "40분 게임의 마침표",
+      "channel": "괴물쥐 유튜브",
+      "subs": 1210000,
+      "views": 342314,
+      "likes": 1261,
+      "published": "2026-11-26T13:00:34Z",
+      "seconds": 1248,
+      "ratio": 0.28,
+      "rank": 9
+     },
+     {
+      "id": "7cxlLN3iGpQ",
+      "title": "아님의 무게",
+      "channel": "HYUKOH - Topic",
+      "subs": 1360,
+      "views": 47268,
+      "likes": 1194,
+      "published": "2026-11-25T09:01:09Z",
+      "seconds": 279,
+      "ratio": 34.76,
+      "rank": 10
+     },
+     {
+      "id": "MK498Mm4eRo",
+      "title": "난 처음부터 너였어 | 멸망전 EP.6",
+      "channel": "클리드",
+      "subs": 360000,
+      "views": 228997,
+      "likes": 1062,
+      "published": "2026-11-26T13:40:26Z",
+      "seconds": 4291,
+      "ratio": 0.64,
+      "rank": 12
+     },
+     {
+      "id": "UPwKwJuV8mw",
+      "title": "Imperfect Christmas",
+      "channel": "KISS OF LIFE - Topic",
+      "subs": 35600,
+      "views": 81459,
+      "likes": 2624,
+      "published": "2026-11-25T09:04:57Z",
+      "seconds": 226,
+      "ratio": 2.29,
+      "rank": 13
+     }
+    ],
+    "shorts": [
+     {
+      "id": "cS7xovz4DH0",
+      "title": "Like You",
+      "channel": "Yim Siwan - Topic",
+      "subs": 2680,
+      "views": 204319,
+      "likes": 5219,
+      "published": "2026-11-24T09:01:29Z",
+      "seconds": 171,
+      "ratio": 76.24,
+      "rank": 4
+     },
+     {
+      "id": "gfVF1LRvluY",
+      "title": "Welcome Back Home, Zeus",
+      "channel": "T1",
+      "subs": 1790000,
+      "views": 2243155,
+      "likes": 85878,
+      "published": "2026-11-25T10:06:33Z",
+      "seconds": 85,
+      "ratio": 1.25,
+      "rank": 6
+     },
+     {
+      "id": "DzgorMtx38c",
+      "title": "Avengers Doomsday | Magneto vs Doom | Get Your Tickets at TGV Now",
+      "channel": "TGV Cinemas",
+      "subs": 50600,
+      "views": 2573906,
+      "likes": 25396,
+      "published": "2026-11-26T04:00:26Z",
+      "seconds": 17,
+      "ratio": 50.87,
+      "rank": 11
+     },
+     {
+      "id": "aVvQcM9RvQ4",
+      "title": "[고딩형사] 1차 예고편",
+      "channel": "잇츠뉴 It'sNEW",
+      "subs": 221000,
+      "views": 1581138,
+      "likes": 5499,
+      "published": "2026-11-23T22:30:01Z",
+      "seconds": 52,
+      "ratio": 7.15,
+      "rank": 14
+     },
+     {
+      "id": "-htnBIywgfM",
+      "title": "Avengers: Doomsday | “DESTINY” TRAILER CONCEPT | Marvel Studios",
+      "channel": "MovieTrailers Entertainment",
+      "subs": 578000,
+      "views": 3922476,
+      "likes": 37532,
+      "published": "2026-11-25T14:30:01Z",
+      "seconds": 64,
+      "ratio": 6.79,
+      "rank": 17
+     },
+     {
+      "id": "kikZn258jvE",
+      "title": "[듄: 파트 3] 파이널 예고편",
+      "channel": "Warner Bros. Korea",
+      "subs": 136000,
+      "views": 153850,
+      "likes": 838,
+      "published": "2026-11-25T03:23:59Z",
+      "seconds": 31,
+      "ratio": 1.13,
+      "rank": 20
+     },
+     {
+      "id": "_qb0yKFj2nc",
+      "title": "AVENGERS: DOOMSDAY | MAGNETO vs DOOM NEW TEASER TRAILER!",
+      "channel": "OneVerse",
+      "subs": 3320,
+      "views": 482673,
+      "likes": 2503,
+      "published": "2026-11-26T07:00:06Z",
+      "seconds": 30,
+      "ratio": 145.38,
+      "rank": 23
+     },
+     {
+      "id": "5e5Q-_ZdEK4",
+      "title": "Irony of Love",
+      "channel": "Yiya - Topic",
+      "subs": 79,
+      "views": 337974,
+      "likes": 15812,
+      "published": "2026-11-23T03:03:08Z",
+      "seconds": 140,
+      "ratio": 4278.15,
+      "rank": 28
+     },
+     {
+      "id": "VQaIS-eG4uw",
+      "title": "WING - Plastic Smile (Official Video) (BEATBOX)",
+      "channel": "BEATPELLA HOUSE",
+      "subs": 7710000,
+      "views": 680547,
+      "likes": 25566,
+      "published": "2026-11-25T09:00:09Z",
+      "seconds": 176,
+      "ratio": 0.09,
+      "rank": 34
+     },
+     {
+      "id": "IQI2qaqHFlg",
+      "title": "GiiiRIP",
+      "channel": "BIGBANG - Topic",
+      "subs": 244000,
+      "views": 6441328,
+      "likes": 147394,
+      "published": "2026-11-20T05:02:15Z",
+      "seconds": 165,
+      "ratio": 26.4,
+      "rank": 36
+     }
+    ]
+   },
+   "US": {
+    "name": "미국",
+    "videos": [
+     {
+      "id": "OwUrH6J1_N0",
+      "title": "Love & Hate - (Visualizer)",
+      "channel": "Saii Kay",
+      "subs": 55700,
+      "views": 31923,
+      "likes": 984,
+      "published": "2026-11-23T13:44:02Z",
+      "seconds": 256,
+      "ratio": 0.57,
+      "rank": 1
+     },
+     {
+      "id": "O-3nK-3NOKk",
+      "title": "TV Royale | Barbarian King, EVO Archer Queen, Legendary C.H.A.O.S & MORE!",
+      "channel": "Clash Royale",
+      "subs": 11900000,
+      "views": 757035,
+      "likes": 24488,
+      "published": "2026-11-26T14:55:07Z",
+      "seconds": 235,
+      "ratio": 0.06,
+      "rank": 3
+     },
+     {
+      "id": "7tYnGWUbMmM",
+      "title": "Best Christmas Hits 2027 🎅 Top Christmas Songs ✨ Best Holiday Songs",
+      "channel": "Snowlume Christmas Music",
+      "subs": 4820,
+      "views": 195954,
+      "likes": 397,
+      "published": "2026-11-25T09:00:32Z",
+      "seconds": 5718,
+      "ratio": 40.65,
+      "rank": 4
+     },
+     {
+      "id": "hXZR2EI4Df0",
+      "title": "We Went Duck Hunting...",
+      "channel": "SMii7Y",
+      "subs": 9140000,
+      "views": 407838,
+      "likes": 21015,
+      "published": "2026-11-26T20:13:10Z",
+      "seconds": 1364,
+      "ratio": 0.04,
+      "rank": 6
+     },
+     {
+      "id": "HQoB61gvVOw",
+      "title": "Jamie Miller - Babydoll (Official Music Video)",
+      "channel": "JamieMillerVEVO",
+      "subs": 30,
+      "views": 1540834,
+      "likes": 36959,
+      "published": "2026-11-25T15:00:10Z",
+      "seconds": 190,
+      "ratio": 51361.13,
+      "rank": 7
+     },
+     {
+      "id": "Wb8Tq_HD4E8",
+      "title": "Avengers: Doomsday | Final Trailer | In Theaters December 18",
+      "channel": "Marvel Entertainment",
+      "subs": 24300000,
+      "views": 60770529,
+      "likes": 1668193,
+      "published": "2026-11-23T14:00:01Z",
+      "seconds": 196,
+      "ratio": 2.5,
+      "rank": 8
+     },
+     {
+      "id": "Y7PPzKj6kTQ",
+      "title": "🔴LIVE | GTA 6 | DAY 7 | CHAPTER 5 | irredeemable | LUCIA DUMPED ME | BEST ENDING 100% | #BUNGULATE",
+      "channel": "TheBurntPeanut",
+      "subs": 2190000,
+      "views": 1415760,
+      "likes": 12721,
+      "published": "2026-11-26T10:07:01Z",
+      "seconds": 33644,
+      "ratio": 0.65,
+      "rank": 9
+     },
+     {
+      "id": "L2z-NKaTA7E",
+      "title": "AVENGERS DOOMSDAY TRAILER BREAKDOWN | International Promo | Steve & Thor in Latveria & TVA!",
+      "channel": "New Rockstars",
+      "subs": 4460000,
+      "views": 766367,
+      "likes": 14885,
+      "published": "2026-11-25T20:26:53Z",
+      "seconds": 1001,
+      "ratio": 0.17,
+      "rank": 11
+     },
+     {
+      "id": "9B1ljU7lv-E",
+      "title": "Don't Do That",
+      "channel": "penguinz0",
+      "subs": 18300000,
+      "views": 5202778,
+      "likes": 87771,
+      "published": "2026-11-25T17:00:09Z",
+      "seconds": 948,
+      "ratio": 0.28,
+      "rank": 12
+     },
+     {
+      "id": "9Z4ZL6LWvXA",
+      "title": "SANDAUN LEWA (Meri Waromo)",
+      "channel": "JNR VIGI - Topic",
+      "subs": 2530,
+      "views": 47142,
+      "likes": 906,
+      "published": "2026-11-19T10:03:59Z",
+      "seconds": 242,
+      "ratio": 18.63,
+      "rank": 13
+     }
+    ],
+    "shorts": [
+     {
+      "id": "dnGJmIrdbls",
+      "title": "AVENGERS: DOOMSDAY \"Magneto Removes Doctor Doom's Mask\" TV Spot Trailer (2026)",
+      "channel": "ONE Media +",
+      "subs": 1370000,
+      "views": 765270,
+      "likes": 5658,
+      "published": "2026-11-26T10:27:50Z",
+      "seconds": 43,
+      "ratio": 0.56,
+      "rank": 2
+     },
+     {
+      "id": "DzgorMtx38c",
+      "title": "Avengers Doomsday | Magneto vs Doom | Get Your Tickets at TGV Now",
+      "channel": "TGV Cinemas",
+      "subs": 50600,
+      "views": 2573906,
+      "likes": 25396,
+      "published": "2026-11-26T04:00:26Z",
+      "seconds": 17,
+      "ratio": 50.87,
+      "rank": 5
+     },
+     {
+      "id": "EqdQOo7cnzA",
+      "title": "Bulin 47 X Kevin Wai - Dame Hombro (Letra)",
+      "channel": "Marinosaurio",
+      "subs": 4730000,
+      "views": 77305,
+      "likes": 560,
+      "published": "2026-11-26T17:30:09Z",
+      "seconds": 123,
+      "ratio": 0.02,
+      "rank": 10
+     },
+     {
+      "id": "-l237RK1icA",
+      "title": "AVENGERS 5: DOOMSDAY Official “Magneto Removes Doctor Dooms Mask” Teaser Trailer (2026) Marvel",
+      "channel": "KinoCheck.com",
+      "subs": 5010000,
+      "views": 131172,
+      "likes": 1325,
+      "published": "2026-11-26T17:14:20Z",
+      "seconds": 64,
+      "ratio": 0.03,
+      "rank": 14
+     },
+     {
+      "id": "-htnBIywgfM",
+      "title": "Avengers: Doomsday | “DESTINY” TRAILER CONCEPT | Marvel Studios",
+      "channel": "MovieTrailers Entertainment",
+      "subs": 578000,
+      "views": 3922476,
+      "likes": 37532,
+      "published": "2026-11-25T14:30:01Z",
+      "seconds": 64,
+      "ratio": 6.79,
+      "rank": 17
+     },
+     {
+      "id": "_qb0yKFj2nc",
+      "title": "AVENGERS: DOOMSDAY | MAGNETO vs DOOM NEW TEASER TRAILER!",
+      "channel": "OneVerse",
+      "subs": 3320,
+      "views": 482673,
+      "likes": 2503,
+      "published": "2026-11-26T07:00:06Z",
+      "seconds": 30,
+      "ratio": 145.38,
+      "rank": 29
+     },
+     {
+      "id": "R3AzRsIqxb0",
+      "title": "Vrushakarma Official Trailer | Naga Chaitanya | Meenakshi Chaudhary | Karthik | Sparsh Shrivastava",
+      "channel": "Sri Venkateswara Cine Chitra",
+      "subs": 931000,
+      "views": 6251439,
+      "likes": 77719,
+      "published": "2026-11-26T04:25:54Z",
+      "seconds": 177,
+      "ratio": 6.71,
+      "rank": 32
+     },
+     {
+      "id": "RMXe4RnC-m8",
+      "title": "Shotta's.",
+      "channel": "Season 25 - Topic",
+      "subs": 16,
+      "views": 1623130,
+      "likes": 26324,
+      "published": "2026-10-29T18:19:15Z",
+      "seconds": 143,
+      "ratio": 101445.62,
+      "rank": 34
+     },
+     {
+      "id": "Udi-mYx8kRY",
+      "title": "La Clientela",
+      "channel": "Los Inquietos Del Norte - Topic",
+      "subs": 31200,
+      "views": 37960,
+      "likes": 800,
+      "published": "2026-11-26T01:02:56Z",
+      "seconds": 131,
+      "ratio": 1.22,
+      "rank": 39
+     },
+     {
+      "id": "19KeHl9kbqQ",
+      "title": "TRÁILER - SUPERHÉROE - Ian Lucas x Fede Vigevani",
+      "channel": "FedeXEdits",
+      "subs": 195000,
+      "views": 720225,
+      "likes": 6241,
+      "published": "2026-11-26T20:11:36Z",
+      "seconds": 18,
+      "ratio": 3.69,
+      "rank": 40
+     }
+    ]
+   }
+  }
+ }
+}
