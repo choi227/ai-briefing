@@ -1,0 +1,957 @@
+{
+ "date": "2026-11-28",
+ "issue": 10,
+ "weekday": "토",
+ "headline": {
+  "kicker": "오늘의 헤드라인 · 시장",
+  "title": "SAP, AI 전환 위해 최소 1만 명 감원 준비",
+  "body": "블룸버그가 소식통을 인용해 SAP가 AI 중심 구조조정으로 최소 1만 개 일자리를 줄일 계획이라고 보도했어요. 11만 명 넘는 전체 직원의 9% 이상이에요. 모든 부서에 절감안을 요구했고 제품 개발·엔지니어링·영업이 가장 크게 영향을 받아요. 최종 규모는 정해지지 않았고, SAP는 논평을 거부했어요.",
+  "figures": [
+   {
+    "value": "1만 명+",
+    "label": "감원 검토 규모"
+   },
+   {
+    "value": "9%+",
+    "label": "전체 직원 대비"
+   },
+   {
+    "value": "11만 명+",
+    "label": "SAP 전 세계 직원"
+   }
+  ],
+  "source": {
+   "name": "The Decoder",
+   "url": "https://the-decoder.com/sap-plans-to-cut-at-least-10000-jobs-as-it-pivots-to-ai/"
+  }
+ },
+ "market": {
+  "label": "밤사이 미국 시장 · 11/27 종가 (단축 거래)",
+  "rows": [
+   {
+    "name": "나스닥",
+    "change": 2.31
+   },
+   {
+    "name": "S&P 500",
+    "change": 1.6
+   }
+  ],
+  "note": "추수감사절 다음 날 단축 거래에서 AI 수익성 걱정이 누그러지며 기술주·반도체주가 반등했어요. 필라델피아 반도체지수는 '5% 가까이' 올랐다고만 나와 표에서 뺐어요.",
+  "source": {
+   "name": "Yahoo Finance",
+   "url": "https://finance.yahoo.com/markets/live/stock-market-today-firday-november-27-dow-sp-500-nasdaq-black-friday-holiday-091152065.html"
+  }
+ },
+ "oneline": {
+  "text": "AI 때문에 대기업이 1만 명을 줄인다는 보도가 나온 날, 스위스에선 AI 에이전트 해킹이 처음 공식 확인됐고 블랙프라이데이 쇼핑엔 AI가 길잡이로 나섰어요.",
+  "tags": [
+   "#SAP감원",
+   "#AI에이전트해킹",
+   "#블랙프라이데이",
+   "#에이전트결제"
+  ]
+ },
+ "news": [
+  {
+   "cat": "policy",
+   "featured": true,
+   "title": "스위스, AI 에이전트의 사이버 공격 첫 공식 확인",
+   "summary": "스위스 국가사이버보안센터(NCSC)가 11/24 권고문에서 AI 에이전트 공격을 처음 확인했어요. 확인된 5건 중 3건이 핵심 기반시설 운영사를 노렸고 그중 2건이 뚫렸어요. 공격용 에이전트 수가 10월 이후 '거의 두 배'라며 외부 노출 시스템의 긴급 패치를 24시간 안에 하라고 권고했어요.",
+   "source": "TNW",
+   "url": "https://thenextweb.com/news/switzerland-ai-agent-cyberattacks-critical-infrastructure"
+  },
+  {
+   "cat": "market",
+   "featured": true,
+   "title": "블랙프라이데이, AI로 상품 찾는 사람은 늘었지만 결제는 아직",
+   "summary": "어도비에 따르면 추수감사절 당일 AI 서비스를 거쳐 미국 쇼핑몰로 온 방문이 작년의 두 배를 넘었고, 온라인 지출은 71억 달러로 사상 최대였어요(회사 발표 기준). 하지만 베인 조사에선 AI 에이전트가 직접 한 구매는 전 세계 전자상거래 거래의 0.4%뿐이에요. 대형 소매업체 절반가량은 AI 비서를 막고 있어요.",
+   "source": "TNW",
+   "url": "https://thenextweb.com/news/ai-shopping-agents-black-friday-retailers-trust"
+  },
+  {
+   "cat": "startup",
+   "title": "영국에서 AI 에이전트가 카드 없이 피자값 결제",
+   "summary": "오픈뱅킹 기업 TrueLayer가 영국 금융감독청(FCA) AI 샌드박스 시험에서 AI 에이전트가 고객 은행 계좌로 파파존스 피자값을 직접 냈다고 밝혔어요. 고객이 정한 한도 안에서 결제하는지 확인하는 시험이었고, '영국 첫 사례'라는 건 회사 주장이에요.",
+   "source": "Tech.eu",
+   "url": "https://tech.eu/2026/11/27/papa-johns-pizza-order-first-uk-cardless-payment-by-ai-agent/"
+  },
+  {
+   "cat": "chip",
+   "title": "엔비디아 이사회, 젠슨 황 사임 번복… 논란은 계속",
+   "summary": "엔비디아 이사회가 월요일(11/23) 젠슨 황의 사임을 뒤집고 CEO로 복귀시켰어요. 칼럼은 이를 트럼프 대통령의 압박 때문으로 보면서, 회사 안팎의 조사와 의회 검증이 이어지고 있고 시장은 복귀 효과를 거의 반영하지 않았다고 평가했어요.",
+   "source": "SiliconANGLE",
+   "url": "https://siliconangle.com/2026/11/27/jensen-huang-returns-but-controversies-keep-growing-around-nvidia/"
+  },
+  {
+   "cat": "policy",
+   "title": "캐나다, AI 연산 지원 기금에 7억 달러 추가… 총 10억 달러",
+   "summary": "캐나다 정부가 AI 컴퓨트 접근 기금을 10억 달러로 늘리고 보건·생명과학 분야 공모를 열었어요. 자국 클라우드 연산 비용의 최대 80%를 지원하고, 보건 분야 관심 신청은 12/17까지예요.",
+   "source": "Unite.AI",
+   "url": "https://www.unite.ai/canada-invests-700-million-more-to-expand-ai-compute-access-fund/"
+  },
+  {
+   "cat": "policy",
+   "title": "LA 교육구, 학생 노트북에서 구글 AI 개요 꺼",
+   "summary": "학생 약 50만 명인 미국 2위 교육구 LAUSD가 학생 기기에서 구글 'AI 개요'를 '일시 중단'했어요. 구글 교육 책임자는 AI를 통째로 거부하는 학교는 검색도 잃는다고 했고, 구글 직원·계약자 540여 명은 AI 없는 검색을 요구하는 청원에 서명했어요.",
+   "source": "TNW",
+   "url": "https://thenextweb.com/news/la-schools-disable-google-ai-overviews-search-standoff"
+  }
+ ],
+ "trending": {
+  "label": "github.com/trending 전체 16개 · 11/28 09:22 수집",
+  "repos": [
+   {
+    "name": "elementalsouls/Claude-BugHunter",
+    "today": 1608,
+    "total": 26066,
+    "lang": "Python",
+    "skill": true,
+    "desc": "버그 헌팅·레드팀용 Claude Code 스킬 묶음(스킬 85개)"
+   },
+   {
+    "name": "obra/superpowers",
+    "today": 922,
+    "total": 328302,
+    "lang": "Shell",
+    "skill": true,
+    "desc": "에이전트 스킬 프레임워크와 개발 방법론"
+   },
+   {
+    "name": "XiaoYouChR/Ghost-Downloader-3",
+    "today": 836,
+    "total": 19842,
+    "lang": "Python",
+    "skill": false,
+    "desc": "여러 방식을 한데 모은 다운로더"
+   },
+   {
+    "name": "firecrawl/firecrawl",
+    "today": 822,
+    "total": 211680,
+    "lang": "TypeScript",
+    "skill": false,
+    "desc": "검색·스크래핑·550여 데이터 소스를 API 하나로"
+   },
+   {
+    "name": "cathrynlavery/diagram-design",
+    "today": 725,
+    "total": 74453,
+    "lang": "HTML",
+    "skill": true,
+    "desc": "코딩 에이전트용 다이어그램 디자인 스킬(52종)"
+   },
+   {
+    "name": "zhouxiaoka/autoclip",
+    "today": 718,
+    "total": 17584,
+    "lang": "Python",
+    "skill": false,
+    "desc": "긴 영상을 쇼츠로 자르는 로컬 AI 편집 도구(MCP 서버 포함)"
+   },
+   {
+    "name": "mvanhorn/last30days-skill",
+    "today": 675,
+    "total": 76361,
+    "lang": "Python",
+    "skill": true,
+    "desc": "여러 플랫폼을 조사해 요약하는 에이전트 스킬"
+   },
+   {
+    "name": "HKUDS/CLI-Anything",
+    "today": 666,
+    "total": 66999,
+    "lang": "Python",
+    "skill": false,
+    "desc": "모든 소프트웨어를 CLI로 감싸 에이전트가 쓰게 하는 도구"
+   },
+   {
+    "name": "jingyaogong/minimind",
+    "today": 660,
+    "total": 72207,
+    "lang": "Python",
+    "skill": false,
+    "desc": "2시간 만에 64M 파라미터 LLM을 처음부터 학습"
+   },
+   {
+    "name": "mjmirza/app-store-compliance",
+    "today": 530,
+    "total": 7897,
+    "lang": "Shell",
+    "skill": true,
+    "desc": "앱스토어·구글플레이 심사 반려를 막는 점검표와 에이전트 스킬"
+   }
+  ],
+  "categories": {
+   "title": "분야 분포 · 트렌딩 16개",
+   "items": [
+    {
+     "name": "에이전트 스킬",
+     "count": 6
+    },
+    {
+     "name": "에이전트 도구·인프라",
+     "count": 5
+    },
+    {
+     "name": "기타",
+     "count": 5
+    }
+   ]
+  },
+  "languages": [
+   {
+    "name": "Python",
+    "count": 7
+   },
+   {
+    "name": "TypeScript",
+    "count": 4
+   },
+   {
+    "name": "Shell",
+    "count": 2
+   },
+   {
+    "name": "C",
+    "count": 1
+   },
+   {
+    "name": "C++",
+    "count": 1
+   },
+   {
+    "name": "HTML",
+    "count": 1
+   }
+  ],
+  "insight": "닷새째 같은 16개가 자리만 바꾸고 있어요. 1위 Claude-BugHunter는 하루 별 1,608개로 전날과 비슷했고, 상위 10개 중 절반이 <strong>에이전트 스킬</strong>이에요."
+ },
+ "community": {
+  "label": "HN · GeekNews · HF 논문 · dev.to · 11/28 09:40 KST",
+  "items": [
+   {
+    "source": "hn",
+    "title": "Claude sabotaging ML research tasks?",
+    "title_ko": "Claude가 ML 연구 과제를 방해한다?",
+    "url": "https://twitter.com/RealAstropulse/status/2126119408997466389",
+    "discuss": "https://news.ycombinator.com/item?id=50664325",
+    "points": 565,
+    "comments": 279
+   },
+   {
+    "source": "hn",
+    "title": "Michael Nielsen took down his book on neural nets",
+    "title_ko": "마이클 닐슨, 신경망 입문서 사이트를 내렸다",
+    "url": "https://neuralnetworksanddeeplearning.com/",
+    "discuss": "https://news.ycombinator.com/item?id=50670757",
+    "points": 360,
+    "comments": 238
+   },
+   {
+    "source": "hn",
+    "title": "The need for a formally verifiable mainstream programming language",
+    "title_ko": "형식 검증 가능한 주류 프로그래밍 언어가 필요하다",
+    "url": "https://blainehansen.me/post/mainstream-verifiable-language/",
+    "discuss": "https://news.ycombinator.com/item?id=50663089",
+    "points": 308,
+    "comments": 298
+   },
+   {
+    "source": "hn",
+    "title": "States sue SpaceX to stop Grok from generating child sex images, revenge porn",
+    "title_ko": "미 주정부들, Grok 성착취 이미지 생성 막으려 SpaceX 제소",
+    "url": "https://www.oag.state.va.us/media-center/news-releases/jay-jones/3162-attorneys-general-jones-and-rayfield-file-suit-against-spacex-parent-company-of-x-xai-and-grok-over-creation-and-promotion-of-child-exploitation-and-non-consensual-images-on-platform",
+    "discuss": "https://news.ycombinator.com/item?id=50670855",
+    "points": 232,
+    "comments": 126
+   },
+   {
+    "source": "hn",
+    "title": "Convex skills send the user's app idea to a remote server without telling them",
+    "title_ko": "Convex 스킬이 사용자 앱 아이디어를 알리지 않고 외부 서버로 보낸다",
+    "url": "https://github.com/convex/convex-backend-skill/issues/64",
+    "discuss": "https://news.ycombinator.com/item?id=50669765",
+    "points": 212,
+    "comments": 62
+   },
+   {
+    "source": "gn",
+    "title": "1인 조직이 온다",
+    "title_ko": "1인 조직이 온다",
+    "url": "https://news.hada.io/topic?id=37871",
+    "discuss": "https://news.hada.io/topic?id=37871",
+    "points": 27,
+    "comments": 2
+   },
+   {
+    "source": "gn",
+    "title": "똑똑하고 진심으로 책임지는 사람들은 도구를 쓴다",
+    "title_ko": "똑똑하고 진심으로 책임지는 사람들은 도구를 쓴다",
+    "url": "https://news.hada.io/topic?id=37851",
+    "discuss": "https://news.hada.io/topic?id=37851",
+    "points": 13,
+    "comments": 4
+   },
+   {
+    "source": "gn",
+    "title": "AI 덕분에 셀프 호스팅이 다시 즐거워졌다",
+    "title_ko": "AI 덕분에 셀프 호스팅이 다시 즐거워졌다",
+    "url": "https://news.hada.io/topic?id=37928",
+    "discuss": "https://news.hada.io/topic?id=37928",
+    "points": 4,
+    "comments": 1
+   },
+   {
+    "source": "hf",
+    "title": "Stable Gated DeltaNet-2: Understanding and Mitigating Recurrent State Instability",
+    "title_ko": "Gated DeltaNet-2: 순환 상태 불안정성 이해와 완화",
+    "url": "https://huggingface.co/papers/2611.34051",
+    "discuss": "https://huggingface.co/papers/2611.34051",
+    "points": 128,
+    "comments": 2
+   },
+   {
+    "source": "hf",
+    "title": "OS-Omni: Benchmarking Generalist Computer-Using Agents on Long-Horizon Workflows Across Platforms",
+    "title_ko": "OS-Omni: 여러 OS에서 긴 작업을 하는 컴퓨터 사용 에이전트 벤치마크",
+    "url": "https://huggingface.co/papers/2611.34232",
+    "discuss": "https://huggingface.co/papers/2611.34232",
+    "points": 103,
+    "comments": 2
+   },
+   {
+    "source": "hf",
+    "title": "Solve Vision with Code: Coding Agents Are Stronger Visual Reasoners Than Video Models",
+    "title_ko": "코드로 푸는 비전: 코딩 에이전트가 비디오 모델보다 시각 추론을 더 잘한다",
+    "url": "https://huggingface.co/papers/2611.34813",
+    "discuss": "https://huggingface.co/papers/2611.34813",
+    "points": 59,
+    "comments": 4
+   },
+   {
+    "source": "dev",
+    "title": "I Got Two AI Agents Talking. Then I Found Out They Weren't Hearing Each Other.",
+    "title_ko": "AI 에이전트 둘을 대화시켰더니 서로 듣고 있지 않았다",
+    "url": "https://dev.to/kenielzep97/i-got-two-ai-agents-talking-then-i-found-out-they-werent-hearing-each-other-1fn6",
+    "discuss": "https://dev.to/kenielzep97/i-got-two-ai-agents-talking-then-i-found-out-they-werent-hearing-each-other-1fn6",
+    "points": 35,
+    "comments": 20
+   },
+   {
+    "source": "dev",
+    "title": "How I built my own OS",
+    "title_ko": "나만의 OS를 만든 방법",
+    "url": "https://dev.to/cloudwerx/how-i-built-my-own-os-942",
+    "discuss": "https://dev.to/cloudwerx/how-i-built-my-own-os-942",
+    "points": 29,
+    "comments": 10
+   },
+   {
+    "source": "dev",
+    "title": "Under the Hood of Google Cloud Data Agent Kit: MCP Tools, SKILL.md Playbooks & Custom Guardrails",
+    "title_ko": "구글 클라우드 Data Agent Kit 뜯어보기: MCP 도구·SKILL.md·가드레일",
+    "url": "https://dev.to/gde/under-the-hood-of-google-cloud-data-agent-kit-mcp-tools-skillmd-playbooks-custom-guardrails-4568",
+    "discuss": "https://dev.to/gde/under-the-hood-of-google-cloud-data-agent-kit-mcp-tools-skillmd-playbooks-custom-guardrails-4568",
+    "points": 11,
+    "comments": 4
+   }
+  ]
+ },
+ "todo": [
+  "SAP 감원 기사에서 가장 영향이 큰 세 부서와 독일 고용 보장 기한 적어 보기",
+  "스위스 NCSC가 권고한 '24시간 패치' 원칙을 내 서비스에 적용하면 무엇부터 할지 한 줄 정리",
+  "HN 'Convex 스킬' 이슈를 읽고 에이전트 스킬 설치 전 확인할 점 하나 뽑아 보기"
+ ],
+ "searchtrend": {
+  "label": "AI 서비스 검색 관심도 · 구글 트렌드 한국 · 최근 7일",
+  "dates": [
+   "11/21",
+   "11/22",
+   "11/23",
+   "11/24",
+   "11/25",
+   "11/26",
+   "11/27",
+   "11/28"
+  ],
+  "keywords": [
+   {
+    "name": "Gemini",
+    "series": [
+     45.1,
+     50.1,
+     65.8,
+     65.3,
+     64.2,
+     62.0,
+     52.0,
+     28.0
+    ],
+    "avg": 54.1
+   },
+   {
+    "name": "ChatGPT",
+    "series": [
+     35.5,
+     40.0,
+     50.1,
+     49.8,
+     49.0,
+     47.9,
+     39.6,
+     30.0
+    ],
+    "avg": 42.7
+   },
+   {
+    "name": "Claude",
+    "series": [
+     31.8,
+     35.5,
+     48.4,
+     47.8,
+     47.9,
+     46.0,
+     37.8,
+     20.0
+    ],
+    "avg": 39.4
+   },
+   {
+    "name": "Grok",
+    "series": [
+     3.9,
+     4.1,
+     9.3,
+     4.7,
+     4.6,
+     4.2,
+     4.2,
+     0.0
+    ],
+    "avg": 4.4
+   },
+   {
+    "name": "Perplexity",
+    "series": [
+     1.3,
+     1.9,
+     2.5,
+     2.2,
+     2.2,
+     2.2,
+     1.6,
+     0.0
+    ],
+    "avg": 1.7
+   }
+  ],
+  "rising": [
+   {
+    "query": "인공 일반 지능",
+    "value": 1150
+   }
+  ]
+ },
+ "youtube": {
+  "label": "검색어 없이 유튜브 지역별 인기 순위 그대로 · 11/28 09:25 수집",
+  "collected": "11/28 09:25 KST",
+  "regions": {
+   "KR": {
+    "name": "한국",
+    "videos": [
+     {
+      "id": "lw5QpAdo3WI",
+      "title": "아니 마블 진짜 미치셨어요..? ≪어벤져스: 둠스데이≫ 메인 예고편 나노 분석 3탄 & 떡밥 총정리",
+      "channel": "무비띵크_Movie Think",
+      "subs": 611000,
+      "views": 1248926,
+      "likes": 11476,
+      "published": "2026-11-26T10:35:45Z",
+      "seconds": 755,
+      "ratio": 2.04,
+      "rank": 2
+     },
+     {
+      "id": "9nCVUedbHus",
+      "title": "아파도 하는 남자",
+      "channel": "괴물쥐 유튜브",
+      "subs": 1210000,
+      "views": 324027,
+      "likes": 1007,
+      "published": "2026-11-27T13:00:27Z",
+      "seconds": 1628,
+      "ratio": 0.27,
+      "rank": 3
+     },
+     {
+      "id": "Dp2xVG6YHf0",
+      "title": "있어도 그만 없어도 그만",
+      "channel": "MEOMURU - Topic",
+      "subs": 14,
+      "views": 134955,
+      "likes": 643,
+      "published": "2026-11-26T03:00:07Z",
+      "seconds": 261,
+      "ratio": 9639.64,
+      "rank": 4
+     },
+     {
+      "id": "Oae1ZnQ15gQ",
+      "title": "[어벤져스: 둠스데이] 메인 예고편",
+      "channel": "MarvelKorea",
+      "subs": 386000,
+      "views": 5987974,
+      "likes": 46136,
+      "published": "2026-11-23T14:19:20Z",
+      "seconds": 204,
+      "ratio": 15.51,
+      "rank": 5
+     },
+     {
+      "id": "3ynhPDuk5qA",
+      "title": "천하제일 바텀대회 | 멸망전 EP.7",
+      "channel": "클리드",
+      "subs": 360000,
+      "views": 326940,
+      "likes": 1245,
+      "published": "2026-11-27T00:54:12Z",
+      "seconds": 3332,
+      "ratio": 0.91,
+      "rank": 6
+     },
+     {
+      "id": "TZU9OpJLwaE",
+      "title": "하 진짜 미친놈들 ㅋㅋㅋㅋㅋ [어벤져스 둠스데이 예고편 리뷰]",
+      "channel": "김채호의 필름찢기",
+      "subs": 286000,
+      "views": 309000,
+      "likes": 1954,
+      "published": "2026-11-26T11:45:22Z",
+      "seconds": 837,
+      "ratio": 1.08,
+      "rank": 8
+     },
+     {
+      "id": "yyhplGTLFkY",
+      "title": "킥형이 저 고소한다네요..｜멸망전 EP.09",
+      "channel": "저라뎃 JUSTLIKETHAT",
+      "subs": 731000,
+      "views": 257189,
+      "likes": 800,
+      "published": "2026-11-27T09:30:00Z",
+      "seconds": 2588,
+      "ratio": 0.35,
+      "rank": 9
+     },
+     {
+      "id": "4Di16_aaq0s",
+      "title": "Winter",
+      "channel": "Epitone Project - Topic",
+      "subs": 13900,
+      "views": 56641,
+      "likes": 300,
+      "published": "2026-11-26T09:03:54Z",
+      "seconds": 200,
+      "ratio": 4.07,
+      "rank": 10
+     },
+     {
+      "id": "32KECPoRi2U",
+      "title": "랄부",
+      "channel": "랄로",
+      "subs": 1330000,
+      "views": 1304918,
+      "likes": 6053,
+      "published": "2026-11-25T07:50:08Z",
+      "seconds": 4198,
+      "ratio": 0.98,
+      "rank": 12
+     },
+     {
+      "id": "enSjDT99QoU",
+      "title": "미라클 타임 하루 만에 벌어진 일 [팡이요,  메이플스토리]",
+      "channel": "팡이요",
+      "subs": 590000,
+      "views": 278905,
+      "likes": 702,
+      "published": "2026-11-27T12:36:51Z",
+      "seconds": 1074,
+      "ratio": 0.47,
+      "rank": 15
+     }
+    ],
+    "shorts": [
+     {
+      "id": "4EFxXjiWDOM",
+      "title": "BIGBANG - ‘기립 (GiiiRIP)’ FILM",
+      "channel": "BIGBANG",
+      "subs": 17000000,
+      "views": 3933889,
+      "likes": 188512,
+      "published": "2026-11-25T09:00:03Z",
+      "seconds": 164,
+      "ratio": 0.23,
+      "rank": 1
+     },
+     {
+      "id": "XL94EDMvGEI",
+      "title": "GOOD MOURNING (Feat. BE'O)",
+      "channel": "ASH ISLAND - Topic",
+      "subs": 74400,
+      "views": 26145,
+      "likes": 658,
+      "published": "2026-11-27T09:00:35Z",
+      "seconds": 160,
+      "ratio": 0.35,
+      "rank": 7
+     },
+     {
+      "id": "S-RAaQZHpws",
+      "title": "천천히 강렬하게 | 공식 예고편 | 넷플릭스",
+      "channel": "Netflix Korea 넷플릭스 코리아",
+      "subs": 3210000,
+      "views": 248062,
+      "likes": 1628,
+      "published": "2026-11-27T00:00:01Z",
+      "seconds": 127,
+      "ratio": 0.08,
+      "rank": 11
+     },
+     {
+      "id": "apsZ4ukW_mg",
+      "title": "Yeah, You Were Right",
+      "channel": "DOKO - Topic",
+      "subs": 2800,
+      "views": 194494,
+      "likes": 8830,
+      "published": "2026-11-21T09:03:56Z",
+      "seconds": 153,
+      "ratio": 69.46,
+      "rank": 13
+     },
+     {
+      "id": "DzgorMtx38c",
+      "title": "Avengers Doomsday | Magneto vs Doom | Get Your Tickets at TGV Now",
+      "channel": "TGV Cinemas",
+      "subs": 50900,
+      "views": 2987165,
+      "likes": 28473,
+      "published": "2026-11-26T04:00:26Z",
+      "seconds": 17,
+      "ratio": 58.69,
+      "rank": 14
+     },
+     {
+      "id": "7hj4g173FhM",
+      "title": "Hollow Knight: Silksong - Sea of Sorrow - Launch Trailer",
+      "channel": "Team Cherry",
+      "subs": 609000,
+      "views": 1511020,
+      "likes": 123983,
+      "published": "2026-11-27T15:13:54Z",
+      "seconds": 75,
+      "ratio": 2.48,
+      "rank": 17
+     },
+     {
+      "id": "FYHvlRJXG2A",
+      "title": "Avengers: Doomsday | TV SPOT “REDEMPTION” CONCEPT | Marvel Studios",
+      "channel": "MovieTrailers Entertainment",
+      "subs": 579000,
+      "views": 1552496,
+      "likes": 16903,
+      "published": "2026-11-27T14:30:29Z",
+      "seconds": 31,
+      "ratio": 2.68,
+      "rank": 23
+     },
+     {
+      "id": "cS7xovz4DH0",
+      "title": "Like You",
+      "channel": "Yim Siwan - Topic",
+      "subs": 2860,
+      "views": 284979,
+      "likes": 6004,
+      "published": "2026-11-24T09:01:29Z",
+      "seconds": 171,
+      "ratio": 99.64,
+      "rank": 25
+     },
+     {
+      "id": "gfVF1LRvluY",
+      "title": "Welcome Back Home, Zeus",
+      "channel": "T1",
+      "subs": 1790000,
+      "views": 2337161,
+      "likes": 86818,
+      "published": "2026-11-25T10:06:33Z",
+      "seconds": 85,
+      "ratio": 1.31,
+      "rank": 26
+     },
+     {
+      "id": "-dkbHAEhIMM",
+      "title": "123-78 (Carol Ver.)",
+      "channel": "BOYNEXTDOOR - Topic",
+      "subs": 10200,
+      "views": 51989,
+      "likes": 4634,
+      "published": "2026-11-27T05:00:06Z",
+      "seconds": 161,
+      "ratio": 5.1,
+      "rank": 33
+     }
+    ]
+   },
+   "US": {
+    "name": "미국",
+    "videos": [
+     {
+      "id": "j9zK2cWrDKE",
+      "title": "Anuel AA ft Cosculluela, Chris Jedi | LOS DIABLOS ( Visualizer ) | R.H.L.M 2",
+      "channel": "Anuel AA",
+      "subs": 30200000,
+      "views": 3276862,
+      "likes": 188846,
+      "published": "2026-11-27T00:01:09Z",
+      "seconds": 280,
+      "ratio": 0.11,
+      "rank": 1
+     },
+     {
+      "id": "JB1emuC56bk",
+      "title": "I Finally Figured Out the Doctor Doom Tony Stark Connection + X-Men Clue!",
+      "channel": "New Rockstars",
+      "subs": 4460000,
+      "views": 233016,
+      "likes": 7611,
+      "published": "2026-11-27T19:52:31Z",
+      "seconds": 764,
+      "ratio": 0.05,
+      "rank": 2
+     },
+     {
+      "id": "M-QUgdcBpZU",
+      "title": "Cherry Time! Special Presentation - November 2026",
+      "channel": "Team Cherry",
+      "subs": 609000,
+      "views": 1537971,
+      "likes": 136333,
+      "published": "2026-11-27T15:00:07Z",
+      "seconds": 544,
+      "ratio": 2.53,
+      "rank": 3
+     },
+     {
+      "id": "6xupDQUqKY8",
+      "title": "Top 50 Christmas Songs of All Time 🎄 Best Christmas Songs Playlist",
+      "channel": "Christmas Songs and Carols - Love to Sing",
+      "subs": 3070000,
+      "views": 249400,
+      "likes": 721,
+      "published": "2026-11-25T14:00:05Z",
+      "seconds": 10125,
+      "ratio": 0.08,
+      "rank": 4
+     },
+     {
+      "id": "1qa9PrPY3kk",
+      "title": "if you don't TIP you DIE",
+      "channel": "TheRussianBadger",
+      "subs": 8370000,
+      "views": 544894,
+      "likes": 37707,
+      "published": "2026-11-27T18:44:57Z",
+      "seconds": 3344,
+      "ratio": 0.07,
+      "rank": 6
+     },
+     {
+      "id": "HenqTsQhFu0",
+      "title": "From POOR to RICH Island in Minecraft!",
+      "channel": "Cash",
+      "subs": 11800000,
+      "views": 469474,
+      "likes": 4053,
+      "published": "2026-11-27T15:00:31Z",
+      "seconds": 1313,
+      "ratio": 0.04,
+      "rank": 9
+     },
+     {
+      "id": "LZXpJbiNyaM",
+      "title": "Final Life: Episode 5 - ABSOLUTE CHAOS!",
+      "channel": "Grian",
+      "subs": 8930000,
+      "views": 188263,
+      "likes": 18694,
+      "published": "2026-11-27T21:19:31Z",
+      "seconds": 3480,
+      "ratio": 0.02,
+      "rank": 12
+     },
+     {
+      "id": "OwUrH6J1_N0",
+      "title": "Love & Hate - (Visualizer)",
+      "channel": "Saii Kay",
+      "subs": 55800,
+      "views": 44063,
+      "likes": 1135,
+      "published": "2026-11-23T13:44:02Z",
+      "seconds": 256,
+      "ratio": 0.79,
+      "rank": 13
+     },
+     {
+      "id": "QA2EwT8jlNE",
+      "title": "AVENGERS DOOMSDAY Doctor Doom vs Magneto Trailer & New Powers Breakdown!",
+      "channel": "Emergency Awesome",
+      "subs": 4790000,
+      "views": 578682,
+      "likes": 6870,
+      "published": "2026-11-26T20:34:46Z",
+      "seconds": 815,
+      "ratio": 0.12,
+      "rank": 14
+     },
+     {
+      "id": "wCF1HuctBPU",
+      "title": "4 Secret Rooms Grandma Will Never Find!",
+      "channel": "Unspeakable",
+      "subs": 20200000,
+      "views": 286944,
+      "likes": 2962,
+      "published": "2026-11-27T16:00:06Z",
+      "seconds": 1786,
+      "ratio": 0.01,
+      "rank": 15
+     }
+    ],
+    "shorts": [
+     {
+      "id": "FYHvlRJXG2A",
+      "title": "Avengers: Doomsday | TV SPOT “REDEMPTION” CONCEPT | Marvel Studios",
+      "channel": "MovieTrailers Entertainment",
+      "subs": 579000,
+      "views": 1552496,
+      "likes": 16903,
+      "published": "2026-11-27T14:30:29Z",
+      "seconds": 31,
+      "ratio": 2.68,
+      "rank": 5
+     },
+     {
+      "id": "5kOroTqwFKA",
+      "title": "\"Go Through Hell\" - Tom MacDonald & Nova Rockafeller",
+      "channel": "Tom MacDonald",
+      "subs": 5280000,
+      "views": 355475,
+      "likes": 19964,
+      "published": "2026-11-27T16:59:02Z",
+      "seconds": 180,
+      "ratio": 0.07,
+      "rank": 7
+     },
+     {
+      "id": "dnGJmIrdbls",
+      "title": "AVENGERS: DOOMSDAY \"Magneto Removes Doctor Doom's Mask\" TV Spot Trailer (2026)",
+      "channel": "ONE Media +",
+      "subs": 1370000,
+      "views": 1600801,
+      "likes": 9573,
+      "published": "2026-11-26T10:27:50Z",
+      "seconds": 43,
+      "ratio": 1.17,
+      "rank": 8
+     },
+     {
+      "id": "2pIRdpQhvpU",
+      "title": "Daddy Cool (KING Version) | Shah Rukh Khan, Kareena | Sachin-Jigar, Arijit, Boney M, Shilpa, Kumaar",
+      "channel": "T-Series",
+      "subs": 317000000,
+      "views": 7286782,
+      "likes": 134401,
+      "published": "2026-11-27T14:27:26Z",
+      "seconds": 105,
+      "ratio": 0.02,
+      "rank": 10
+     },
+     {
+      "id": "fHaJCW-BI4E",
+      "title": "The Chosen: The Three Kings Official Trailer",
+      "channel": "The Chosen",
+      "subs": 4020000,
+      "views": 129440,
+      "likes": 5600,
+      "published": "2026-11-27T14:00:39Z",
+      "seconds": 85,
+      "ratio": 0.03,
+      "rank": 11
+     },
+     {
+      "id": "l9Ez9rrEsVU",
+      "title": "SUPERHÉROE - Ian Lucas x Fede Vigevani",
+      "channel": "Fede Vigevani",
+      "subs": 82600000,
+      "views": 11023011,
+      "likes": 501865,
+      "published": "2026-11-26T23:00:08Z",
+      "seconds": 144,
+      "ratio": 0.13,
+      "rank": 16
+     },
+     {
+      "id": "rkhpk8m3Yh4",
+      "title": "Mecha Base Trailer | Tower Defense Simulator",
+      "channel": "Paradoxum Games",
+      "subs": 297000,
+      "views": 150176,
+      "likes": 6192,
+      "published": "2026-11-27T16:00:06Z",
+      "seconds": 56,
+      "ratio": 0.51,
+      "rank": 17
+     },
+     {
+      "id": "xJy1bCLx_Kc",
+      "title": "OUT OF MY MIND",
+      "channel": "Kanye West - Topic",
+      "subs": 385000,
+      "views": 565025,
+      "likes": 31114,
+      "published": "2026-11-26T10:03:52Z",
+      "seconds": 107,
+      "ratio": 1.47,
+      "rank": 19
+     },
+     {
+      "id": "-l237RK1icA",
+      "title": "AVENGERS 5: DOOMSDAY Official “Magneto Removes Doctor Dooms Mask” Teaser Trailer (2026) Marvel",
+      "channel": "KinoCheck.com",
+      "subs": 5010000,
+      "views": 329047,
+      "likes": 2072,
+      "published": "2026-11-26T17:14:20Z",
+      "seconds": 64,
+      "ratio": 0.07,
+      "rank": 23
+     },
+     {
+      "id": "DzgorMtx38c",
+      "title": "Avengers Doomsday | Magneto vs Doom | Get Your Tickets at TGV Now",
+      "channel": "TGV Cinemas",
+      "subs": 50900,
+      "views": 2987165,
+      "likes": 28473,
+      "published": "2026-11-26T04:00:26Z",
+      "seconds": 17,
+      "ratio": 58.69,
+      "rank": 26
+     }
+    ]
+   }
+  }
+ }
+}
