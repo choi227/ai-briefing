@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """github.com/trending (오늘 기준) 목록을 GitHub 서버에서 직접 읽어 public/data/trending-raw.json 으로 저장한다.
 
-GitHub Actions(.github/workflows/trending.yml)가 매일 06:07 KST에 실행한다.
+GitHub Actions(.github/workflows/trending.yml)를 매일 아침 브리핑 발행 때 직접 실행한다.
 클라우드 발행 환경에서는 github.com이 막혀 있고 웹페이지 읽기 도구는 캐시된 옛 목록을 줄 때가 있어서,
 발행 때는 이 파일을 쓴다. 표준 라이브러리만 쓴다.
 """
